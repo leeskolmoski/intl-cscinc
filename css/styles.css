@@ -1,4 +1,41 @@
-/* minimal styles to prove it renders */
-html,body{margin:0;padding:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:#0f172a;color:#e5e7eb}
-.container{max-width:900px;margin:40px auto;padding:20px;background:#111827;border:1px solid #1f2937;border-radius:12px}
-a{color:#60a5fa}
+/* Global light theme */
+:root{
+  --ink:#0f172a; --muted:#475569; --card:#ffffff; --accent:#0b3a7e; --accent-2:#1f5fbf; --bg:#f5f7fb;
+}
+html,body{margin:0;padding:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink)}
+*{box-sizing:border-box}
+
+.container{max-width:1120px;margin:0 auto;padding:24px}
+.card{
+  background:var(--card);
+  border:1px solid #e5e7eb;
+  border-radius:14px;
+  padding:20px;
+  box-shadow:0 10px 24px rgba(2,6,23,.06);
+}
+
+/* nav */
+nav.site{
+  position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;
+  background:rgba(255,255,255,.8);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #e5e7eb;
+  padding:12px 16px;
+}
+nav.site a{color:#334155;text-decoration:none;padding:6px 10px;border-radius:10px}
+nav.site a:hover{background:#eef2ff;color:#000}
+
+/* hero */
+.hero{position:relative;overflow:hidden;border-radius:16px;margin:24px auto 0;max-width:1120px;
+  border:1px solid #e5e7eb;background:linear-gradient(180deg,#fff, #f3f6fb)}
+.hero img{width:100%;height:460px;object-fit:cover;display:block;opacity:0;transition:opacity .7s ease}
+.hero img.show{opacity:1}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35))}
+.hero .caption{position:absolute;left:16px;bottom:12px;color:#eef2ff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+
+/* grid + buttons */
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.card h3{margin:0 0 6px}
+.btn{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid #d1d5db;color:#0b3a7e;text-decoration:none;background:#fff}
+.btn:hover{border-color:#b6c3ff;box-shadow:0 0 0 4px rgba(59,130,246,.15)}
+footer.site-footer{margin:28px 0 40px;color:#64748b}
