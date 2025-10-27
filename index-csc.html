@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CSC — Construction Services Consulting</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
-  <!-- Header -->
+  <!-- Site Header -->
   <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="index-csc.html" aria-label="CSC home">
-        <img class="brand-mark" src="assets/images/main/logo-short.svg" alt="CSC logo" />
+    <div class="nav-wrap container">
+      <a class="brand" href="index-csc.html" aria-label="CSC Home">
+        <img class="brand-mark" src="assets/images/main/logo-short.svg" alt="CSC" />
       </a>
-      <nav class="main-nav" aria-label="Main">
+
+      <nav class="main-nav" aria-label="Primary">
         <a class="nav-link active" href="index-csc.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="projects.html">Projects</a>
@@ -23,122 +24,115 @@
     </div>
   </header>
 
-  <!-- Hero (exact files + captions) -->
-  <section class="hero">
+  <!-- Hero Slideshow -->
+  <section class="hero container">
     <figure class="hero-frame">
-      <img id="heroImage" class="hero-img" src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg" alt="Project photo" />
-      <figcaption id="heroCaption" class="hero-caption">Amarillo, Texas, USA</figcaption>
+      <img id="hero-img" src="" alt="Project photo" />
+      <figcaption id="hero-cap" class="hero-cap">Project photo</figcaption>
     </figure>
   </section>
 
-  <!-- Center logo + intro -->
-  <section class="intro wrap">
-    <div class="logo-shortline">
-      <img class="logo-shortline-img" src="assets/images/main/logo-short.svg" alt="CSC" />
-    </div>
-    <h1 class="page-title">Construction Services Consulting</h1>
-    <p class="lede">
-      More than 100 years of combined experience from three partners. We guide projects from concept
-      to completion with precision, safety, and care.
-    </p>
+  <!-- Logo lockup (blue, larger, spaced) -->
+  <section class="lockup container">
+    <img class="logo-full" src="assets/images/main/logo-short.svg" alt="CSC" />
+    <img class="logo-tag" src="assets/images/main/logo-full.svg" alt="Construction Services Consulting" />
   </section>
 
-  <!-- Value band -->
-  <section class="value band">
-    <div class="wrap">
-      <h2 class="section-title">Complex Projects. Delivered with Precision and Safety.</h2>
-      <p class="body">
+  <!-- Intro + single CTA -->
+  <main class="container">
+    <section class="intro">
+      <h1>Construction Services Consulting</h1>
+      <p class="lede">
+        More than 100 years of combined experience from three partners. We guide projects from concept
+        to completion with precision, safety, and care.
+      </p>
+    </section>
+
+    <section class="value">
+      <h2>Complex Projects. Delivered with Precision and Safety.</h2>
+      <p>
         We provide leadership, oversight, and detailed coordination from initial concept through startup.
         Our role is to ensure projects are delivered on time, on budget, and with uncompromising attention
         to safety and quality.
       </p>
-      <p class="body">
-        With expertise across food processing, distribution, commercial, and mixed-use development, CSC works
-        with clients to navigate permitting, design, contractor management, and final turnover to operations.
+      <p>
+        With expertise across food processing, distribution, commercial, and mixed-use development,
+        CSC works with clients to navigate permitting, design, contractor management, and final turnover to operations.
       </p>
-      <div class="cta-row">
-        <a class="btn btn-outline" href="projects.html">See Our Projects →</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- Three cards -->
-  <section class="cards wrap">
-    <article class="card">
-      <h3>Owner’s Representative</h3>
-      <p>Single point of accountability protecting schedule and budget.</p>
-    </article>
-    <article class="card">
-      <h3>Construction Management</h3>
-      <p>Field oversight, safety culture, submittals, and cost control.</p>
-    </article>
-    <article class="card">
-      <h3>Design-Build Oversight</h3>
-      <p>Integration from design through commissioning and turnover.</p>
-    </article>
-  </section>
+      <p class="cta-row">
+        <a class="btn-cta" href="projects.html">See Our Projects →</a>
+      </p>
+    </section>
 
-  <!-- Footer -->
+    <!-- Service cards (kept, but no duplicate CTA below) -->
+    <section class="cards">
+      <article class="card">
+        <h3>Owner’s Representative</h3>
+        <p>Single point of accountability protecting schedule and budget.</p>
+      </article>
+      <article class="card">
+        <h3>Construction Management</h3>
+        <p>Field oversight, safety culture, submittals, and cost control.</p>
+      </article>
+      <article class="card">
+        <h3>Design-Build Oversight</h3>
+        <p>Integration from design through commissioning and turnover.</p>
+      </article>
+    </section>
+  </main>
+
   <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2009–2025 Construction Services Consulting, Inc. All rights reserved.</p>
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
-  <!-- Strict slideshow list (order preserved, case-exact filenames) -->
+  <!-- Slideshow script: 6s, cross-fade, randomized once per load -->
   <script>
+    // Exact files you specified, captions strictly City, State, Country.
     const slides = [
-      {
-        src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
-        caption: "Amarillo, Texas, USA"
-      },
-      {
-        src: "assets/images/projects/albuquerque-high-security-hero.jpg",
-        caption: "Albuquerque, New Mexico, USA"
-      },
-      {
-        src: "assets/images/projects/ng-1.JPG",
-        caption: "San Bernardino, California, USA"
-      },
-      {
-        src: "assets/images/projects/ama-cacique-overview-daylight.JPG",
-        caption: "Amarillo, Texas, USA"
-      },
-      {
-        src: "assets/images/projects/nm-2.JPG",
-        caption: "Albuquerque, New Mexico, USA"
-      },
-      {
-        src: "assets/images/projects/ogden-assisted.jpg",
-        caption: "Ogden, Utah, USA"
-      },
-      {
-        src: "assets/images/projects/wells-fargo-ps-3a.png",
-        caption: "San Bernardino, California, USA"
-      },
-      {
-        src: "assets/images/projects/Stockton Distribution Temperature Controlled Warehouse-1.jpg",
-        caption: "Stockton, California, USA"
-      }
+      { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", cap: "Amarillo, Texas, USA" },
+      { src: "assets/images/projects/albuquerque-high-security-hero.jpg", cap: "Albuquerque, New Mexico, USA" },
+      { src: "assets/images/projects/ng-1.JPG", cap: "San Bernardino, California, USA" },
+      { src: "assets/images/projects/ama-cacique-overview-daylight.JPG", cap: "Amarillo, Texas, USA" },
+      { src: "assets/images/projects/nm-2.JPG", cap: "Albuquerque, New Mexico, USA" },
+      { src: "assets/images/projects/ogden-assisted.jpg", cap: "Ogden, Utah, USA" },
+      { src: "assets/images/projects/wells-fargo-ps-3a.png", cap: "San Bernardino, California, USA" },
+      { src: "assets/images/projects/Stockton%20Distribution%20Temperature%20Controlled%20Warehouse-1.jpg", cap: "Stockton, California, USA" }
     ];
 
-    const img = document.getElementById("heroImage");
-    const cap = document.getElementById("heroCaption");
-    let idx = 0;
-
-    function showSlide(i){
-      const s = slides[i];
-      img.classList.remove("fade-in");
-      void img.offsetWidth; // restart animation
-      img.src = s.src;
-      cap.textContent = s.caption;
-      img.classList.add("fade-in");
+    // Shuffle once to break up similar cities
+    for (let i = slides.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [slides[i], slides[j]] = [slides[j], slides[i]];
     }
 
-    setInterval(() => {
-      idx = (idx + 1) % slides.length;
-      showSlide(idx);
-    }, 6000);
+    const img = document.getElementById("hero-img");
+    const cap = document.getElementById("hero-cap");
+
+    // Preload
+    slides.forEach(s => { const i = new Image(); i.src = s.src; });
+
+    let idx = 0;
+    function show(n) {
+      const s = slides[n % slides.length];
+      cap.textContent = s.cap;
+      // cross-fade by toggling a class
+      img.classList.remove("show");
+      // defer source switch slightly so fade-out can start
+      setTimeout(() => {
+        img.src = s.src;
+        // after image applies, fade back in
+        requestAnimationFrame(() => img.classList.add("show"));
+      }, 80);
+    }
+
+    // first frame
+    show(idx);
+
+    // 6s cadence
+    setInterval(() => { idx = (idx + 1) % slides.length; show(idx); }, 6000);
   </script>
 </body>
 </html>
