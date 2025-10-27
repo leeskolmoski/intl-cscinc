@@ -8,32 +8,37 @@
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="site">
-    <a href="index-csc.html">Home</a>
-    <a href="services-csc.html">Services</a>
-    <a href="projects-csc.html">Projects</a>
-    <a href="about-csc.html">About</a>
-    <a href="contact-csc.html">Contact</a>
-  </nav>
+  <!-- BRAND + NAV -->
+  <header class="brandbar">
+    <div class="inner">
+      <img src="assets/images/main/logo-full.svg" alt="CSC — Construction Services Consulting" loading="eager">
+      <nav class="site">
+        <a href="index-csc.html">Home</a>
+        <a href="services-csc.html">Services</a>
+        <a href="projects-csc.html">Projects</a>
+        <a href="about-csc.html">About</a>
+        <a href="contact-csc.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <!-- HERO SLIDESHOW (randomized + fade) -->
   <div class="hero container">
-    <img id="hero" alt="CSC showcase">
+    <img id="hero" alt="CSC showcase" loading="eager">
     <div class="overlay"></div>
     <div class="caption" id="cap">CSC showcase</div>
   </div>
 
-  <!-- CONTENT -->
+  <!-- INTRO / VALUE -->
   <div class="container" style="margin-top:22px">
-    <div class="grid">
+    <div class="grid kpis">
       <div class="card"><h3>Owner’s Representative</h3><p>Single point of accountability protecting schedule and budget.</p></div>
-      <div class="card"><h3>Construction Management</h3><p>Field oversight, safety culture, submittals, cost control.</p></div>
+      <div class="card"><h3>Construction Management</h3><p>Field oversight, safety culture, submittals, and cost control.</p></div>
       <div class="card"><h3>Design-Build Oversight</h3><p>Integration from design through commissioning and turnover.</p></div>
     </div>
 
     <div class="card" style="margin-top:20px">
-      <h3>What we do</h3>
+      <h3 style="margin-top:0">What we do</h3>
       <p>CSC represents owners on complex industrial, food, and logistics projects. We coordinate design, manage construction, and ensure compliance with a documentation-first approach.</p>
       <p style="margin-top:10px"><a class="btn" href="projects-csc.html">See Projects</a></p>
     </div>
@@ -41,9 +46,7 @@
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc.</p>
-    </div>
+    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
   </footer>
 
   <!-- SLIDESHOW SCRIPT -->
@@ -54,21 +57,19 @@
     const YEAR_EL = document.getElementById('y');
     if (YEAR_EL) YEAR_EL.textContent = new Date().getFullYear();
 
-    // Money shots ONLY — pulled from assets/images/projects/ (your repo structure)
-    // Captions are human-friendly (not raw filenames). Case-sensitive paths.
+    // Money shots ONLY — from assets/images/projects/, with human captions.
+    // REMOVED: Park City Lowell, Amarillo NE drone.
+    // CLEANED: no "(Daylight)" / "(Drone)" text in captions.
     const MONEY_SHOTS = [
       { src: 'assets/images/projects/albuquerque-high-security-hero.jpg', caption: 'Albuquerque — High Security Facility' },
       { src: 'assets/images/projects/ogden-assisted.jpg',                   caption: 'Ogden — Assisted Living' },
-      { src: 'assets/images/projects/park-city-lowell.jpg',                 caption: 'Park City — Lowell' },
       { src: 'assets/images/projects/wells-fargo-ps-3a.png',                caption: 'Wells Fargo — Parking Structure' },
       { src: 'assets/images/projects/ng-1.JPG',                             caption: 'New Mexico — Site Work' },
       { src: 'assets/images/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' },
-      { src: 'assets/images/projects/ama-cacique-NE-construction-drone.jpg',caption: 'Amarillo — NE Construction (Drone)' },
-      { src: 'assets/images/projects/ama-cacique-overview-day.JPG',         caption: 'Amarillo — Overview (Daylight)' }
-      // Add/remove here anytime; keep paths inside assets/images/projects/
+      { src: 'assets/images/projects/ama-cacique-overview-day.JPG',         caption: 'Amarillo — Overview' }
     ];
 
-    // Shuffle so Amarillo isn't grouped
+    // Shuffle order so Amarillo isn’t grouped/repeated
     (function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}})(MONEY_SHOTS);
 
     const img = document.getElementById('hero');
@@ -96,17 +97,17 @@
 
       let i = 0;
 
-      // fade-in when image loads
+      // Fade-in when image loads
       img.addEventListener('load', ()=> img.classList.add('show'));
 
       function show(n){
         const s = slides[n];
         cap.textContent = s.caption;
-        img.classList.remove('show');                 // fade out current
-        setTimeout(()=>{ img.src = s.src; }, FADE_MS * 0.4); // swap during fade
+        img.classList.remove('show');                         // fade out
+        setTimeout(()=>{ img.src = s.src; }, FADE_MS * 0.4);  // swap mid-fade
       }
 
-      // start + rotate
+      // Start + rotate
       show(i);
       setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, DURATION_MS);
     })();
