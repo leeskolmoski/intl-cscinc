@@ -1,134 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>CSC — Construction Services Consulting</title>
-<link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
-<meta name="description" content="Construction Services Consulting. Owner’s representative, construction management, and design-build oversight.">
-
-<style>
-/* ===== INLINE CSS TO BYPASS ANY PATH ISSUES ===== */
-:root{
-  --brand-blue:#233a79;
-  --brand-blue-brighter:#2d4694;
-  --text:#121624;
-  --text-soft:#4b5771;
-  --card:#fff;
-  --bg0:#f7f9fc;
-  --bg1:#eef3f9;
-  --shadow:0 10px 30px rgba(17,24,39,.10);
-}
-*{box-sizing:border-box}
-html,body{height:100%}
-body{margin:0;font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);
-  background:
-    radial-gradient(1200px 700px at 50% -10%, rgba(35,58,121,.05), transparent 70%),
-    linear-gradient(180deg,#ffffff 0%,var(--bg1) 60%,var(--bg0) 100%);
-}
-.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
-
-/* Header */
-.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.9);
-  backdrop-filter:saturate(140%) blur(8px);border-bottom:1px solid rgba(17,24,39,.06)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand-mark{height:42px;width:auto;display:block}
-.nav ul{list-style:none;display:flex;gap:26px;margin:0;padding:0}
-.nav-link{position:relative;display:inline-block;text-decoration:none;color:#1a2540;font-weight:700}
-.nav-link:hover{color:var(--brand-blue-brighter)}
-.nav-underline{position:absolute;left:0;right:0;height:3px;bottom:-8px;background:var(--brand-blue-brighter);
-  border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .18s ease}
-.nav-link:hover .nav-underline{transform:scaleX(1)}
-.nav-link.active{color:var(--brand-blue-brighter)}
-.nav-link.active .nav-underline{transform:scaleX(1)}
-
-/* Hero */
-.hero{padding:22px 0 8px}
-.hero-frame{position:relative;border-radius:14px;overflow:hidden;background:#e8edf5;box-shadow:var(--shadow);margin:0}
-.hero-frame img{width:100%;height:520px;object-fit:cover;display:block;opacity:1;transition:opacity .25s ease}
-.hero-frame img.fade-out{opacity:0}
-.hero-frame img.fade-in{opacity:1}
-.hero-frame figcaption{position:absolute;left:18px;bottom:14px;color:#e9eef8;font-weight:600;font-size:14px;
-  text-shadow:0 2px 10px rgba(0,0,0,.45);background:rgba(12,20,35,.35);padding:6px 10px;border-radius:8px}
-
-/* Intro */
-.intro-head{padding:22px 0 6px}
-.intro-head-inner{text-align:center}
-.hero-mark{margin:0 auto 8px auto;display:block}
-.intro-head h1{margin:8px 0 6px 0;font-size:32px;line-height:1.2;color:var(--brand-blue-brighter);font-weight:800}
-.lede{max-width:800px;margin:0 auto;color:#23324e}
-
-/* Intro band */
-.intro-band{margin:24px 0 10px 0;padding:36px 0;background:linear-gradient(180deg,rgba(255,255,255,.65),rgba(255,255,255,.85));
-  border-top:1px solid rgba(17,24,39,.06);border-bottom:1px solid rgba(17,24,39,.06)}
-.intro-band h2{text-align:center;margin:0 0 12px 0;color:var(--brand-blue-brighter);font-size:28px;line-height:1.25}
-.intro-band p{max-width:860px;margin:10px auto;color:var(--text-soft)}
-.intro-cta{text-align:center}
-
-/* Buttons */
-.btn{display:inline-block;border-radius:28px;padding:12px 18px;font-weight:700;text-decoration:none;
-  transition:transform .08s ease,box-shadow .08s ease,background .08s ease}
-.btn:active{transform:translateY(1px)}
-.btn-primary{background:var(--brand-blue-brighter);color:#fff;box-shadow:0 6px 18px rgba(35,58,121,.25)}
-.btn-primary:hover{background:#3552a2}
-.btn-secondary{background:#1b2a55;color:#fff}
-.btn-secondary:hover{background:#22346b}
-
-/* Cards */
-.pillars{padding:20px 0 10px}
-.cards{display:grid;gap:18px;grid-template-columns:1fr}
-@media(min-width:900px){.cards{grid-template-columns:repeat(3,1fr)}}
-.card{background:var(--card);border-radius:16px;padding:18px 20px;box-shadow:var(--shadow)}
-.card h3{margin:4px 0 6px 0;color:var(--brand-blue-brighter)}
-
-/* What we do */
-.what-we-do{padding:24px 0 40px}
-.what-we-do h2{color:var(--brand-blue-brighter)}
-.what-we-do p{max-width:900px;color:var(--text-soft)}
-
-/* Footer */
-.site-footer{border-top:1px solid rgba(17,24,39,.06);padding:20px 0 40px;color:#516083}
-.site-footer small{display:block;text-align:center}
-main#content{padding-bottom:24px}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CSC — Construction Services Consulting</title>
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-
 <body>
-  <!-- HEADER -->
+  <!-- Site header -->
   <header class="site-header">
-    <div class="wrap header-inner">
+    <div class="container header-inner">
       <a class="brand" href="index-csc.html" aria-label="CSC Home">
-        <img src="assets/images/main/logo-full.svg" alt="CSC — Construction Services Consulting" class="brand-mark">
+        <img src="assets/images/main/logo-short.svg" alt="CSC Construction Services Consulting" class="brand-mark" />
       </a>
-      <nav class="nav" aria-label="Primary">
-        <ul>
-          <li><a class="nav-link active" href="index-csc.html">Home<span class="nav-underline"></span></a></li>
-          <li><a class="nav-link" href="services.html">Services<span class="nav-underline"></span></a></li>
-          <li><a class="nav-link" href="projects/">Projects<span class="nav-underline"></span></a></li>
-          <li><a class="nav-link" href="about.html">About<span class="nav-underline"></span></a></li>
-          <li><a class="nav-link" href="contact.html">Contact<span class="nav-underline"></span></a></li>
-        </ul>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link active" href="index-csc.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="projects/index.html">Projects</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="content">
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="wrap">
-        <figure class="hero-frame">
-          <img id="heroImg" src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg" alt="">
-          <figcaption id="heroCap">Amarillo, Texas, USA</figcaption>
+  <!-- Hero slideshow -->
+  <main>
+    <section class="hero-wrap">
+      <div class="container">
+        <figure class="hero" id="hero">
+          <img id="hero-img" alt="" />
+          <figcaption id="hero-cap" class="hero-cap">Loading…</figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- INTRO LOGO + HEADING -->
-    <section class="intro-head">
-      <div class="wrap intro-head-inner">
-        <img class="hero-mark" src="assets/images/main/logo-short.svg" alt="CSC" height="48">
-        <h1>Construction Services Consulting</h1>
+    <!-- Lockup + intro -->
+    <section class="intro-block">
+      <div class="container lockup">
+        <img src="assets/images/main/logo-full.svg" alt="CSC" class="lockup-mark" />
+        <h1 class="h1">Construction Services Consulting</h1>
         <p class="lede">
           More than 100 years of combined experience from three partners. We guide projects from concept
           to completion with precision, safety, and care.
@@ -136,28 +47,28 @@ main#content{padding-bottom:24px}
       </div>
     </section>
 
-    <!-- INTRO BAND -->
-    <section class="intro-band">
-      <div class="wrap">
-        <h2>Complex Projects. Delivered with Precision and Safety.</h2>
+    <!-- Value statement -->
+    <section class="value-block">
+      <div class="container">
+        <h2 class="h2">Complex Projects. Delivered with Precision and Safety.</h2>
         <p>
           We provide leadership, oversight, and detailed coordination from initial concept through startup.
           Our role is to ensure projects are delivered on time, on budget, and with uncompromising attention
           to safety and quality.
         </p>
         <p>
-          With expertise across food processing, distribution, commercial, and mixed-use development, CSC
-          works with clients to navigate permitting, design, contractor management, and final turnover to operations.
+          With expertise across food processing, distribution, commercial, and mixed-use development, CSC works
+          with clients to navigate permitting, design, contractor management, and final turnover to operations.
         </p>
-        <p class="intro-cta">
-          <a class="btn btn-primary" href="projects/">See Our Projects →</a>
+        <p class="cta-row">
+          <a class="btn" href="projects/index.html">See Our Projects</a>
         </p>
       </div>
     </section>
 
-    <!-- THREE PILLARS -->
-    <section class="pillars">
-      <div class="wrap cards">
+    <!-- Service cards -->
+    <section class="cards-block">
+      <div class="container cards">
         <article class="card">
           <h3>Owner’s Representative</h3>
           <p>Single point of accountability protecting schedule and budget.</p>
@@ -173,56 +84,65 @@ main#content{padding-bottom:24px}
       </div>
     </section>
 
-    <!-- WHAT WE DO -->
-    <section class="what-we-do">
-      <div class="wrap">
-        <h2>What we do</h2>
+    <!-- What we do -->
+    <section class="what-block">
+      <div class="container">
+        <h2 class="h3">What we do</h2>
         <p>
-          CSC represents owners on complex industrial, food, and logistics projects. We coordinate design, manage construction,
-          and ensure compliance with a documentation-first approach.
+          CSC represents owners on complex industrial, food, and logistics projects. We coordinate design,
+          manage construction, and ensure compliance with a documentation-first approach.
         </p>
-        <p><a class="btn btn-secondary" href="projects/">See Our Projects →</a></p>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <small>© 2009–2025 Construction Services Consulting, Inc. All rights reserved.</small>
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
-  <!-- SLIDESHOW (kept small and robust) -->
   <script>
-    // Images must exist exactly at these paths (case-sensitive on GitHub Pages).
-    const slides = [
-      { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", cap: "Amarillo, Texas, USA" },
+    // Slides: projects only, with consistent City, State, Country captions
+    const SLIDES = [
       { src: "assets/images/projects/albuquerque-high-security-hero.jpg", cap: "Albuquerque, New Mexico, USA" },
-      { src: "assets/images/projects/ng-1.JPG", cap: "San Bernardino, California, USA" },
-      { src: "assets/images/projects/ama-cacique-overview-daylight.JPG", cap: "Amarillo, Texas, USA" },
-      { src: "assets/images/projects/nm-2.JPG", cap: "Albuquerque, New Mexico, USA" },
-      { src: "assets/images/projects/ogden-assisted.jpg", cap: "Ogden, Utah, USA" },
-      { src: "assets/images/projects/wells-fargo-ps-3a.png", cap: "San Bernardino, California, USA" },
-      { src: "assets/images/projects/Stockton Distribution Temperature Controlled Warehouse-1.jpg", cap: "Stockton, California, USA" }
+      { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", cap: "Amarillo, Texas, USA" },
+      { src: "assets/images/projects/wells-fargo-ps-2a.jpg", cap: "Salt Lake City, Utah, USA" }
     ];
-    const heroImg = document.getElementById('heroImg');
-    const heroCap = document.getElementById('heroCap');
-    let i = 0;
 
-    function showSlide(idx){
-      const s = slides[idx];
-      heroImg.classList.remove('fade-in');
-      heroImg.classList.add('fade-out');
-      setTimeout(()=>{
-        heroImg.src = s.src;
-        heroCap.textContent = s.cap;
-        heroImg.classList.remove('fade-out');
-        heroImg.classList.add('fade-in');
-      },250);
+    // Randomize order each load
+    for (let i = SLIDES.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [SLIDES[i], SLIDES[j]] = [SLIDES[j], SLIDES[i]];
     }
-    // kick off
-    showSlide(i);
-    setInterval(()=>{ i = (i+1)%slides.length; showSlide(i); }, 6000);
+
+    const imgEl = document.getElementById("hero-img");
+    const capEl = document.getElementById("hero-cap");
+    let idx = 0;
+
+    function show(i) {
+      const { src, cap } = SLIDES[i];
+      // Preload next image to avoid flash
+      const img = new Image();
+      img.onload = () => {
+        imgEl.classList.remove("show");
+        // small timeout to allow fade-out
+        setTimeout(() => {
+          imgEl.src = src;
+          imgEl.alt = cap;
+          capEl.textContent = cap;
+          requestAnimationFrame(() => imgEl.classList.add("show"));
+        }, 150);
+      };
+      img.src = src;
+    }
+
+    show(idx);
+    setInterval(() => {
+      idx = (idx + 1) % SLIDES.length;
+      show(idx);
+    }, 6500);
   </script>
 </body>
 </html>
+
