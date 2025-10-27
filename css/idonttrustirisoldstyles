@@ -1,1 +1,105 @@
+/* ===== Base */
+:root{
+  --csc-blue:#25448d;          /* brand blue, slightly brighter per your note */
+  --csc-blue-dark:#1f3772;
+  --ink:#0f172a;
+  --muted:#5b6b86;
+  --paper:#eef3fa;
+  --card:#ffffff;
+  --shadow:0 12px 28px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
+}
 
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(37,68,141,.06), transparent 60%),
+    radial-gradient(1200px 600px at 120% 10%, rgba(37,68,141,.05), transparent 60%),
+    linear-gradient(#f7f9fd, var(--paper));
+  min-height:100vh;
+}
+
+.container{width:min(1120px, calc(100% - 48px)); margin:0 auto}
+
+/* ===== Topbar */
+.topbar{
+  position:sticky; top:0; z-index:20;
+  background:#fff; box-shadow:0 1px 0 rgba(17,24,39,.08);
+}
+.nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+.brand-mark{height:28px; width:auto; display:block}
+.main-nav{display:flex; gap:28px}
+.nav-link{
+  text-decoration:none; color:#24324d; font-weight:700; padding:6px 0; position:relative;
+}
+.nav-link:hover{color:var(--csc-blue)}
+.nav-link.active{color:var(--csc-blue)}
+.nav-link.active::after{
+  content:""; position:absolute; left:0; right:0; bottom:-8px; height:3px; border-radius:2px; background:var(--csc-blue);
+}
+
+/* ===== Hero */
+.hero{padding:24px 0 8px}
+.hero-frame{
+  position:relative; margin:0; padding:0;
+  border-radius:14px; overflow:hidden;
+  box-shadow:var(--shadow);
+  background:linear-gradient(#e9edf4,#dfe6f2);
+}
+.hero-frame img{
+  display:block; width:100%; height:520px; object-fit:cover;
+  opacity:1; transition:opacity .7s ease-in-out;
+}
+.hero-frame img.fade-in{opacity:0; animation:fade .7s forwards}
+@keyframes fade{to{opacity:1}}
+.hero-cap{
+  position:absolute; left:18px; bottom:12px;
+  font-size:14px; color:#eaf0ff; background:rgba(17,27,48,.45);
+  padding:8px 10px; border-radius:10px; backdrop-filter:saturate(120%) blur(6px);
+}
+
+/* ===== Intro */
+.intro{padding:28px 0 8px}
+.intro-inner{
+  text-align:center; background:rgba(255,255,255,.78);
+  border-radius:12px; padding:24px; box-shadow:var(--shadow);
+}
+.intro-logo{font-size:40px; letter-spacing:.16em; color:var(--csc-blue); opacity:.95}
+.intro-title{margin:10px 0 8px; font-size:32px; color:var(--csc-blue); line-height:1.2}
+.intro-sub{margin:0 auto; max-width:780px; color:var(--muted)}
+
+/* ===== Cards */
+.cards{padding:24px 0}
+.cards-grid{
+  display:grid; gap:22px; grid-template-columns:repeat(3,1fr);
+}
+.card{
+  background:var(--card); border-radius:14px; padding:22px; box-shadow:var(--shadow);
+  border:1px solid rgba(28,45,93,.08);
+}
+.card h3{margin:0 0 8px; color:var(--csc-blue)}
+.card p{margin:0; color:#475569}
+
+/* ===== What we do */
+.what{padding:10px 0 42px}
+.what-inner{
+  background:rgba(255,255,255,.85); border-radius:14px; padding:26px; box-shadow:var(--shadow);
+}
+.what h2{margin:0 0 10px; color:var(--csc-blue)}
+.what p{margin:0 0 12px; color:#475569}
+.cta{
+  display:inline-block; background:var(--csc-blue); color:#fff; text-decoration:none;
+  padding:12px 18px; border-radius:28px; font-weight:800; box-shadow:var(--shadow);
+}
+.cta:hover{background:var(--csc-blue-dark)}
+
+/* ===== Footer */
+.footer{padding:30px 0 40px; color:#6b7280; text-align:center; font-size:14px}
+
+/* ===== Responsive */
+@media (max-width:900px){
+  .cards-grid{grid-template-columns:1fr}
+  .hero-frame img{height:44vh}
+}
