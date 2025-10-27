@@ -2,115 +2,261 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Construction Services Consulting — Home</title>
-  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SINGLE-FILE CSS (no external dependency) -->
+  <style>
+    :root{
+      --brand:#243e7a;       /* brighten/darken here */
+      --brand-dark:#1a2f5c;
+      --ink:#142033;
+      --ink-2:#3b4a63;
+      --bg:#f2f4f8;
+      --card:#ffffff;
+      --muted:#6b778c;
+      --shadow:0 6px 24px rgba(20,32,51,.08);
+      --radius:16px;
+      --radius-lg:20px;
+      --speed:550ms;
+    }
+
+    /* Page background gradient + very faint “wave” feel */
+    html,body{height:100%}
+    body{
+      margin:0;
+      font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(1200px 600px at -10% -10%, #ffffff 0%, rgba(255,255,255,.9) 40%, rgba(255,255,255,.85) 55%, transparent 65%) no-repeat,
+        linear-gradient(180deg, #ffffff 0%, #f7f9fc 40%, #eef2f7 100%);
+    }
+
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:#fff;
+      border-bottom:1px solid rgba(27,58,107,.08);
+      box-shadow:0 2px 12px rgba(20,32,51,.04);
+    }
+    .nav-inner{
+      max-width:1100px; margin:0 auto; padding:14px 20px;
+      display:flex; align-items:center; gap:22px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px; flex:0 0 auto;
+    }
+    .brand img{height:26px}
+    .brand-mark{
+      margin-left:6px; font-weight:600; letter-spacing:.12em; color:var(--brand-dark);
+      position:relative; padding:0 12px; font-size:14px;
+    }
+    .brand-mark::before,.brand-mark::after{
+      content:""; position:absolute; top:50%; width:26px; height:2px; background:var(--brand-dark); opacity:.35;
+    }
+    .brand-mark::before{right:100%}
+    .brand-mark::after{left:100%}
+
+    .links{margin-left:auto; display:flex; gap:26px}
+    .links a{
+      text-decoration:none; color:var(--ink); font-weight:600;
+      padding:10px 2px; position:relative;
+    }
+    /* double-line motif on hover/active */
+    .links a::after,.links a::before{
+      content:""; position:absolute; left:0; right:0; height:2px; border-radius:2px; transform:translateY(8px) scaleX(0);
+      transition:transform .22s ease; background:var(--brand);
+    }
+    .links a::before{ bottom:0; transform:translateY(10px) scaleX(0.0)}
+    .links a:hover::after{ transform:translateY(8px) scaleX(1)}
+    .links a:hover::before{ transform:translateY(12px) scaleX(.65)}
+    .links a.active{ color:var(--brand) }
+    .links a.active::after{ transform:translateY(8px) scaleX(1)}
+    .links a.active::before{ transform:translateY(12px) scaleX(.65)}
+
+    /* Container */
+    .wrap{max-width:1100px; margin:28px auto 80px; padding:0 20px}
+
+    /* HERO SLIDER */
+    .hero{
+      background:linear-gradient(180deg,#f8fafc 0%,#eef2f7 100%);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow);
+      overflow:hidden; position:relative;
+    }
+    .hero-figure{
+      position:relative; aspect-ratio: 16/9; background:#e6e9ee;
+    }
+    .slide{
+      position:absolute; inset:0; opacity:0; transition:opacity var(--speed) ease;
+      background-position:center; background-size:cover;
+    }
+    .slide.active{ opacity:1 }
+    .hero-cap{
+      position:absolute; left:18px; bottom:16px;
+      color:#fff; font-weight:600; font-size:14px; letter-spacing:.02em;
+      text-shadow:0 2px 10px rgba(0,0,0,.35), 0 1px 0 rgba(0,0,0,.4);
+      padding:.35rem .6rem; border-radius:10px;
+      background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.15));
+      backdrop-filter:saturate(120%) blur(1px);
+    }
+    .hero-bar{ padding:12px 16px 18px; color:var(--muted) }
+
+    /* 3-up cards */
+    .grid-3{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; margin-top:26px}
+    .card{
+      background:var(--card); border-radius:var(--radius);
+      box-shadow:var(--shadow); padding:22px 22px 20px
+    }
+    .card h3{margin:.2rem 0 .35rem; font-size:18px; color:var(--brand); letter-spacing:.01em}
+    .card p{margin:0; color:var(--ink-2); font-size:14px}
+
+    /* Intro block */
+    .intro{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:26px; margin-top:22px}
+    .intro h2{ margin:0 0 8px; font-size:22px; color:var(--brand-dark)}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      background:var(--brand); color:#fff; border-radius:999px; padding:10px 16px;
+      text-decoration:none; font-weight:700; box-shadow:0 6px 22px rgba(36,62,122,.25)
+    }
+    .btn:hover{ background:#1e3569 }
+
+    footer{ margin:50px 0 30px; text-align:center; color:#8a96aa; font-size:12px }
+
+    @media (max-width:880px){
+      .grid-3{ grid-template-columns:1fr; }
+      .links{ gap:18px }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- BRAND + NAV -->
-  <header class="brandbar">
-    <div class="inner">
-      <img src="assets/images/main/logo-full.svg" alt="CSC — Construction Services Consulting" loading="eager">
-      <nav class="site">
-        <a href="index-csc.html">Home</a>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">
+        <img src="assets/images/main/logo-full.svg" alt="CSC logo" />
+        <div class="brand-mark">CSC</div>
+      </div>
+      <div class="links">
+        <a class="active" href="index-csc.html">Home</a>
         <a href="services-csc.html">Services</a>
         <a href="projects-csc.html">Projects</a>
         <a href="about-csc.html">About</a>
         <a href="contact-csc.html">Contact</a>
-      </nav>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <!-- HERO SLIDESHOW (randomized + fade) -->
-  <div class="hero container">
-    <img id="hero" alt="CSC showcase" loading="eager">
-    <div class="overlay"></div>
-    <div class="caption" id="cap">CSC showcase</div>
-  </div>
+  <main class="wrap">
 
-  <!-- INTRO / VALUE -->
-  <div class="container" style="margin-top:22px">
-    <div class="grid kpis">
-      <div class="card"><h3>Owner’s Representative</h3><p>Single point of accountability protecting schedule and budget.</p></div>
-      <div class="card"><h3>Construction Management</h3><p>Field oversight, safety culture, submittals, and cost control.</p></div>
-      <div class="card"><h3>Design-Build Oversight</h3><p>Integration from design through commissioning and turnover.</p></div>
-    </div>
+    <!-- HERO SLIDER -->
+    <section class="hero" aria-label="CSC showcase">
+      <div class="hero-figure" id="hero">
+        <!-- slides injected by JS -->
+        <div class="hero-cap" id="caption">Loading…</div>
+      </div>
+      <div class="hero-bar" id="credit"></div>
+    </section>
 
-    <div class="card" style="margin-top:20px">
-      <h3 style="margin-top:0">What we do</h3>
-      <p>CSC represents owners on complex industrial, food, and logistics projects. We coordinate design, manage construction, and ensure compliance with a documentation-first approach.</p>
-      <p style="margin-top:10px"><a class="btn" href="projects-csc.html">See Projects</a></p>
-    </div>
-  </div>
+    <!-- THREE PROOF CARDS -->
+    <section class="grid-3">
+      <article class="card">
+        <h3>Owner’s Representative</h3>
+        <p>Single point of accountability protecting schedule and budget.</p>
+      </article>
+      <article class="card">
+        <h3>Construction Management</h3>
+        <p>Field oversight, safety culture, submittals, and cost control.</p>
+      </article>
+      <article class="card">
+        <h3>Design-Build Oversight</h3>
+        <p>Integration from design through commissioning and turnover.</p>
+      </article>
+    </section>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
-  </footer>
+    <!-- INTRO + CTA -->
+    <section class="intro">
+      <h2>What we do</h2>
+      <p style="margin: 0 0 14px;">
+        CSC represents owners on complex industrial, food, and logistics projects. We coordinate design,
+        manage construction, and ensure compliance with a documentation-first approach.
+      </p>
+      <a class="btn" href="projects-csc.html">See Our Projects →</a>
+    </section>
 
-  <!-- SLIDESHOW SCRIPT -->
+    <footer>© 2009–2025 Construction Services Consulting, Inc. All rights reserved.</footer>
+  </main>
+
+  <!-- SINGLE-FILE JS -->
   <script>
-    // -------- SETTINGS --------
-    const FADE_MS = 600;        // fade duration
-    const DURATION_MS = 5000;   // time each slide is shown
-    const YEAR_EL = document.getElementById('y');
-    if (YEAR_EL) YEAR_EL.textContent = new Date().getFullYear();
-
-    // Money shots ONLY — from assets/images/projects/, with human captions.
-    // REMOVED: Park City Lowell, Amarillo NE drone.
-    // CLEANED: no "(Daylight)" / "(Drone)" text in captions.
-    const MONEY_SHOTS = [
-      { src: 'assets/images/projects/albuquerque-high-security-hero.jpg', caption: 'Albuquerque — High Security Facility' },
-      { src: 'assets/images/projects/ogden-assisted.jpg',                   caption: 'Ogden — Assisted Living' },
-      { src: 'assets/images/projects/wells-fargo-ps-3a.png',                caption: 'Wells Fargo — Parking Structure' },
-      { src: 'assets/images/projects/ng-1.JPG',                             caption: 'New Mexico — Site Work' },
-      { src: 'assets/images/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' },
-      { src: 'assets/images/projects/ama-cacique-overview-day.JPG',         caption: 'Amarillo — Overview' }
+    /* Curated, projects-only “money shots”. Exact filenames from your repo. */
+    const SLIDES = [
+      {
+        src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
+        cap: "Amarillo — Dairy plant overview",
+        credit: "Cacique Foods • Amarillo, TX"
+      },
+      {
+        src: "assets/images/projects/albuquerque-high-security-hero.jpg",
+        cap: "Albuquerque — High-Security Facility",
+        credit: "New Mexico"
+      },
+      {
+        src: "assets/images/projects/wells-fargo-ps-3a.png",
+        cap: "Wells Fargo — Parking Structure Campus",
+        credit: "Salt Lake City, UT"
+      },
+      {
+        src: "assets/images/projects/nm-2.JPG",
+        cap: "New Mexico — Office Building",
+        credit: "New Mexico"
+      },
+      {
+        src: "assets/images/projects/ng-1.JPG",
+        cap: "New Mexico — Facilities",
+        credit: "New Mexico"
+      },
+      {
+        src: "assets/images/projects/ogden-assisted.jpg",
+        cap: "Ogden — Assisted Living",
+        credit: "Utah"
+      }
+      // If you want to add more, drop additional objects here using the same pattern.
     ];
 
-    // Shuffle order so Amarillo isn’t grouped/repeated
-    (function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}})(MONEY_SHOTS);
+    /* Shuffle so Amarillo never clumps at the start every refresh */
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } return a; }
+    const slides = shuffle([...SLIDES]);
 
-    const img = document.getElementById('hero');
-    const cap = document.getElementById('cap');
+    const hero = document.getElementById('hero');
+    const caption = document.getElementById('caption');
+    const credit = document.getElementById('credit');
 
-    // Preload and keep only images that actually load (auto-skip typos)
-    function preload(entry){
-      return new Promise(resolve=>{
-        const im = new Image();
-        im.onload  = ()=> resolve({ok:true,  entry});
-        im.onerror = ()=> resolve({ok:false, entry});
-        im.src = entry.src;
-      });
+    // Build slide DIVs
+    const slideEls = slides.map(s => {
+      const el = document.createElement('div');
+      el.className = 'slide';
+      el.style.backgroundImage = `url("${s.src}")`;
+      // If an image 404s, show a subtle pattern instead of a broken icon
+      const img = new Image();
+      img.onerror = ()=>{ el.style.backgroundImage =
+        'linear-gradient(135deg, #e8edf5 0%, #dfe6f0 100%)'; };
+      img.src = s.src;
+      hero.appendChild(el);
+      return el;
+    });
+
+    let i = 0;
+    function show(n){
+      slideEls.forEach((el, idx)=> el.classList.toggle('active', idx===n));
+      caption.textContent = slides[n].cap;
+      credit.textContent = slides[n].credit || "";
     }
 
-    (async function init(){
-      const results = await Promise.all(MONEY_SHOTS.map(preload));
-      const slides = results.filter(r=>r.ok).map(r=>r.entry);
-
-      if (!slides.length) {
-        cap.textContent = 'No showcase images loaded — verify filenames and folders.';
-        console.warn('Slideshow: none of the listed images loaded. Check paths/case in assets/images/projects/.');
-        return;
-      }
-
-      let i = 0;
-
-      // Fade-in when image loads
-      img.addEventListener('load', ()=> img.classList.add('show'));
-
-      function show(n){
-        const s = slides[n];
-        cap.textContent = s.caption;
-        img.classList.remove('show');                         // fade out
-        setTimeout(()=>{ img.src = s.src; }, FADE_MS * 0.4);  // swap mid-fade
-      }
-
-      // Start + rotate
-      show(i);
-      setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, DURATION_MS);
-    })();
+    // start
+    show(0);
+    setInterval(()=>{ i=(i+1)%slideEls.length; show(i); }, 4800); // ~4.8s cadence
   </script>
 </body>
 </html>
