@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CSC — Construction Services Consulting</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Construction Services Consulting. Owner’s Representative, Construction Management, Design-Build Oversight." />
-  <link rel="stylesheet" href="assets/css/styles.css?v=7" />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <!-- Top bar -->
-  <header class="site-header">
-    <div class="container header-inner">
+  <header class="topbar">
+    <div class="container nav-wrap">
       <a class="brand" href="index-csc.html" aria-label="CSC Home">
-        <img src="assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting" height="40" />
+        <img src="assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting" class="brand-mark" />
       </a>
-      <nav class="site-nav" aria-label="Main">
+      <nav class="main-nav" aria-label="Primary">
         <a class="nav-link active" href="index-csc.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="projects/index.html">Projects</a>
@@ -24,105 +23,100 @@
     </div>
   </header>
 
-  <main>
-    <!-- HERO slideshow -->
-    <section class="hero-wrap">
-      <div class="container">
-        <figure class="hero">
-          <img id="hero-img" src="" alt="" />
-          <figcaption id="hero-cap">Loading…</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Intro band (from v1 copy) -->
-    <section class="intro-band">
-      <div class="container">
-        <div class="intro-logo">
-          <img src="assets/images/main/logo-short.svg" alt="CSC monogram" height="46" />
-        </div>
-        <h1>Construction Services Consulting</h1>
-        <p class="lede">
-          More than 100 years of combined experience from three partners. We guide projects from concept
-          to completion with precision, safety, and care.
-        </p>
-      </div>
-    </section>
-
-    <!-- Three service cards -->
-    <section class="cards">
-      <div class="container cards-grid">
-        <article class="card">
-          <h3>Owner’s Representative</h3>
-          <p>Single point of accountability protecting schedule and budget.</p>
-        </article>
-        <article class="card">
-          <h3>Construction Management</h3>
-          <p>Field oversight, safety culture, submittals, and cost control.</p>
-        </article>
-        <article class="card">
-          <h3>Design-Build Oversight</h3>
-          <p>Integration from design through commissioning and turnover.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- What we do -->
-    <section class="what-we-do">
-      <div class="container">
-        <h2>What we do</h2>
-        <p>
-          CSC represents owners on complex industrial, food, and logistics projects. We coordinate design,
-          manage construction, and ensure compliance with a documentation-first approach.
-        </p>
-        <p><a class="btn" href="projects/index.html">See Our Projects →</a></p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+  <!-- Hero slideshow -->
+  <section class="hero">
     <div class="container">
-      <p>© 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      <figure class="hero-frame">
+        <img id="heroImage" src="" alt="CSC project photo" />
+        <figcaption id="heroCaption" class="hero-cap">Loading…</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Intro (same content as v1) -->
+  <section class="intro">
+    <div class="container intro-inner">
+      <div class="intro-logo">CSC</div>
+      <h1 class="intro-title">Construction Services Consulting</h1>
+      <p class="intro-sub">
+        More than 100 years of combined experience from three partners. We guide projects from concept
+        to completion with precision, safety, and care.
+      </p>
+    </div>
+  </section>
+
+  <!-- Services cards -->
+  <section class="cards">
+    <div class="container cards-grid">
+      <article class="card">
+        <h3>Owner’s Representative</h3>
+        <p>Single point of accountability protecting schedule and budget.</p>
+      </article>
+      <article class="card">
+        <h3>Construction Management</h3>
+        <p>Field oversight, safety culture, submittals, and cost control.</p>
+      </article>
+      <article class="card">
+        <h3>Design-Build Oversight</h3>
+        <p>Integration from design through commissioning and turnover.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- What we do -->
+  <section class="what">
+    <div class="container what-inner">
+      <h2>What we do</h2>
+      <p>
+        CSC represents owners on complex industrial, food, and logistics projects. We coordinate design,
+        manage construction, and ensure compliance with a documentation-first approach.
+      </p>
+      <p><a class="cta" href="projects/index.html">See Our Projects →</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009-2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
   <script>
-    // Year
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // HERO list: use only your requested “money shots” with location-only captions
+    // Only CSC project photos (no stock). Captions: City, State/Province/Country.
     const slides = [
-      { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", cap: "Amarillo, TX" },
       { src: "assets/images/projects/albuquerque-high-security-hero.jpg", cap: "Albuquerque, NM" },
+      { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", cap: "Amarillo, TX" },
       { src: "assets/images/projects/ogden-assisted.jpg", cap: "Ogden, UT" },
+      { src: "assets/images/projects/stockton-distribution-64m-1.jpg", cap: "Stockton, CA" },
+      { src: "assets/images/projects/harbin-construction-3.png", cap: "Harbin, China" },
+      { src: "assets/images/projects/kent-tech-cleanroom-thumb.jpg", cap: "Kent, WA" },
       { src: "assets/images/projects/wells-fargo-ps-3a.png", cap: "San Bernardino, CA" }
     ];
 
-    // Shuffle once so Amarillo is not always first
-    for (let i = slides.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [slides[i], slides[j]] = [slides[j], slides[i]];
-    }
+    // Shuffle to avoid clustering; avoid starting on Amarillo if first becomes Amarillo.
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+    shuffle(slides);
+    if (slides[0]?.cap.includes("Amarillo")) { slides.push(slides.shift()); }
 
-    const img = document.getElementById('hero-img');
-    const cap = document.getElementById('hero-cap');
+    const img = document.getElementById("heroImage");
+    const cap = document.getElementById("heroCaption");
+    let i = 0;
 
-    // Preload
-    slides.forEach(s => { const p = new Image(); p.src = s.src; });
-
-    let idx = 0;
-    function show(n) {
-      const s = slides[n];
+    function show(index, first=false){
+      const s = slides[index];
       cap.textContent = s.cap;
-      // fade
-      img.classList.remove('fade-in');
-      void img.offsetWidth; // reflow
+      if (first){ img.src = s.src; return; }
+      img.classList.remove("fade-in");
+      void img.offsetWidth;
       img.src = s.src;
-      img.alt = s.cap;
-      img.classList.add('fade-in');
+      img.classList.add("fade-in");
     }
-    show(idx);
-    setInterval(() => { idx = (idx + 1) % slides.length; show(idx); }, 5000);
+
+    show(0, true);
+    setInterval(() => {
+      i = (i + 1) % slides.length;
+      show(i);
+    }, 5000); // 5 seconds
   </script>
 </body>
 </html>
