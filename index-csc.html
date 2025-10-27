@@ -5,9 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Construction Services Consulting — Home</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* small extras just for this page */
+    .hero{position:relative;overflow:hidden;border-radius:16px;margin:24px auto 0;max-width:1120px;
+      border:1px solid #e5e7eb;background:linear-gradient(180deg,#fff,#f3f6fb)}
+    .hero img{width:100%;height:460px;object-fit:cover;display:block;opacity:0;transition:opacity .6s ease}
+    .hero img.show{opacity:1}
+    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35))}
+    .hero .caption{position:absolute;left:16px;bottom:12px;color:#eef2ff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
+    nav.site{
+      position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;
+      background:rgba(255,255,255,.8);backdrop-filter:blur(6px);
+      border-bottom:1px solid #e5e7eb;padding:12px 16px
+    }
+    nav.site a{color:#334155;text-decoration:none;padding:6px 10px;border-radius:10px}
+    nav.site a:hover{background:#eef2ff;color:#000}
+    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .card h3{margin:0 0 6px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid #d1d5db;color:#0b3a7e;text-decoration:none;background:#fff}
+    .btn:hover{border-color:#b6c3ff;box-shadow:0 0 0 4px rgba(59,130,246,.15)}
+    footer.site-footer{margin:28px 0 40px;color:#64748b}
+  </style>
 </head>
 <body>
-
   <!-- NAV -->
   <nav class="site">
     <a href="index-csc.html">Home</a>
@@ -45,59 +65,91 @@
   </footer>
 
   <script>
-    // Year
+    // -------- SETTINGS --------
+    const FADE_MS = 600;        // fade duration
+    const DURATION_MS = 5000;   // time each slide shows
+
+    // Year in footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // --- SLIDES: include Amarillo + others, we'll shuffle so it's not grouped ---
-    // IMPORTANT: Paths must match your repo exactly (case-sensitive).
-    const slides = [
-      // Projects (from your screenshot; adjust names if different in GitHub)
-      { src: 'assets/img/projects/albuquerque-high-security-hero.jpg', caption: 'Albuquerque — High Security' },
-      { src: 'assets/img/projects/ogden-assisted.jpg',                   caption: 'Ogden — Assisted Living' },
-      { src: 'assets/img/projects/park-city-lowell.jpg',                 caption: 'Park City — Lowell' },
-      { src: 'assets/img/projects/wells-fargo-ps-3a.png',                caption: 'Wells Fargo — Parking Structure' },
-      { src: 'assets/img/projects/ng-1.JPG',                             caption: 'New Mexico — Site Work' },
-      { src: 'assets/img/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' },
+    // IMPORTANT: your repo uses assets/**images**/..., not assets/img.
+    // Slides (includes Amarillo; we shuffle so they’re not grouped)
+    const CANDIDATES = [
+      // Projects (non-Amarillo) — all from: assets/images/projects/
+      'assets/images/projects/albuquerque-high-security-hero.jpg',
+      'assets/images/projects/ogden-assisted.jpg',
+      'assets/images/projects/park-city-lowell.jpg',
+      'assets/images/projects/wells-fargo-ps-3a.png',
+      'assets/images/projects/ng-1.JPG',
+      'assets/images/projects/ng-2.JPG',
+      'assets/images/projects/nm-1.JPG',
+      'assets/images/projects/nm-2.JPG',
 
-      // Amarillo set (included, but shuffled so not back-to-back)
-      { src: 'assets/img/projects/ama-cacique-overview-daylight.JPG',    caption: 'Amarillo — Overview (Daylight)' },
-      { src: 'assets/img/projects/ama-cacique-NE-construction-drone.jpg',caption: 'Amarillo — NE Construction (Drone)' },
-      { src: 'assets/img/projects/ama-cacique-NW-dron...ept-to-completion-4.jpg', caption: 'Amarillo — NW Drone (Completion)' } // <-- Fix this filename to exact name in repo
-      // You can add more Amarillo images here. Make sure each filename matches exactly (.JPG vs .jpg)
+      // Amarillo examples (exact names/case from your repo)
+      'assets/images/projects/ama-cacique-N-drone.JPG',
+      'assets/images/projects/ama-cacique-NE-construction-drone.jpg',
+      'assets/images/projects/ama-cacique-NE-drone-High.jpg',
+      'assets/images/projects/ama-cacique-NE-drone-green.jpg',
+      'assets/images/projects/ama-cacique-NE-drone.JPG',
+      'assets/images/projects/ama-cacique-NE-office-construction.jpg',
+      'assets/images/projects/ama-cacique-W-drone-construction.jpg',
+      'assets/images/projects/ama-cacique-overview-day.JPG',
+
+      // A few stock options if projects are still loading
+      'assets/images/stock/construction-site-evening-001.jpg',
+      'assets/images/stock/office-building-glass-001.jpg',
+      'assets/images/stock/warehouse-interior-001.jpg'
     ];
 
-    // If any are inside a subfolder like 'assets/img/projects/home page/',
-    // change the path for that item to 'assets/img/projects/home page/<file>'
-
-    // Shuffle to randomize order (Fisher–Yates)
-    (function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}})(slides);
+    // Shuffle order so Amarillo isn't back-to-back
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } }
+    shuffle(CANDIDATES);
 
     const img = document.getElementById('hero');
     const cap = document.getElementById('cap');
-    let i = 0;
 
-    function show(n){
-      const s = slides[n];
-      cap.textContent = s.caption;
-      // fade out current
-      img.classList.remove('show');
-      // small delay to let opacity animate out
-      setTimeout(() => {
-        img.src = s.src;
-      }, 150);
+    // Preload and keep only files that actually load (auto-skip bad paths)
+    function preload(src){
+      return new Promise(resolve=>{
+        const im = new Image();
+        im.onload  = ()=> resolve({ok:true,  src});
+        im.onerror = ()=> resolve({ok:false, src});
+        im.src = src;
+      });
     }
 
-    // when image loads, fade in
-    img.addEventListener('load', ()=> img.classList.add('show'));
-    img.addEventListener('error', ()=> {
-      console.warn('Image not found (check spelling & path):', img.src);
-      // skip to next if a file is missing
-      i = (i + 1) % slides.length; show(i);
-    });
+    (async function init(){
+      const checks = await Promise.all(CANDIDATES.map(preload));
+      const slides = checks.filter(x=>x.ok).map(x=>x.src);
 
-    // start & rotate
-    show(0);
-    setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, 5000);
+      if(slides.length === 0){
+        cap.textContent = 'No showcase images loaded (check filenames / paths)';
+        console.warn('None of the candidate images loaded. Verify names/paths exactly as stored in GitHub.');
+        return;
+      }
+
+      // Make caption from filename
+      function niceCaption(path){
+        const name = path.split('/').pop();
+        return name.replace(/[-_]/g,' ').replace(/\.(jpg|jpeg|png)$/i,'');
+      }
+
+      let i = 0;
+      function show(n){
+        const src = slides[n];
+        cap.textContent = niceCaption(src);
+        img.classList.remove('show');           // fade out
+        setTimeout(()=>{ img.src = src; }, FADE_MS * 0.4); // swap during fade
+      }
+
+      img.addEventListener('load', ()=> img.classList.add('show'));
+      // Click caption opens the image in a new tab (easy debug if needed)
+      cap.style.cursor = 'pointer';
+      cap.onclick = ()=> window.open(img.src, '_blank');
+
+      show(i);
+      setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, DURATION_MS);
+    })();
   </script>
 </body>
 </html>
