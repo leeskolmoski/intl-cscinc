@@ -5,26 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Construction Services Consulting — Home</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    /* Extra styles just for the hero; keeps your main CSS simple */
-    nav.site{position:sticky;top:0;z-index:10;display:flex;gap:14px;align-items:center;
-      background:#0f172a; border-bottom:1px solid #1f2937; padding:10px 16px}
-    nav.site a{color:#cbd5e1;text-decoration:none;margin-right:10px}
-    nav.site a:hover{color:#fff}
-
-    .hero{position:relative; overflow:hidden; border-radius:14px; margin:24px auto 0; max-width:1100px}
-    .hero img{width:100%; height:420px; object-fit:cover; display:block; filter:saturate(.95) contrast(1.05)}
-    .hero .overlay{position:absolute; inset:0;
-      background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.55))}
-    .hero .caption{position:absolute; left:20px; bottom:14px; color:#e5e7eb; font-size:14px; opacity:.9}
-
-    .grid{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card h3{margin:0 0 6px}
-  </style>
 </head>
 <body>
 
-  <!-- simple nav (links can 404 until we add those pages) -->
+  <!-- NAV -->
   <nav class="site">
     <a href="index-csc.html">Home</a>
     <a href="services-csc.html">Services</a>
@@ -33,11 +17,11 @@
     <a href="contact-csc.html">Contact</a>
   </nav>
 
-  <!-- HERO SLIDESHOW -->
+  <!-- HERO SLIDESHOW (randomized + fade) -->
   <div class="hero container">
-    <img id="hero" src="" alt="CSC showcase">
+    <img id="hero" alt="CSC showcase">
     <div class="overlay"></div>
-    <div class="caption" id="cap"></div>
+    <div class="caption" id="cap">CSC showcase</div>
   </div>
 
   <div class="container" style="margin-top:22px">
@@ -60,22 +44,33 @@
     </div>
   </footer>
 
-  <!-- ultra-simple slideshow (no libraries) -->
   <script>
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // IMPORTANT: use RELATIVE paths, and exclude Amarillo (ama-*) per your note.
+    // --- SLIDES: include Amarillo + others, we'll shuffle so it's not grouped ---
+    // IMPORTANT: Paths must match your repo exactly (case-sensitive).
     const slides = [
+      // Projects (from your screenshot; adjust names if different in GitHub)
       { src: 'assets/img/projects/albuquerque-high-security-hero.jpg', caption: 'Albuquerque — High Security' },
       { src: 'assets/img/projects/ogden-assisted.jpg',                   caption: 'Ogden — Assisted Living' },
       { src: 'assets/img/projects/park-city-lowell.jpg',                 caption: 'Park City — Lowell' },
       { src: 'assets/img/projects/wells-fargo-ps-3a.png',                caption: 'Wells Fargo — Parking Structure' },
       { src: 'assets/img/projects/ng-1.JPG',                             caption: 'New Mexico — Site Work' },
-      { src: 'assets/img/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' }
+      { src: 'assets/img/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' },
+
+      // Amarillo set (included, but shuffled so not back-to-back)
+      { src: 'assets/img/projects/ama-cacique-overview-daylight.JPG',    caption: 'Amarillo — Overview (Daylight)' },
+      { src: 'assets/img/projects/ama-cacique-NE-construction-drone.jpg',caption: 'Amarillo — NE Construction (Drone)' },
+      { src: 'assets/img/projects/ama-cacique-NW-dron...ept-to-completion-4.jpg', caption: 'Amarillo — NW Drone (Completion)' } // <-- Fix this filename to exact name in repo
+      // You can add more Amarillo images here. Make sure each filename matches exactly (.JPG vs .jpg)
     ];
 
-    // If your files live in a subfolder (e.g., 'assets/img/projects/home page/'),
-    // change each src above to: 'assets/img/projects/home page/<filename>'
+    // If any are inside a subfolder like 'assets/img/projects/home page/',
+    // change the path for that item to 'assets/img/projects/home page/<file>'
+
+    // Shuffle to randomize order (Fisher–Yates)
+    (function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}})(slides);
 
     const img = document.getElementById('hero');
     const cap = document.getElementById('cap');
@@ -83,16 +78,26 @@
 
     function show(n){
       const s = slides[n];
-      img.src = s.src;
       cap.textContent = s.caption;
+      // fade out current
+      img.classList.remove('show');
+      // small delay to let opacity animate out
+      setTimeout(() => {
+        img.src = s.src;
+      }, 150);
     }
 
-    // start + rotate
-    show(0);
-    setInterval(() => { i = (i + 1) % slides.length; show(i); }, 4500);
+    // when image loads, fade in
+    img.addEventListener('load', ()=> img.classList.add('show'));
+    img.addEventListener('error', ()=> {
+      console.warn('Image not found (check spelling & path):', img.src);
+      // skip to next if a file is missing
+      i = (i + 1) % slides.length; show(i);
+    });
 
-    // safety: log missing images
-    img.addEventListener('error', () => console.warn('Image not found:', img.src));
+    // start & rotate
+    show(0);
+    setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, 5000);
   </script>
 </body>
 </html>
