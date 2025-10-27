@@ -5,29 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Construction Services Consulting — Home</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <style>
-    /* small extras just for this page */
-    .hero{position:relative;overflow:hidden;border-radius:16px;margin:24px auto 0;max-width:1120px;
-      border:1px solid #e5e7eb;background:linear-gradient(180deg,#fff,#f3f6fb)}
-    .hero img{width:100%;height:460px;object-fit:cover;display:block;opacity:0;transition:opacity .6s ease}
-    .hero img.show{opacity:1}
-    .hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.35))}
-    .hero .caption{position:absolute;left:16px;bottom:12px;color:#eef2ff;font-size:14px;text-shadow:0 2px 10px rgba(0,0,0,.45)}
-    nav.site{
-      position:sticky;top:0;z-index:10;display:flex;gap:16px;align-items:center;
-      background:rgba(255,255,255,.8);backdrop-filter:blur(6px);
-      border-bottom:1px solid #e5e7eb;padding:12px 16px
-    }
-    nav.site a{color:#334155;text-decoration:none;padding:6px 10px;border-radius:10px}
-    nav.site a:hover{background:#eef2ff;color:#000}
-    .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-    .card h3{margin:0 0 6px}
-    .btn{display:inline-block;padding:10px 14px;border-radius:999px;border:1px solid #d1d5db;color:#0b3a7e;text-decoration:none;background:#fff}
-    .btn:hover{border-color:#b6c3ff;box-shadow:0 0 0 4px rgba(59,130,246,.15)}
-    footer.site-footer{margin:28px 0 40px;color:#64748b}
-  </style>
 </head>
 <body>
+
   <!-- NAV -->
   <nav class="site">
     <a href="index-csc.html">Home</a>
@@ -44,6 +24,7 @@
     <div class="caption" id="cap">CSC showcase</div>
   </div>
 
+  <!-- CONTENT -->
   <div class="container" style="margin-top:22px">
     <div class="grid">
       <div class="card"><h3>Owner’s Representative</h3><p>Single point of accountability protecting schedule and budget.</p></div>
@@ -58,95 +39,74 @@
     </div>
   </div>
 
+  <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
       <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc.</p>
     </div>
   </footer>
 
+  <!-- SLIDESHOW SCRIPT -->
   <script>
     // -------- SETTINGS --------
     const FADE_MS = 600;        // fade duration
-    const DURATION_MS = 5000;   // time each slide shows
+    const DURATION_MS = 5000;   // time each slide is shown
+    const YEAR_EL = document.getElementById('y');
+    if (YEAR_EL) YEAR_EL.textContent = new Date().getFullYear();
 
-    // Year in footer
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // IMPORTANT: your repo uses assets/**images**/..., not assets/img.
-    // Slides (includes Amarillo; we shuffle so they’re not grouped)
-    const CANDIDATES = [
-      // Projects (non-Amarillo) — all from: assets/images/projects/
-      'assets/images/projects/albuquerque-high-security-hero.jpg',
-      'assets/images/projects/ogden-assisted.jpg',
-      'assets/images/projects/park-city-lowell.jpg',
-      'assets/images/projects/wells-fargo-ps-3a.png',
-      'assets/images/projects/ng-1.JPG',
-      'assets/images/projects/ng-2.JPG',
-      'assets/images/projects/nm-1.JPG',
-      'assets/images/projects/nm-2.JPG',
-
-      // Amarillo examples (exact names/case from your repo)
-      'assets/images/projects/ama-cacique-N-drone.JPG',
-      'assets/images/projects/ama-cacique-NE-construction-drone.jpg',
-      'assets/images/projects/ama-cacique-NE-drone-High.jpg',
-      'assets/images/projects/ama-cacique-NE-drone-green.jpg',
-      'assets/images/projects/ama-cacique-NE-drone.JPG',
-      'assets/images/projects/ama-cacique-NE-office-construction.jpg',
-      'assets/images/projects/ama-cacique-W-drone-construction.jpg',
-      'assets/images/projects/ama-cacique-overview-day.JPG',
-
-      // A few stock options if projects are still loading
-      'assets/images/stock/construction-site-evening-001.jpg',
-      'assets/images/stock/office-building-glass-001.jpg',
-      'assets/images/stock/warehouse-interior-001.jpg'
+    // Money shots ONLY — pulled from assets/images/projects/ (your repo structure)
+    // Captions are human-friendly (not raw filenames). Case-sensitive paths.
+    const MONEY_SHOTS = [
+      { src: 'assets/images/projects/albuquerque-high-security-hero.jpg', caption: 'Albuquerque — High Security Facility' },
+      { src: 'assets/images/projects/ogden-assisted.jpg',                   caption: 'Ogden — Assisted Living' },
+      { src: 'assets/images/projects/park-city-lowell.jpg',                 caption: 'Park City — Lowell' },
+      { src: 'assets/images/projects/wells-fargo-ps-3a.png',                caption: 'Wells Fargo — Parking Structure' },
+      { src: 'assets/images/projects/ng-1.JPG',                             caption: 'New Mexico — Site Work' },
+      { src: 'assets/images/projects/nm-2.JPG',                             caption: 'New Mexico — Facilities' },
+      { src: 'assets/images/projects/ama-cacique-NE-construction-drone.jpg',caption: 'Amarillo — NE Construction (Drone)' },
+      { src: 'assets/images/projects/ama-cacique-overview-day.JPG',         caption: 'Amarillo — Overview (Daylight)' }
+      // Add/remove here anytime; keep paths inside assets/images/projects/
     ];
 
-    // Shuffle order so Amarillo isn't back-to-back
-    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } }
-    shuffle(CANDIDATES);
+    // Shuffle so Amarillo isn't grouped
+    (function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}})(MONEY_SHOTS);
 
     const img = document.getElementById('hero');
     const cap = document.getElementById('cap');
 
-    // Preload and keep only files that actually load (auto-skip bad paths)
-    function preload(src){
+    // Preload and keep only images that actually load (auto-skip typos)
+    function preload(entry){
       return new Promise(resolve=>{
         const im = new Image();
-        im.onload  = ()=> resolve({ok:true,  src});
-        im.onerror = ()=> resolve({ok:false, src});
-        im.src = src;
+        im.onload  = ()=> resolve({ok:true,  entry});
+        im.onerror = ()=> resolve({ok:false, entry});
+        im.src = entry.src;
       });
     }
 
     (async function init(){
-      const checks = await Promise.all(CANDIDATES.map(preload));
-      const slides = checks.filter(x=>x.ok).map(x=>x.src);
+      const results = await Promise.all(MONEY_SHOTS.map(preload));
+      const slides = results.filter(r=>r.ok).map(r=>r.entry);
 
-      if(slides.length === 0){
-        cap.textContent = 'No showcase images loaded (check filenames / paths)';
-        console.warn('None of the candidate images loaded. Verify names/paths exactly as stored in GitHub.');
+      if (!slides.length) {
+        cap.textContent = 'No showcase images loaded — verify filenames and folders.';
+        console.warn('Slideshow: none of the listed images loaded. Check paths/case in assets/images/projects/.');
         return;
       }
 
-      // Make caption from filename
-      function niceCaption(path){
-        const name = path.split('/').pop();
-        return name.replace(/[-_]/g,' ').replace(/\.(jpg|jpeg|png)$/i,'');
-      }
-
       let i = 0;
+
+      // fade-in when image loads
+      img.addEventListener('load', ()=> img.classList.add('show'));
+
       function show(n){
-        const src = slides[n];
-        cap.textContent = niceCaption(src);
-        img.classList.remove('show');           // fade out
-        setTimeout(()=>{ img.src = src; }, FADE_MS * 0.4); // swap during fade
+        const s = slides[n];
+        cap.textContent = s.caption;
+        img.classList.remove('show');                 // fade out current
+        setTimeout(()=>{ img.src = s.src; }, FADE_MS * 0.4); // swap during fade
       }
 
-      img.addEventListener('load', ()=> img.classList.add('show'));
-      // Click caption opens the image in a new tab (easy debug if needed)
-      cap.style.cursor = 'pointer';
-      cap.onclick = ()=> window.open(img.src, '_blank');
-
+      // start + rotate
       show(i);
       setInterval(()=>{ i = (i + 1) % slides.length; show(i); }, DURATION_MS);
     })();
