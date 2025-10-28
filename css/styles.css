@@ -10,15 +10,6 @@
   --paper:#eef3fa;
   --card:#ffffff;
   --shadow:0 12px 28px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
-
-  /* Texture controls */
-  --texture-stroke:%232f53c7;   /* URL-encoded hex to match brand */
-  --texture-stroke-opacity:.15; /* 0 to 1 */
-  --texture-stroke-width:2;     /* px */
-  --texture-scale:160px 160px;  /* tile size */
-  --texture-opacity:.85;        /* overall intensity */
-  --texture-center-x:50%;
-  --texture-center-y:40%;
 }
 
 *{box-sizing:border-box}
@@ -119,15 +110,11 @@ body{
 
 /* ================================
    Subtle geometric page texture
-   - No images to host, inline SVG
-   - Stronger at edges, softer center
-   - Never blocks clicks or layout
    ================================= */
 
-/* Turn the texture off per page by adding class="texture-off" to <body> */
+/* Disable texture per page: <body class="texture-off"> */
 .texture-off::before{ display:none !important; }
 
-/* Texture layer */
 body::before{
   content:"";
   position:fixed;
@@ -135,25 +122,26 @@ body::before{
   pointer-events:none;
   z-index:0;
 
+  /* Pattern color: #3E5FD1  (URL-encoded as %233E5FD1) */
   background-image:url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
       <rect width='120' height='120' fill='none'/>\
       <rect x='12' y='12' width='30' height='30' rx='4' ry='4' fill='none'\
-            stroke='var(--texture-stroke)' stroke-opacity='var(--texture-stroke-opacity)' stroke-width='var(--texture-stroke-width)'/>\
+            stroke='%233E5FD1' stroke-opacity='.15' stroke-width='2'/>\
     </svg>");
-  background-size:var(--texture-scale);
+  background-size:160px 160px;
   background-position:center;
-  opacity:var(--texture-opacity);
+  opacity:.85;
 
   -webkit-mask-image: radial-gradient(
-      circle at var(--texture-center-x) var(--texture-center-y),
+      circle at 50% 40%,
       rgba(0,0,0,0.02) 0%,
       rgba(0,0,0,0.10) 35%,
       rgba(0,0,0,0.70) 75%,
       rgba(0,0,0,1.00) 100%
   );
           mask-image: radial-gradient(
-      circle at var(--texture-center-x) var(--texture-center-y),
+      circle at 50% 40%,
       rgba(0,0,0,0.02) 0%,
       rgba(0,0,0,0.10) 35%,
       rgba(0,0,0,0.70) 75%,
@@ -161,7 +149,7 @@ body::before{
   );
 }
 
-/* Optional: stronger only at very bottom edge */
+/* Optional stronger texture at page bottom */
 .edge-strong::before{
   -webkit-mask-image: radial-gradient(
       80% 120% at 50% 110%,
@@ -179,11 +167,15 @@ body::before{
   );
 }
 
-/* Light mode tweak if you ever switch body bg */
+/* Light-mode adjustment */
 @media (prefers-color-scheme: light){
-  :root{
-    --texture-stroke:%232b3a55;
-    --texture-stroke-opacity:.12;
-    --texture-opacity:.65;
+  body::before{
+    background-image:url("data:image/svg+xml;utf8,\
+      <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
+        <rect width='120' height='120' fill='none'/>\
+        <rect x='12' y='12' width='30' height='30' rx='4' ry='4' fill='none'\
+              stroke='%232b3a55' stroke-opacity='.12' stroke-width='2'/>\
+      </svg>");
+    opacity:.65;
   }
 }
