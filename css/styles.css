@@ -103,3 +103,91 @@ body{
   .cards-grid{grid-template-columns:1fr}
   .hero-frame img{height:44vh}
 }
+
+/* ================================
+   Subtle geometric page texture
+   - No images to host (inline SVG)
+   - Stronger at edges, softer center
+   - Does not block clicks or layout
+   ================================= */
+:root{
+  /* Quick tuning knobs */
+  --texture-stroke: %238ba2c7;   /* URL-encoded hex, no # */
+  --texture-stroke-opacity: .15; /* 0 to 1 */
+  --texture-stroke-width: 2;     /* px */
+  --texture-scale: 160px 160px;  /* tile size */
+  --texture-opacity: .85;        /* overall intensity */
+  --texture-center-x: 50%;
+  --texture-center-y: 40%;
+}
+
+body{
+  /* Ensure there is a backdrop under the texture */
+  background-color: #0c0f14; /* keep or replace with your site bg */
+}
+
+/* Turn the texture off per page by adding class="texture-off" to <body> */
+.texture-off::before{ display:none !important; }
+
+/* Subtle background texture with edge emphasis */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none; /* never blocks clicks */
+  z-index:-1;          /* behind everything */
+
+  /* Tiled SVG pattern encoded as a data URI */
+  background-image:url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
+      <rect width='120' height='120' fill='none'/>\
+      <rect x='12' y='12' width='30' height='30' rx='4' ry='4' fill='none'\
+            stroke='var(--texture-stroke)' stroke-opacity='var(--texture-stroke-opacity)' stroke-width='var(--texture-stroke-width)'/>\
+    </svg>");
+  background-size: var(--texture-scale);
+  background-position:center;
+  opacity: var(--texture-opacity);
+
+  /* Fade the texture out toward the page center */
+  -webkit-mask-image: radial-gradient(
+      circle at var(--texture-center-x) var(--texture-center-y),
+      rgba(0,0,0,0.02) 0%,
+      rgba(0,0,0,0.10) 35%,
+      rgba(0,0,0,0.70) 75%,
+      rgba(0,0,0,1.00) 100%
+  );
+          mask-image: radial-gradient(
+      circle at var(--texture-center-x) var(--texture-center-y),
+      rgba(0,0,0,0.02) 0%,
+      rgba(0,0,0,0.10) 35%,
+      rgba(0,0,0,0.70) 75%,
+      rgba(0,0,0,1.00) 100%
+  );
+}
+
+/* Optional: strengthen texture only at very bottom edge (footer areas) */
+.edge-strong::before{
+  -webkit-mask-image: radial-gradient(
+      80% 120% at 50% 110%,
+      rgba(0,0,0,0.00) 0%,
+      rgba(0,0,0,0.15) 55%,
+      rgba(0,0,0,0.75) 85%,
+      rgba(0,0,0,1.00) 100%
+  );
+          mask-image: radial-gradient(
+      80% 120% at 50% 110%,
+      rgba(0,0,0,0.00) 0%,
+      rgba(0,0,0,0.15) 55%,
+      rgba(0,0,0,0.75) 85%,
+      rgba(0,0,0,1.00) 100%
+  );
+}
+
+/* Optional: automatic dark/light tweak if you ever switch body.bg */
+@media (prefers-color-scheme: light){
+  :root{
+    --texture-stroke: %232b3a55; /* darker line on light bg */
+    --texture-stroke-opacity: .12;
+    --texture-opacity: .65;
+  }
+}
