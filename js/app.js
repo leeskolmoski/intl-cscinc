@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // final hero slides
+  // final hero slides (your list)
   const slides = [
     { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", caption: "Amarillo, Texas, USA" },
     { src: "assets/images/projects/albuquerque-high-security-hero.jpg", caption: "Albuquerque, New Mexico, USA" },
@@ -14,8 +14,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroImg = document.getElementById('heroImage');
   const heroCap = document.getElementById('heroCaption');
 
-  // if the first image failed and the placeholder kicked in, slideshow will still override it
   let i = 0;
+
+  // immediately show the real first slide so we replace the placeholder
+  function setSlide(idx) {
+    const slide = slides[idx];
+    heroImg.src = slide.src;
+    heroImg.alt = `Project photo, ${slide.caption}`;
+    heroCap.textContent = slide.caption;
+  }
+  setSlide(0);
 
   function showSlide(idx){
     const slide = slides[idx];
@@ -28,10 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 250);
   }
 
-  // start loop
   setInterval(() => {
     i = (i + 1) % slides.length;
     showSlide(i);
   }, 6000);
 });
-
