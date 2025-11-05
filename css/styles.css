@@ -15,6 +15,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
+  position:relative; /* so the ::before can sit behind everything */
   font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
   color:var(--ink);
   background:
@@ -29,7 +30,7 @@ body{
 
 /* ===== Topbar */
 .topbar{
-  position:sticky; top:0; z-index:20;
+  position:sticky; top:0; z-index:10;
   background:#fff; box-shadow:0 1px 0 rgba(17,24,39,.08);
 }
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
@@ -126,11 +127,12 @@ body{
 }
 
 /* ================================
-   Subtle geometric page texture
-   -> switched to dot lattice instead of squares
+   Subtle blueprint-style background
+   - sits BEHIND content
+   - more transparent in center
    ================================= */
 
-/* Disable texture per page: <body class="texture-off"> */
+/* turn off per page */
 .texture-off::before{ display:none !important; }
 
 body::before{
@@ -138,32 +140,45 @@ body::before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  z-index:0;
-
-  /* Dot pattern, brand blue, soft */
+  z-index:-1; /* behind everything */
+  /* light blueprint grid, 1px lines, brand blue */
   background-image:url("data:image/svg+xml;utf8,\
-    <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
-      <circle cx='16' cy='16' r='3' fill='%233E5FD1' fill-opacity='.14' />\
-      <circle cx='64' cy='48' r='2.5' fill='%233E5FD1' fill-opacity='.10' />\
-      <circle cx='100' cy='22' r='2.5' fill='%233E5FD1' fill-opacity='.12' />\
-      <circle cx='32' cy='92' r='2.5' fill='%233E5FD1' fill-opacity='.12' />\
+    <svg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'>\
+      <rect width='140' height='140' fill='none'/>\
+      <path d='M 0 0 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 0 20 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 0 40 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 0 60 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 0 80 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 0 100 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 0 120 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 0 140 H 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 0 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 20 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 40 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 60 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 80 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 100 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.09'/>\
+      <path d='M 120 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
+      <path d='M 140 0 V 140' stroke='%233E5FD1' stroke-width='0.5' stroke-opacity='0.14'/>\
     </svg>");
-  background-size:160px 160px;
+  background-size:140px 140px;
   background-position:center;
-  opacity:.85;
+  opacity:.8;
 
+  /* make the middle basically invisible, edges more visible */
   -webkit-mask-image: radial-gradient(
       circle at 50% 40%,
-      rgba(0,0,0,0.02) 0%,
-      rgba(0,0,0,0.10) 35%,
-      rgba(0,0,0,0.70) 75%,
-      rgba(0,0,0,1.00) 100%
+      rgba(0,0,0,0.00) 0%,   /* dead center invisible */
+      rgba(0,0,0,0.02) 28%,  /* still almost nothing */
+      rgba(0,0,0,0.35) 70%,  /* starts showing */
+      rgba(0,0,0,1.00) 100%  /* full at edge */
   );
           mask-image: radial-gradient(
       circle at 50% 40%,
-      rgba(0,0,0,0.02) 0%,
-      rgba(0,0,0,0.10) 35%,
-      rgba(0,0,0,0.70) 75%,
+      rgba(0,0,0,0.00) 0%,
+      rgba(0,0,0,0.02) 28%,
+      rgba(0,0,0,0.35) 70%,
       rgba(0,0,0,1.00) 100%
   );
 }
