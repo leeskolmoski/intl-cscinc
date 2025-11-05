@@ -34,7 +34,7 @@ body{
 }
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
 
-/* masked blue logo */
+/* masked blue logo-short */
 .brand{display:flex; align-items:center; text-decoration:none}
 .brand-mask{
   display:inline-block; width:122px; height:32px;
@@ -89,7 +89,7 @@ body{
 }
 .intro-sub{margin:0 auto; max-width:780px; color:var(--muted)}
 
-/* ===== Complex text */
+/* ===== Complex section */
 .what{padding:10px 0 42px}
 .what-inner{
   background:rgba(255,255,255,.85); border-radius:14px; padding:26px; box-shadow:var(--shadow);
@@ -127,6 +127,7 @@ body{
 
 /* ================================
    Subtle geometric page texture
+   -> switched to dot lattice instead of squares
    ================================= */
 
 /* Disable texture per page: <body class="texture-off"> */
@@ -139,12 +140,13 @@ body::before{
   pointer-events:none;
   z-index:0;
 
-  /* Pattern color: #3E5FD1 */
+  /* Dot pattern, brand blue, soft */
   background-image:url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
-      <rect width='120' height='120' fill='none'/>\
-      <rect x='12' y='12' width='30' height='30' rx='4' ry='4' fill='none'\
-            stroke='%233E5FD1' stroke-opacity='.15' stroke-width='2'/>\
+      <circle cx='16' cy='16' r='3' fill='%233E5FD1' fill-opacity='.14' />\
+      <circle cx='64' cy='48' r='2.5' fill='%233E5FD1' fill-opacity='.10' />\
+      <circle cx='100' cy='22' r='2.5' fill='%233E5FD1' fill-opacity='.12' />\
+      <circle cx='32' cy='92' r='2.5' fill='%233E5FD1' fill-opacity='.12' />\
     </svg>");
   background-size:160px 160px;
   background-position:center;
