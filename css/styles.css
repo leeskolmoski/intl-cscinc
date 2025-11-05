@@ -33,13 +33,15 @@ body{
 }
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
 
-/* slightly larger logo-short */
+/* enlarged logo-short */
 .brand{display:flex; align-items:center; text-decoration:none}
 .brand-mask{
-  display:inline-block; width:138px; height:36px;   /* slightly bigger */
+  display:inline-block;
+  width:160px;   /* +20% */
+  height:42px;
   background-color:var(--csc-blue);
-  -webkit-mask: url("../assets/images/main/logo-short.svg") no-repeat center/contain;
-          mask: url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+  -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+          mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
 }
 
 .main-nav{display:flex; gap:28px}
@@ -82,8 +84,8 @@ body{
   height:84px;
   margin:0 auto 12px auto;
   background-color:var(--csc-blue);
-  -webkit-mask: url("../assets/images/main/logo-full.svg") no-repeat center/contain;
-          mask: url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+  -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+          mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
 }
 .intro-sub{margin:0 auto; max-width:780px; color:var(--muted)}
 
@@ -119,7 +121,7 @@ body{
 @media (max-width:900px){
   .cards-grid{grid-template-columns:1fr}
   .hero-frame img{height:44vh}
-  .brand-mask{width:120px; height:30px}
+  .brand-mask{width:135px; height:36px}
   .intro-logo-full{height:70px}
 }
 
@@ -138,21 +140,21 @@ body::before{
     <svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
       <rect width='160' height='160' fill='none'/>\
       <!-- horizontal lines -->\
-      <path d='M0 20H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M0 40H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M0 60H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M0 80H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M0 100H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M0 120H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M0 140H160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
+      <path d='M0 20H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 40H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 60H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 80H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 100H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 120H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 140H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <!-- vertical lines -->\
-      <path d='M20 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M40 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M60 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M80 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M100 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
-      <path d='M120 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.06'/>\
-      <path d='M140 0V160' stroke='%233E5FD1' stroke-width='0.9' stroke-opacity='0.12'/>\
+      <path d='M20 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M40 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M60 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M80 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M100 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M120 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M140 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
     </svg>");
   background-size:160px 160px;
   background-position:center;
