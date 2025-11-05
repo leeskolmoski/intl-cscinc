@@ -37,8 +37,8 @@ body{
 .brand{display:flex; align-items:center; text-decoration:none}
 .brand-mask{
   display:inline-block;
-  width:160px;   /* +20% */
-  height:42px;
+  width:176px;   /* final enlarged size */
+  height:46px;
   background-color:var(--csc-blue);
   -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
           mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
@@ -80,8 +80,8 @@ body{
   border-radius:12px; padding:24px; box-shadow:var(--shadow);
 }
 .intro-logo-full{
-  width:min(520px, 80vw);
-  height:84px;
+  width:min(580px, 85vw);
+  height:96px; /* larger center CSC logo */
   margin:0 auto 12px auto;
   background-color:var(--csc-blue);
   -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
@@ -121,8 +121,8 @@ body{
 @media (max-width:900px){
   .cards-grid{grid-template-columns:1fr}
   .hero-frame img{height:44vh}
-  .brand-mask{width:135px; height:36px}
-  .intro-logo-full{height:70px}
+  .brand-mask{width:150px; height:40px}
+  .intro-logo-full{height:80px}
 }
 
 /* ================================
