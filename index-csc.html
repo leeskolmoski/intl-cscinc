@@ -1,36 +1,111 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // final hero slides
-  const slides = [
-    { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", caption: "Amarillo, Texas, USA" },
-    { src: "assets/images/projects/albuquerque-high-security-hero.jpg", caption: "Albuquerque, New Mexico, USA" },
-    { src: "assets/images/projects/ng-1.JPG", caption: "San Bernardino, California, USA" },
-    { src: "assets/images/projects/ama-cacique-overview-daylight.JPG", caption: "Amarillo, Texas, USA" },
-    { src: "assets/images/projects/nm-2.JPG", caption: "Albuquerque, New Mexico, USA" },
-    { src: "assets/images/projects/ogden-assisted.jpg", caption: "Ogden, Utah, USA" },
-    { src: "assets/images/projects/wells-fargo-ps-3a.png", caption: "San Bernardino, California, USA" },
-    { src: "assets/images/projects/Stockton Distribution Temperature Controlled Warehouse-1.jpg", caption: "Stockton, California, USA" }
-  ];
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSC — Construction Services Consulting</title>
+  <meta name="description" content="Construction Services Consulting. Owner’s representative, construction management, and design-build oversight.">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
+</head>
+<body>
+  <!-- Top Bar -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <!-- top-left logo (short) -->
+      <a class="brand" href="index-csc.html" aria-label="CSC Home">
+        <span class="brand-mask brand-short" aria-hidden="true"></span>
+      </a>
 
-  const heroImg = document.getElementById('heroImage');
-  const heroCap = document.getElementById('heroCaption');
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link active" href="index-csc.html">Home</a>
+        <a class="nav-link" href="#">Services</a>
+        <a class="nav-link" href="#">Projects</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  // if the first image failed and the placeholder kicked in, slideshow will still override it
-  let i = 0;
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <figure class="hero-frame">
+          <!-- start with first slide, but add a fallback -->
+          <img
+            id="heroImage"
+            src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
+            alt="Project photo"
+            onerror="this.onerror=null;this.src='assets/images/main/placeholder.jpg';">
+          <figcaption class="hero-cap" id="heroCaption">Amarillo, Texas, USA</figcaption>
+        </figure>
+      </div>
+    </section>
 
-  function showSlide(idx){
-    const slide = slides[idx];
-    heroImg.classList.add('fade');
-    setTimeout(() => {
-      heroImg.src = slide.src;
-      heroImg.alt = `Project photo, ${slide.caption}`;
-      heroCap.textContent = slide.caption;
-      heroImg.classList.remove('fade');
-    }, 250);
-  }
+    <!-- INTRO (big logo-full in blue) -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro-inner">
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
+          <p class="intro-sub">
+            More than 100 years of combined experience from three partners. We guide projects from concept to
+            completion with precision, safety, and care.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  // start loop
-  setInterval(() => {
-    i = (i + 1) % slides.length;
-    showSlide(i);
-  }, 6000);
-});
+    <!-- Complex Projects text + CTA -->
+    <section class="what">
+      <div class="container">
+        <div class="what-inner">
+          <h2>Complex Projects. Delivered with Precision and Safety.</h2>
+          <p>
+            We provide leadership, oversight, and detailed coordination from initial concept through startup.
+            Our role is to ensure projects are delivered on time, on budget, and with unwavering attention to
+            safety and quality.
+          </p>
+          <p>
+            With expertise across food processing, distribution, commercial, and mixed-use development, we help
+            clients navigate permitting, design, contractor management, and final turnover to operations.
+          </p>
+
+          <a class="cta" href="#">See Our Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service cards (what we do removed) -->
+    <section class="cards">
+      <div class="container">
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Owner’s Representative</h3>
+            <p>Single point of accountability protecting schedule and budget.</p>
+          </article>
+
+          <article class="card">
+            <h3>Construction Management</h3>
+            <p>Field oversight, safety culture, submittals, and cost control.</p>
+          </article>
+
+          <article class="card">
+            <h3>Design-Build Oversight</h3>
+            <p>Integration from design through commissioning and turnover.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
