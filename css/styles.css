@@ -1,7 +1,7 @@
 /* ===== Base */
 :root{
   /* Brand */
-  --csc-blue:#2f53c7;          /* lighter corporate blue */
+  --csc-blue:#2f53c7;
   --csc-blue-dark:#2746a9;
 
   /* Neutrals */
@@ -33,7 +33,16 @@ body{
   background:#fff; box-shadow:0 1px 0 rgba(17,24,39,.08);
 }
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-.brand-mark{height:28px; width:auto; display:block}
+
+/* masked blue logo */
+.brand{display:flex; align-items:center; text-decoration:none}
+.brand-mask{
+  display:inline-block; width:122px; height:32px;
+  background-color:var(--csc-blue);
+  -webkit-mask: url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+          mask: url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+}
+
 .main-nav{display:flex; gap:28px}
 .nav-link{
   text-decoration:none; color:#24324d; font-weight:700; padding:6px 0; position:relative;
@@ -54,10 +63,9 @@ body{
 }
 .hero-frame img{
   display:block; width:100%; height:520px; object-fit:cover;
-  opacity:1; transition:opacity .7s ease-in-out;
+  opacity:1; transition:opacity .6s ease-in-out;
 }
-.hero-frame img.fade-in{opacity:0; animation:fade .7s forwards}
-@keyframes fade{to{opacity:1}}
+.hero-frame img.fade{opacity:0}
 .hero-cap{
   position:absolute; left:18px; bottom:12px;
   font-size:14px; color:#eaf0ff; background:rgba(17,27,48,.45);
@@ -70,9 +78,29 @@ body{
   text-align:center; background:rgba(255,255,255,.78);
   border-radius:12px; padding:24px; box-shadow:var(--shadow);
 }
-.intro-logo{font-size:40px; letter-spacing:.16em; color:var(--csc-blue); opacity:.95}
-.intro-title{margin:10px 0 8px; font-size:32px; color:var(--csc-blue); line-height:1.2}
+/* big centered logo-full */
+.intro-logo-full{
+  width:min(520px, 80vw);
+  height:84px;
+  margin:0 auto 12px auto;
+  background-color:var(--csc-blue);
+  -webkit-mask: url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+          mask: url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+}
 .intro-sub{margin:0 auto; max-width:780px; color:var(--muted)}
+
+/* ===== Complex text */
+.what{padding:10px 0 42px}
+.what-inner{
+  background:rgba(255,255,255,.85); border-radius:14px; padding:26px; box-shadow:var(--shadow);
+}
+.what h2{margin:0 0 10px; color:var(--csc-blue)}
+.what p{margin:0 0 12px; color:#475569}
+.cta{
+  display:inline-block; background:var(--csc-blue); color:#fff; text-decoration:none;
+  padding:12px 18px; border-radius:28px; font-weight:800; box-shadow:var(--shadow);
+}
+.cta:hover{background:var(--csc-blue-dark)}
 
 /* ===== Cards */
 .cards{padding:24px 0}
@@ -86,19 +114,6 @@ body{
 .card h3{margin:0 0 8px; color:var(--csc-blue)}
 .card p{margin:0; color:#475569}
 
-/* ===== What we do */
-.what{padding:10px 0 42px}
-.what-inner{
-  background:rgba(255,255,255,.85); border-radius:14px; padding:26px; box-shadow:var(--shadow);
-}
-.what h2{margin:0 0 10px; color:var(--csc-blue)}
-.what p{margin:0 0 12px; color:#475569}
-.cta{
-  display:inline-block; background:var(--csc-blue); color:#fff; text-decoration:none;
-  padding:12px 18px; border-radius:28px; font-weight:800; box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--csc-blue-dark)}
-
 /* ===== Footer */
 .footer{padding:30px 0 40px; color:#6b7280; text-align:center; font-size:14px}
 
@@ -106,6 +121,8 @@ body{
 @media (max-width:900px){
   .cards-grid{grid-template-columns:1fr}
   .hero-frame img{height:44vh}
+  .brand-mask{width:104px; height:26px}
+  .intro-logo-full{height:70px}
 }
 
 /* ================================
@@ -122,7 +139,7 @@ body::before{
   pointer-events:none;
   z-index:0;
 
-  /* Pattern color: #3E5FD1  (URL-encoded as %233E5FD1) */
+  /* Pattern color: #3E5FD1 */
   background-image:url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
       <rect width='120' height='120' fill='none'/>\
@@ -147,35 +164,4 @@ body::before{
       rgba(0,0,0,0.70) 75%,
       rgba(0,0,0,1.00) 100%
   );
-}
-
-/* Optional stronger texture at page bottom */
-.edge-strong::before{
-  -webkit-mask-image: radial-gradient(
-      80% 120% at 50% 110%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.15) 55%,
-      rgba(0,0,0,0.75) 85%,
-      rgba(0,0,0,1.00) 100%
-  );
-          mask-image: radial-gradient(
-      80% 120% at 50% 110%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.15) 55%,
-      rgba(0,0,0,0.75) 85%,
-      rgba(0,0,0,1.00) 100%
-  );
-}
-
-/* Light-mode adjustment */
-@media (prefers-color-scheme: light){
-  body::before{
-    background-image:url("data:image/svg+xml;utf8,\
-      <svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'>\
-        <rect width='120' height='120' fill='none'/>\
-        <rect x='12' y='12' width='30' height='30' rx='4' ry='4' fill='none'\
-              stroke='%232b3a55' stroke-opacity='.12' stroke-width='2'/>\
-      </svg>");
-    opacity:.65;
-  }
 }
