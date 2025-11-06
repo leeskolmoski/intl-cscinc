@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSC — Construction Services Consulting</title>
-  <meta name="description" content="Construction Services Consulting provides owner representation, construction management, and design build oversight for complex projects.">
+  <meta name="description" content="Construction Services Consulting provides owner representation, construction management, and design-build oversight for complex projects.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
@@ -13,9 +13,9 @@
   <!-- Top Bar -->
   <header class="topbar">
     <div class="container nav-wrap">
-      <!-- top left logo -->
+      <!-- logo -->
       <a class="brand" href="index.html" aria-label="CSC Home">
-        <span class="brand-mask brand-short" aria-hidden="true"></span>
+        <span class="brand-mask" aria-hidden="true"></span>
       </a>
 
       <!-- mobile toggle -->
@@ -25,6 +25,7 @@
         <span class="menu-bar"></span>
       </button>
 
+      <!-- main nav -->
       <nav class="main-nav" aria-label="Primary">
         <a class="nav-link active" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
@@ -49,7 +50,7 @@
       </div>
     </section>
 
-    <!-- INTRO -->
+    <!-- CSC PANEL -->
     <section class="intro">
       <div class="container">
         <div class="intro-inner">
@@ -62,7 +63,7 @@
       </div>
     </section>
 
-    <!-- Complex Projects -->
+    <!-- TEXT INTRO -->
     <section class="what">
       <div class="container">
         <div class="what-grid">
@@ -83,7 +84,7 @@
       </div>
     </section>
 
-    <!-- Service cards -->
+    <!-- SERVICES (6) -->
     <section class="cards">
       <div class="container">
         <div class="cards-grid">
@@ -98,7 +99,7 @@
           </article>
 
           <article class="card">
-            <h3>Design Build Oversight</h3>
+            <h3>Design-Build Oversight</h3>
             <p>Integration from design through commissioning and turnover.</p>
           </article>
 
@@ -108,57 +109,18 @@
           </article>
 
           <article class="card">
+            <h3>Cold Storage and Logistics</h3>
+            <p>Distribution infrastructure, dock coordination and temperature-controlled operations.</p>
+          </article>
+
+          <article class="card">
             <h3>Document Control and Closeout</h3>
             <p>RFIs, submittals, safety reports and final as built packages.</p>
           </article>
         </div>
       </div>
     </section>
-
-    <!-- Recent projects teaser -->
-    <section class="projects-teaser">
-      <div class="container">
-        <header class="section-head">
-          <h2>Recent work</h2>
-          <p>Selected projects delivered by CSC partners.</p>
-        </header>
-
-        <div class="projects-teaser-grid">
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg" alt="Amarillo, Texas, USA">
-            </div>
-            <div class="project-body">
-              <h3>Amarillo, Texas, USA</h3>
-              <p>New food processing facility. Full owner representation and construction services.</p>
-              <a class="project-link" href="projects.html">Open project</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="assets/images/projects/placeholder.jpg" alt="Western U.S. Project">
-            </div>
-            <div class="project-body">
-              <h3>Western U.S.</h3>
-              <p>Cold storage and logistics support for long haul distribution.</p>
-              <a class="project-link" href="projects.html">Open project</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-thumb">
-              <img src="assets/images/projects/placeholder.jpg" alt="Process upgrade project">
-            </div>
-            <div class="project-body">
-              <h3>Process upgrades</h3>
-              <p>Design coordination, scheduling and field management for an operating facility.</p>
-              <a class="project-link" href="projects.html">Open project</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <!-- no recent work section on purpose -->
   </main>
 
   <footer class="footer">
@@ -167,6 +129,8 @@
     </div>
   </footer>
 
+  <!-- scripts: config FIRST, then app -->
+  <script src="js/config.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
 </html>
