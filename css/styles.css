@@ -1,222 +1,139 @@
-/* ===== Base */
-:root{
-  --csc-blue:#2f53c7;
-  --csc-blue-dark:#2746a9;
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSC — Construction Services Consulting</title>
+  <meta name="description" content="Construction Services Consulting, Inc. — Owner’s representative, construction management, food and beverage facilities, cold storage and logistics, and document control/closeout.">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- preload the two logos so they show fast -->
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
+</head>
+<body>
 
-  --ink:#0f172a;
-  --muted:#5b6b86;
-  --paper:#eef3fa;
-  --card:#ffffff;
-  --shadow:0 12px 28px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
-}
+  <!-- =================================
+       TOP BAR
+       ================================= -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <!-- left logo (this is the blue masked one) -->
+      <a href="index.html" class="brand" aria-label="CSC Home">
+        <span class="brand-mask"></span>
+      </a>
 
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{
-  position:relative;
-  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
-  color:var(--ink);
-  background:
-    radial-gradient(1200px 600px at 20% -10%, rgba(47,83,199,.06), transparent 60%),
-    radial-gradient(1200px 600px at 120% 10%, rgba(47,83,199,.05), transparent 60%),
-    linear-gradient(#f7f9fd, var(--paper));
-  min-height:100vh;
-}
+      <!-- nav (desktop) -->
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-/* Layout */
-.container{width:min(1120px, calc(100% - 48px)); margin:0 auto}
+      <!-- hamburger (mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
 
-/* ===== Topbar */
-.topbar{
-  position:sticky; top:0; z-index:10;
-  background:#fff; box-shadow:0 1px 0 rgba(17,24,39,.08);
-}
-.nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+  <!-- =================================
+       MAIN
+       ================================= -->
+  <main>
+    <!-- HERO (slideshow) -->
+    <section class="hero">
+      <div class="container">
+        <figure class="hero-frame">
+          <!-- start with the Amarillo image we know exists -->
+          <img
+            id="heroImage"
+            src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
+            alt="Project photo, Amarillo, Texas, USA">
+          <figcaption class="hero-cap" id="heroCaption">
+            Amarillo, Texas, USA — Food Processing Facility
+          </figcaption>
+        </figure>
+      </div>
+    </section>
 
-.brand{display:flex; align-items:center; text-decoration:none}
-.brand-mask{
-  display:inline-block;
-  width:176px;
-  height:46px;
-  background-color:var(--csc-blue);
-  -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
-          mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
-}
+    <!-- INTRO block with the BIG logo (this was the one that was overflowing on mobile) -->
+    <section class="intro">
+      <div class="container">
+        <div class="intro-inner">
+          <!-- this div is what paints the big blue CSC logo -->
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
+          <p class="intro-sub">
+            More than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.
+          </p>
+        </div>
+      </div>
+    </section>
 
-.main-nav{display:flex; gap:28px}
-.nav-link{
-  text-decoration:none; color:#24324d; font-weight:700; padding:6px 0; position:relative;
-}
-.nav-link:hover{color:var(--csc-blue)}
-.nav-link.active{color:var(--csc-blue)}
-.nav-link.active::after{
-  content:""; position:absolute; left:0; right:0; bottom:-8px; height:3px; border-radius:2px; background:var(--csc-blue);
-}
+    <!-- BODY TEXT -->
+    <section class="content-block">
+      <div class="container">
+        <h2>Complex work. Real world schedules.</h2>
+        <p>
+          CSC is a construction services group that supports owners on high value, time sensitive and technically demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
+        </p>
+        <p>
+          With expertise across food processing, distribution, commercial and mixed use development, we help clients navigate permitting, design, contractor management and final turnover to operations.
+        </p>
+        <a class="primary-btn" href="projects.html">See Our Projects ➔</a>
+      </div>
+    </section>
 
-/* ===== Hero */
-.hero{padding:24px 0 8px}
-.hero-frame{
-  position:relative; margin:0; padding:0;
-  border-radius:14px; overflow:hidden;
-  box-shadow:var(--shadow);
-  background:linear-gradient(#e9edf4,#dfe6f2);
-}
-.hero-frame img{
-  display:block; width:100%; height:520px; object-fit:cover;
-  opacity:1; transition:opacity .6s ease-in-out;
-}
-.hero-frame img.fade{opacity:0}
-.hero-cap{
-  position:absolute; left:18px; bottom:12px;
-  font-size:14px; color:#eaf0ff; background:rgba(17,27,48,.45);
-  padding:8px 10px; border-radius:10px; backdrop-filter:saturate(120%) blur(6px);
-}
+    <!-- SERVICES CARDS (6 of them) -->
+    <section class="services-home">
+      <div class="container">
+        <div class="cards-grid">
+          <article class="card">
+            <h3>Owner’s Representative</h3>
+            <p>Single point of accountability protecting schedule and budget.</p>
+          </article>
+          <article class="card">
+            <h3>Construction Management</h3>
+            <p>Field oversight, safety culture, submittals and cost control.</p>
+          </article>
+          <article class="card">
+            <h3>Design-Build Oversight</h3>
+            <p>Integration from design through commissioning and turnover.</p>
+          </article>
+          <article class="card">
+            <h3>Food and Beverage Facilities</h3>
+            <p>Process piping, clean room, cold storage and USDA requirements.</p>
+          </article>
+          <article class="card">
+            <h3>Cold Storage and Logistics</h3>
+            <p>Distribution infrastructure, dock coordination and temperature-controlled operations.</p>
+          </article>
+          <article class="card">
+            <h3>Document Control and Closeout</h3>
+            <p>RFIs, submittals, safety reports and final as built packages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-/* ===== Intro */
-.intro{padding:28px 0 8px}
-.intro-inner{
-  text-align:center; background:rgba(255,255,255,.78);
-  border-radius:12px; padding:24px; box-shadow:var(--shadow);
-}
-.intro-logo-full{
-  width:min(580px, 85vw);
-  height:96px;
-  margin:0 auto 12px auto;
-  background-color:var(--csc-blue);
-  -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
-          mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
-}
-.intro-sub{margin:0 auto; max-width:780px; color:var(--muted)}
+    <!-- we purposely REMOVED "Recent work" here -->
 
-/* ===== Complex section */
-.what{padding:10px 0 42px}
-.what h2{margin:0 0 10px; color:var(--csc-blue)}
-.what p{margin:0 0 12px; color:#475569}
-.cta{
-  display:inline-block; background:var(--csc-blue); color:#fff; text-decoration:none;
-  padding:12px 18px; border-radius:28px; font-weight:800; box-shadow:var(--shadow);
-}
-.cta:hover{background:var(--csc-blue-dark)}
+  </main>
 
-/* ===== Cards */
-.cards{padding:24px 0}
-.cards-grid{
-  display:grid; gap:22px; grid-template-columns:repeat(3,1fr);
-}
-.card{
-  background:var(--card); border-radius:14px; padding:22px; box-shadow:var(--shadow);
-  border:1px solid rgba(28,45,93,.08);
-}
-.card h3{margin:0 0 8px; color:var(--csc-blue)}
-.card p{margin:0; color:#475569}
+  <!-- =================================
+       FOOTER
+       ================================= -->
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
 
-/* ===== Projects teaser */
-.projects-teaser{padding:20px 0 46px}
-.section-head h2{margin:0 0 6px; color:#0f172a}
-.section-head p{margin:0 0 16px; color:#475569}
-.projects-teaser-grid{
-  display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:18px;
-}
-.project-card{
-  background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
-  border:1px solid rgba(29,41,62,.03);
-}
-.project-thumb img{width:100%; height:155px; object-fit:cover; display:block}
-.project-body{padding:14px 16px 18px}
-.project-body h3{margin:0 0 5px; font-size:1rem; color:#0f172a}
-.project-body p{margin:0 0 10px; color:#475569; font-size:.9rem}
-.project-link{
-  display:inline-block; text-decoration:none; color:var(--csc-blue);
-  background:rgba(47,83,199,.12); padding:6px 12px; border-radius:999px; font-size:.8rem;
-}
-
-/* ===== Footer */
-.footer{padding:30px 0 40px; color:#6b7280; text-align:center; font-size:14px}
-
-/* ===== Blueprint BG */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  z-index:-1;
-  background-image:url("data:image/svg+xml;utf8,\
-    <svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
-      <rect width='160' height='160' fill='none'/>\
-      <path d='M0 20H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M0 40H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M0 60H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M0 80H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M0 100H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M0 120H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M0 140H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M20 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M40 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M60 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M80 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M100 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <path d='M120 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
-      <path d='M140 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-    </svg>");
-  background-size:160px 160px;
-  background-position:center;
-  opacity:.75;
-  -webkit-mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.00) 25%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,1.00) 100%);
-          mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.00) 25%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,1.00) 100%);
-}
-
-/* ===== Responsive pieces you already had */
-@media (max-width:900px){
-  .cards-grid{grid-template-columns:1fr}
-  .hero-frame img{height:44vh}
-  .brand-mask{width:150px; height:40px}
-  .intro-logo-full{height:80px}
-}
-
-/* ===== NEW mobile header for index ===== */
-.menu-toggle{
-  display:none;
-  background:#ffffff;
-  border:1px solid rgba(15,23,42,.12);
-  border-radius:10px;
-  width:40px;
-  height:34px;
-  align-items:center;
-  justify-content:center;
-  gap:4px;
-  cursor:pointer;
-}
-
-.menu-bar{
-  display:block;
-  width:20px;
-  height:2.4px;
-  background:#1f2f55;
-  border-radius:999px;
-}
-
-@media (max-width:760px){
-  .nav-wrap{gap:10px}
-  .brand-mask{width:140px; height:38px}
-  .menu-toggle{display:flex}
-  .main-nav{
-    position:absolute;
-    top:60px;
-    right:14px;
-    background:#ffffff;
-    border:1px solid rgba(15,23,42,.05);
-    box-shadow:0 18px 35px rgba(0,0,0,.07);
-    border-radius:14px;
-    padding:10px 0;
-    display:none;
-    flex-direction:column;
-    min-width:175px;
-    z-index:50;
-  }
-  .main-nav.show{display:flex}
-  .nav-link{padding:7px 16px}
-  .nav-link.active::after{content:none}
-}
-@media (max-width:520px){
-  .brand-mask{width:124px; height:34px}
-}
+  <!-- scripts: config FIRST, then app -->
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
+</body>
+</html>
