@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSC — Construction Services Consulting</title>
-  <meta name="description" content="Construction Services Consulting. Owner’s representative, construction management, and design-build oversight.">
+  <meta name="description" content="Construction Services Consulting provides owner representation, construction management, and design build oversight for complex projects.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
@@ -17,6 +17,13 @@
       <a class="brand" href="index.html" aria-label="CSC Home">
         <span class="brand-mask brand-short" aria-hidden="true"></span>
       </a>
+
+      <!-- mobile toggle -->
+      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+        <span class="menu-bar"></span>
+      </button>
 
       <nav class="main-nav" aria-label="Primary">
         <a class="nav-link active" href="index.html">Home</a>
@@ -59,19 +66,20 @@
     <!-- Complex Projects text + CTA -->
     <section class="what">
       <div class="container">
-        <div class="what-inner">
-          <h2>Complex Projects. Delivered with Precision and Safety.</h2>
-          <p>
-            We provide leadership, oversight, and detailed coordination from initial concept through startup.
-            Our role is to ensure projects are delivered on time, on budget, and with unwavering attention to
-            safety and quality.
-          </p>
-          <p>
-            With expertise across food processing, distribution, commercial, and mixed-use development, we help
-            clients navigate permitting, design, contractor management, and final turnover to operations.
-          </p>
+        <div class="what-grid">
+          <div class="what-text">
+            <h2>Complex work. Real world schedules.</h2>
+            <p>
+              CSC is a construction services group that supports owners on high value, time sensitive and technically
+              demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
+            </p>
+            <p>
+              With expertise across food processing, distribution, commercial and mixed use development, we help
+              clients navigate permitting, design, contractor management and final turnover to operations.
+            </p>
 
-          <a class="cta" href="projects.html">See Our Projects →</a>
+            <a class="cta" href="projects.html">See Our Projects →</a>
+          </div>
         </div>
       </div>
     </section>
@@ -87,12 +95,67 @@
 
           <article class="card">
             <h3>Construction Management</h3>
-            <p>Field oversight, safety culture, submittals, and cost control.</p>
+            <p>Field oversight, safety culture, submittals and cost control.</p>
           </article>
 
           <article class="card">
-            <h3>Design-Build Oversight</h3>
+            <h3>Design Build Oversight</h3>
             <p>Integration from design through commissioning and turnover.</p>
+          </article>
+
+          <article class="card">
+            <h3>Food and Beverage Facilities</h3>
+            <p>Process piping, clean room, cold storage and USDA requirements.</p>
+          </article>
+
+          <article class="card">
+            <h3>Document Control and Closeout</h3>
+            <p>RFIs, submittals, safety reports and final as built packages.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent projects teaser -->
+    <section class="projects-teaser">
+      <div class="container">
+        <header class="section-head">
+          <h2>Recent work</h2>
+          <p>Selected projects delivered by CSC partners.</p>
+        </header>
+
+        <div class="projects-teaser-grid">
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg" alt="Amarillo, Texas, USA">
+            </div>
+            <div class="project-body">
+              <h3>Amarillo, Texas, USA</h3>
+              <p>New food processing facility. Full owner representation and construction services.</p>
+              <a class="project-link" href="projects.html">Open project</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/images/projects/placeholder.jpg" alt="Western U.S. Project">
+            </div>
+            <div class="project-body">
+              <h3>Western U.S.</h3>
+              <p>Cold storage and logistics support for long haul distribution.</p>
+              <a class="project-link" href="projects.html">Open project</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb">
+              <img src="assets/images/projects/placeholder.jpg" alt="Process upgrade project">
+            </div>
+            <div class="project-body">
+              <h3>Process upgrades</h3>
+              <p>Design coordination, scheduling and field management for an operating facility.</p>
+              <a class="project-link" href="projects.html">Open project</a>
+            </div>
           </article>
         </div>
       </div>
