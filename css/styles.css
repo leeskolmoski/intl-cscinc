@@ -33,11 +33,10 @@ body{
 }
 .nav-wrap{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
 
-/* enlarged logo-short */
 .brand{display:flex; align-items:center; text-decoration:none}
 .brand-mask{
   display:inline-block;
-  width:176px;   /* final enlarged size */
+  width:176px;
   height:46px;
   background-color:var(--csc-blue);
   -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
@@ -81,7 +80,7 @@ body{
 }
 .intro-logo-full{
   width:min(580px, 85vw);
-  height:96px; /* larger center CSC logo */
+  height:96px;
   margin:0 auto 12px auto;
   background-color:var(--csc-blue);
   -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
@@ -91,9 +90,6 @@ body{
 
 /* ===== Complex section */
 .what{padding:10px 0 42px}
-.what-inner{
-  background:rgba(255,255,255,.85); border-radius:14px; padding:26px; box-shadow:var(--shadow);
-}
 .what h2{margin:0 0 10px; color:var(--csc-blue)}
 .what p{margin:0 0 12px; color:#475569}
 .cta{
@@ -114,32 +110,39 @@ body{
 .card h3{margin:0 0 8px; color:var(--csc-blue)}
 .card p{margin:0; color:#475569}
 
+/* ===== Projects teaser */
+.projects-teaser{padding:20px 0 46px}
+.section-head h2{margin:0 0 6px; color:#0f172a}
+.section-head p{margin:0 0 16px; color:#475569}
+.projects-teaser-grid{
+  display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:18px;
+}
+.project-card{
+  background:#fff; border-radius:16px; overflow:hidden; box-shadow:var(--shadow);
+  border:1px solid rgba(29,41,62,.03);
+}
+.project-thumb img{width:100%; height:155px; object-fit:cover; display:block}
+.project-body{padding:14px 16px 18px}
+.project-body h3{margin:0 0 5px; font-size:1rem; color:#0f172a}
+.project-body p{margin:0 0 10px; color:#475569; font-size:.9rem}
+.project-link{
+  display:inline-block; text-decoration:none; color:var(--csc-blue);
+  background:rgba(47,83,199,.12); padding:6px 12px; border-radius:999px; font-size:.8rem;
+}
+
 /* ===== Footer */
 .footer{padding:30px 0 40px; color:#6b7280; text-align:center; font-size:14px}
 
-/* ===== Responsive */
-@media (max-width:900px){
-  .cards-grid{grid-template-columns:1fr}
-  .hero-frame img{height:44vh}
-  .brand-mask{width:150px; height:40px}
-  .intro-logo-full{height:80px}
-}
-
-/* ================================
-   Blueprint-style grid background
-   ================================= */
-
+/* ===== Blueprint BG */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   pointer-events:none;
   z-index:-1;
-
   background-image:url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
       <rect width='160' height='160' fill='none'/>\
-      <!-- horizontal lines -->\
       <path d='M0 20H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M0 40H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M0 60H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
@@ -147,7 +150,6 @@ body::before{
       <path d='M0 100H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M0 120H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M0 140H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <!-- vertical lines -->\
       <path d='M20 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M40 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M60 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
@@ -159,19 +161,62 @@ body::before{
   background-size:160px 160px;
   background-position:center;
   opacity:.75;
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.00) 25%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,1.00) 100%);
+          mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0.00) 0%, rgba(0,0,0,0.00) 25%, rgba(0,0,0,0.25) 65%, rgba(0,0,0,1.00) 100%);
+}
 
-  -webkit-mask-image: radial-gradient(
-      circle at 50% 40%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.00) 25%,
-      rgba(0,0,0,0.25) 65%,
-      rgba(0,0,0,1.00) 100%
-  );
-          mask-image: radial-gradient(
-      circle at 50% 40%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.00) 25%,
-      rgba(0,0,0,0.25) 65%,
-      rgba(0,0,0,1.00) 100%
-  );
+/* ===== Responsive pieces you already had */
+@media (max-width:900px){
+  .cards-grid{grid-template-columns:1fr}
+  .hero-frame img{height:44vh}
+  .brand-mask{width:150px; height:40px}
+  .intro-logo-full{height:80px}
+}
+
+/* ===== NEW mobile header for index ===== */
+.menu-toggle{
+  display:none;
+  background:#ffffff;
+  border:1px solid rgba(15,23,42,.12);
+  border-radius:10px;
+  width:40px;
+  height:34px;
+  align-items:center;
+  justify-content:center;
+  gap:4px;
+  cursor:pointer;
+}
+
+.menu-bar{
+  display:block;
+  width:20px;
+  height:2.4px;
+  background:#1f2f55;
+  border-radius:999px;
+}
+
+@media (max-width:760px){
+  .nav-wrap{gap:10px}
+  .brand-mask{width:140px; height:38px}
+  .menu-toggle{display:flex}
+  .main-nav{
+    position:absolute;
+    top:60px;
+    right:14px;
+    background:#ffffff;
+    border:1px solid rgba(15,23,42,.05);
+    box-shadow:0 18px 35px rgba(0,0,0,.07);
+    border-radius:14px;
+    padding:10px 0;
+    display:none;
+    flex-direction:column;
+    min-width:175px;
+    z-index:50;
+  }
+  .main-nav.show{display:flex}
+  .nav-link{padding:7px 16px}
+  .nav-link.active::after{content:none}
+}
+@media (max-width:520px){
+  .brand-mask{width:124px; height:34px}
 }
