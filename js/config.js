@@ -1,39 +1,50 @@
-/* ============================================================
-   CSC Website – config.js
-   Holds all slideshow image data and captions
-   ============================================================ */
+// ==========================================
+// CSC Website - Hero Slideshow Configuration
+// ==========================================
 
-/*
-   Each object in this array is one hero slide.
-   'src' must be a valid path from your site root.
-   'caption' appears in the lower-left of the hero frame.
-*/
+// Array of verified hero slides for homepage
+// All files confirmed under: /assets/images/projects/
 
 window.heroSlides = [
   {
-    src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
-    caption: "Amarillo, Texas, USA"
+    src: "/assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
+    caption: "Amarillo, Texas, USA — Food Processing Facility"
   },
   {
-    src: "assets/images/projects/albq-office-or-processing.jpg",
-    caption: "Albuquerque, New Mexico, USA"
+    src: "/assets/images/projects/albuquerque-high-security-hero.jpg",
+    caption: "Albuquerque, New Mexico, USA — High-Security Office Campus"
   },
   {
-    src: "assets/images/projects/ogden-plant-exterior.jpg",
-    caption: "Ogden, Utah, USA"
+    src: "/assets/images/projects/ogden-assisted.jpg",
+    caption: "Ogden, Utah, USA — Assisted Living and Healthcare Facility"
   },
   {
-    src: "assets/images/projects/placeholder.jpg",
-    caption: "Selected CSC Projects"
+    src: "/assets/images/projects/distribution-storage-thumb.jpg",
+    caption: "Midvale, Utah, USA — Regional Storage and Distribution Center"
+  },
+  {
+    src: "/assets/images/projects/san-bernardino-office-campus-001.jpg",
+    caption: "San Bernardino, California, USA — Corporate Office and Retail Campus"
+  },
+  {
+    src: "/assets/images/projects/test-kitchen-clean-room.jpg",
+    caption: "St. Louis, Missouri, USA — Test Kitchen and R&D Laboratory"
+  },
+  {
+    src: "/assets/images/projects/harbin-construction-4.png",
+    caption: "Harbin, Heilongjiang, China — International Food Processing Expansion"
+  },
+  {
+    src: "/assets/images/projects/smithton-food-plant-thumb.jpg",
+    caption: "Smithton, Tasmania, Australia — Agricultural Processing and Storage Plant"
+  },
+  {
+    src: "/assets/images/projects/park-city-lowell.jpg",
+    caption: "Park City, Utah, USA — Mixed-Use Development and Retail Project"
   }
 ];
 
-/*
-   If you want to temporarily disable the slideshow (show only one image),
-   simply comment out all but the first slide, like this:
+// Optional: how long each image shows (milliseconds)
+window.heroSlideDuration = 6000;
 
-   window.heroSlides = [
-     { src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg", caption: "Amarillo, Texas, USA" }
-   ];
-*/
-
+// End of config.js
