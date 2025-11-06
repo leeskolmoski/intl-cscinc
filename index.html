@@ -6,8 +6,56 @@
   <title>CSC — Construction Services Consulting</title>
   <meta name="description" content="Construction Services Consulting provides owner representation, construction management, and design-build oversight for complex projects.">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
-  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
+
+  <!-- mobile-only header fixes, safe to keep here -->
+  <style>
+    @media (max-width: 768px) {
+      .topbar {
+        height: 60px;
+      }
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        font-size: 1.5rem; /* a little smaller on phone */
+        white-space: nowrap;
+      }
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid rgba(0,0,0,0.08);
+        background: #fff;
+        border-radius: 14px;
+        font-size: 26px;
+        line-height: 1;
+        color: #1f2937;
+      }
+      .main-nav {
+        position: absolute;
+        top: 60px;
+        right: 16px;
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+        padding: 12px 0;
+        display: none;
+        flex-direction: column;
+        min-width: 160px;
+      }
+      .main-nav.show {
+        display: flex;
+      }
+      .main-nav .nav-link {
+        padding: 10px 18px;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Top Bar -->
@@ -15,14 +63,12 @@
     <div class="container nav-wrap">
       <!-- logo -->
       <a class="brand" href="index.html" aria-label="CSC Home">
-        <span class="brand-mask" aria-hidden="true"></span>
+        — CSC —
       </a>
 
-      <!-- mobile toggle -->
+      <!-- mobile toggle (now real hamburger) -->
       <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
-        <span class="menu-bar"></span>
+        ☰
       </button>
 
       <!-- main nav -->
@@ -43,9 +89,9 @@
         <figure class="hero-frame">
           <img
             id="heroImage"
-            src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
-            alt="Project photo, Amarillo, Texas, USA">
-          <figcaption class="hero-cap" id="heroCaption">Amarillo, Texas, USA</figcaption>
+            src="assets/images/projects/albuquerque-high-security-hero.jpg"
+            alt="Project photo">
+          <figcaption class="hero-cap" id="heroCaption">Albuquerque, New Mexico, USA — High-Security Office Campus</figcaption>
         </figure>
       </div>
     </section>
@@ -120,7 +166,7 @@
         </div>
       </div>
     </section>
-    <!-- no recent work section on purpose -->
+    <!-- no recent work section -->
   </main>
 
   <footer class="footer">
