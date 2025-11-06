@@ -9,10 +9,6 @@ window.heroSlides = [
     caption: "Albuquerque, New Mexico, USA — High-Security Office Campus"
   },
   {
-    src: "assets/images/projects/ama-cacique-overview-daylight.JPG",
-    caption: "Amarillo, Texas, USA — Food Processing Facility"
-  },
-  {
     src: "assets/images/projects/stockton-distribution-64m-1.jpg",
     caption: "Stockton, California, USA — Distribution and Cold Storage Facility"
   },
