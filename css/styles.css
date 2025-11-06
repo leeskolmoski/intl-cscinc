@@ -1,8 +1,11 @@
 /* ============================
    CSC global styles
    ============================ */
+/* your earlier palette */
 :root{
-  --csc-blue:#2754b5;
+  --csc-blue:#2f53c7;
+  --csc-blue-dark:#2746a9;
+
   --ink:#0f172a;
   --muted:#5b6b86;
   --paper:#eef3fa;
@@ -14,63 +17,93 @@
 *::before,
 *::after{box-sizing:border-box;}
 
-html,body{margin:0;padding:0;}
+html,body{margin:0;padding:0}
 
 body{
-  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#edf1f7;
-  color:var(--ink);
-  min-height:100vh;
   position:relative;
+  font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+  color:var(--ink);
+  /* your soft radial + linear BG */
+  background:
+    radial-gradient(1200px 600px at 20% -10%, rgba(47,83,199,.06), transparent 60%),
+    radial-gradient(1200px 600px at 120% 10%, rgba(47,83,199,.05), transparent 60%),
+    linear-gradient(#f7f9fd, var(--paper));
+  min-height:100vh;
 }
 
-/* blueprint background */
+/* blueprint-style GRID over everything — this is the one you liked */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background-image:
-    linear-gradient(#d2dbe7 1px, transparent 1px),
-    linear-gradient(90deg, #d2dbe7 1px, transparent 1px);
-  background-size:60px 60px;
-  opacity:.35;
   pointer-events:none;
   z-index:-1;
+  background-image:url("data:image/svg+xml;utf8,\
+    <svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
+      <rect width='160' height='160' fill='none'/>\
+      <!-- horizontal lines -->\
+      <path d='M0 20H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 40H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 60H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 80H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 100H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M0 120H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M0 140H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <!-- vertical lines -->\
+      <path d='M20 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M40 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M60 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M80 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M100 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+      <path d='M120 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
+      <path d='M140 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
+    </svg>");
+  background-size:160px 160px;
+  background-position:center;
+  opacity:.75;
+  /* this mask makes the center almost transparent, darker on sides */
+  -webkit-mask-image: radial-gradient(
+      circle at 50% 40%,
+      rgba(0,0,0,0.00) 0%,
+      rgba(0,0,0,0.00) 25%,
+      rgba(0,0,0,0.25) 65%,
+      rgba(0,0,0,1.00) 100%
+  );
+          mask-image: radial-gradient(
+      circle at 50% 40%,
+      rgba(0,0,0,0.00) 0%,
+      rgba(0,0,0,0.00) 25%,
+      rgba(0,0,0,0.25) 65%,
+      rgba(0,0,0,1.00) 100%
+  );
 }
 
 .container{
-  width:min(1180px, 100%);
+  width:min(1120px, calc(100% - 48px));
   margin:0 auto;
-  padding:0 16px;
 }
 
 /* ============================
    HEADER / NAV
    ============================ */
 .topbar{
-  background:#fff;
-  border-bottom:1px solid rgba(10,22,46,.04);
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:10;
+  background:#fff;
+  box-shadow:0 1px 0 rgba(17,24,39,.08);
 }
-
 .nav-wrap{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:16px;
-  min-height:64px;
+  padding:14px 0;
 }
-
-/* masked logo (short) */
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
   text-decoration:none;
 }
-
 .brand-mask{
   display:inline-block;
   width:176px;
@@ -79,13 +112,10 @@ body::before{
   -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
           mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
 }
-
-/* desktop nav */
 .main-nav{
   display:flex;
   gap:28px;
 }
-
 .nav-link{
   text-decoration:none;
   color:#24324d;
@@ -93,21 +123,19 @@ body::before{
   padding:6px 0;
   position:relative;
 }
-
 .nav-link:hover{color:var(--csc-blue);}
 .nav-link.active{color:var(--csc-blue);}
-
 .nav-link.active::after{
   content:"";
   position:absolute;
   left:0; right:0;
-  bottom:-16px;
+  bottom:-8px;
   height:3px;
-  border-radius:99px;
+  border-radius:2px;
   background:var(--csc-blue);
 }
 
-/* mobile hamburger */
+/* hamburger for mobile */
 .menu-toggle{
   display:none;
   width:46px;
@@ -121,7 +149,6 @@ body::before{
   gap:5px;
   cursor:pointer;
 }
-
 .menu-toggle .bar{
   display:block;
   width:22px;
@@ -133,49 +160,46 @@ body::before{
 /* ============================
    HERO
    ============================ */
-.hero{padding:20px 0 12px;}
+.hero{padding:24px 0 8px;}
 .hero-frame{
-  margin:0;
-  border-radius:20px;
-  overflow:hidden;
-  background:linear-gradient(#e9edf4,#dfe6f2);
-  box-shadow:var(--shadow);
   position:relative;
+  margin:0;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:linear-gradient(#e9edf4,#dfe6f2);
 }
 .hero-frame img{
   display:block;
   width:100%;
-  height:340px;
+  height:520px;
   object-fit:cover;
+  opacity:1;
+  transition:opacity .6s ease-in-out;
 }
+.hero-frame img.fade{opacity:0;}
 .hero-cap{
   position:absolute;
   left:18px;
-  bottom:18px;
-  background:rgba(12,23,40,.85);
-  color:#fff;
-  padding:9px 18px;
-  border-radius:999px;
-  font-size:.78rem;
-  letter-spacing:.01em;
-}
-
-/* fade class used by JS */
-.hero-frame img.fade{
-  opacity:0;
-  transition:opacity .3s ease;
+  bottom:12px;
+  font-size:14px;
+  color:#eaf0ff;
+  background:rgba(17,27,48,.45);
+  padding:8px 10px;
+  border-radius:10px;
+  backdrop-filter:saturate(120%) blur(6px);
 }
 
 /* ============================
-   INTRO BLOCK (big CSC logo)
+   INTRO
    ============================ */
-.intro{padding:6px 0 10px;}
+.intro{padding:28px 0 8px;}
 .intro-inner{
-  background:#fff;
-  border-radius:20px;
-  box-shadow:var(--shadow);
-  padding:34px 24px 26px;
   text-align:center;
+  background:rgba(255,255,255,.78);
+  border-radius:12px;
+  padding:24px;
+  box-shadow:var(--shadow);
 }
 .intro-logo-full{
   width:min(580px, 85vw);
@@ -194,63 +218,61 @@ body::before{
 /* ============================
    CONTENT BLOCK
    ============================ */
-.content-block{padding:20px 0 8px;}
+.content-block{padding:10px 0 42px;}
 .content-block h2{
-  font-size:1.4rem;
-  margin-bottom:10px;
+  margin:0 0 10px;
+  color:var(--csc-blue);
 }
 .content-block p{
+  margin:0 0 12px;
+  color:#475569;
   max-width:920px;
-  line-height:1.7;
-  margin-bottom:14px;
 }
 .primary-btn{
   display:inline-block;
   background:var(--csc-blue);
   color:#fff;
-  font-weight:600;
-  padding:14px 34px;
-  border-radius:999px;
   text-decoration:none;
-  margin-top:8px;
-  box-shadow:0 12px 24px rgba(39,84,181,.35);
+  padding:12px 18px;
+  border-radius:28px;
+  font-weight:800;
+  box-shadow:var(--shadow);
 }
+.primary-btn:hover{background:var(--csc-blue-dark);}
 
 /* ============================
-   SERVICES CARDS
+   SERVICES CARDS (6)
    ============================ */
-.services-home{padding:4px 0 38px;}
+.services-home{padding:24px 0 30px;}
 .cards-grid{
   display:grid;
-  grid-template-columns:repeat(3, minmax(0,1fr));
-  gap:20px;
+  gap:22px;
+  grid-template-columns:repeat(3,1fr);
 }
 .card{
-  background:#fff;
-  border-radius:20px;
+  background:var(--card);
+  border-radius:14px;
+  padding:22px;
   box-shadow:var(--shadow);
-  padding:20px 18px 18px;
+  border:1px solid rgba(28,45,93,.08);
 }
 .card h3{
-  margin-top:0;
-  margin-bottom:6px;
+  margin:0 0 8px;
   color:var(--csc-blue);
-  font-size:1.02rem;
 }
 .card p{
   margin:0;
-  color:#42516e;
-  font-size:.9rem;
+  color:#475569;
 }
 
 /* ============================
    FOOTER
    ============================ */
 .footer{
-  padding:18px 0 26px;
+  padding:30px 0 40px;
+  color:#6b7280;
   text-align:center;
-  color:#6c7a94;
-  font-size:.8rem;
+  font-size:14px;
 }
 
 /* ============================
@@ -258,15 +280,12 @@ body::before{
    ============================ */
 @media (max-width:900px){
   .nav-wrap{min-height:58px;}
-  .brand-mask{
-    width:150px;
-    height:40px;
-  }
+  .brand-mask{width:150px; height:40px;}
 
   .main-nav{
     position:absolute;
-    top:60px;
-    right:16px;
+    top:64px;
+    right:24px;
     background:#fff;
     border-radius:18px;
     box-shadow:0 20px 28px rgba(16,24,40,.16);
@@ -280,14 +299,10 @@ body::before{
 
   .menu-toggle{display:flex;}
 
-  .hero-frame img{height:240px;}
+  .hero-frame img{height:44vh;}
 
-  .intro-inner{padding:26px 16px 20px;}
-  .intro-logo-full{
-    height:76px;   /* smaller on phone so it doesn’t hang off */
-  }
+  .intro-inner{padding:22px 16px 20px;}
+  .intro-logo-full{height:80px;} /* keep mobile logo smaller */
 
-  .cards-grid{
-    grid-template-columns:1fr;
-  }
+  .cards-grid{grid-template-columns:1fr;}
 }
