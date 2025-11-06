@@ -1,139 +1,293 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CSC — Construction Services Consulting</title>
-  <meta name="description" content="Construction Services Consulting, Inc. — Owner’s representative, construction management, food and beverage facilities, cold storage and logistics, and document control/closeout.">
-  <link rel="stylesheet" href="css/styles.css">
-  <!-- preload the two logos so they show fast -->
-  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
-  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
-</head>
-<body>
+/* ============================
+   CSC global styles
+   ============================ */
+:root{
+  --csc-blue:#2754b5;
+  --ink:#0f172a;
+  --muted:#5b6b86;
+  --paper:#eef3fa;
+  --card:#ffffff;
+  --shadow:0 12px 28px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
+}
 
-  <!-- =================================
-       TOP BAR
-       ================================= -->
-  <header class="topbar">
-    <div class="container nav-wrap">
-      <!-- left logo (this is the blue masked one) -->
-      <a href="index.html" class="brand" aria-label="CSC Home">
-        <span class="brand-mask"></span>
-      </a>
+*,
+*::before,
+*::after{box-sizing:border-box;}
 
-      <!-- nav (desktop) -->
-      <nav class="main-nav" id="mainNav">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="contact.html" class="nav-link">Contact</a>
-      </nav>
+html,body{margin:0;padding:0;}
 
-      <!-- hamburger (mobile) -->
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </button>
-    </div>
-  </header>
+body{
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:#edf1f7;
+  color:var(--ink);
+  min-height:100vh;
+  position:relative;
+}
 
-  <!-- =================================
-       MAIN
-       ================================= -->
-  <main>
-    <!-- HERO (slideshow) -->
-    <section class="hero">
-      <div class="container">
-        <figure class="hero-frame">
-          <!-- start with the Amarillo image we know exists -->
-          <img
-            id="heroImage"
-            src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
-            alt="Project photo, Amarillo, Texas, USA">
-          <figcaption class="hero-cap" id="heroCaption">
-            Amarillo, Texas, USA — Food Processing Facility
-          </figcaption>
-        </figure>
-      </div>
-    </section>
+/* blueprint background */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(#d2dbe7 1px, transparent 1px),
+    linear-gradient(90deg, #d2dbe7 1px, transparent 1px);
+  background-size:60px 60px;
+  opacity:.35;
+  pointer-events:none;
+  z-index:-1;
+}
 
-    <!-- INTRO block with the BIG logo (this was the one that was overflowing on mobile) -->
-    <section class="intro">
-      <div class="container">
-        <div class="intro-inner">
-          <!-- this div is what paints the big blue CSC logo -->
-          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
-          <p class="intro-sub">
-            More than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.
-          </p>
-        </div>
-      </div>
-    </section>
+.container{
+  width:min(1180px, 100%);
+  margin:0 auto;
+  padding:0 16px;
+}
 
-    <!-- BODY TEXT -->
-    <section class="content-block">
-      <div class="container">
-        <h2>Complex work. Real world schedules.</h2>
-        <p>
-          CSC is a construction services group that supports owners on high value, time sensitive and technically demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
-        </p>
-        <p>
-          With expertise across food processing, distribution, commercial and mixed use development, we help clients navigate permitting, design, contractor management and final turnover to operations.
-        </p>
-        <a class="primary-btn" href="projects.html">See Our Projects ➔</a>
-      </div>
-    </section>
+/* ============================
+   HEADER / NAV
+   ============================ */
+.topbar{
+  background:#fff;
+  border-bottom:1px solid rgba(10,22,46,.04);
+  position:sticky;
+  top:0;
+  z-index:100;
+}
 
-    <!-- SERVICES CARDS (6 of them) -->
-    <section class="services-home">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Owner’s Representative</h3>
-            <p>Single point of accountability protecting schedule and budget.</p>
-          </article>
-          <article class="card">
-            <h3>Construction Management</h3>
-            <p>Field oversight, safety culture, submittals and cost control.</p>
-          </article>
-          <article class="card">
-            <h3>Design-Build Oversight</h3>
-            <p>Integration from design through commissioning and turnover.</p>
-          </article>
-          <article class="card">
-            <h3>Food and Beverage Facilities</h3>
-            <p>Process piping, clean room, cold storage and USDA requirements.</p>
-          </article>
-          <article class="card">
-            <h3>Cold Storage and Logistics</h3>
-            <p>Distribution infrastructure, dock coordination and temperature-controlled operations.</p>
-          </article>
-          <article class="card">
-            <h3>Document Control and Closeout</h3>
-            <p>RFIs, submittals, safety reports and final as built packages.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+.nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  min-height:64px;
+}
 
-    <!-- we purposely REMOVED "Recent work" here -->
+/* masked logo (short) */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+}
 
-  </main>
+.brand-mask{
+  display:inline-block;
+  width:176px;
+  height:46px;
+  background-color:var(--csc-blue);
+  -webkit-mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+          mask:url("../assets/images/main/logo-short.svg") no-repeat center/contain;
+}
 
-  <!-- =================================
-       FOOTER
-       ================================= -->
-  <footer class="footer">
-    <div class="container">
-      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
-    </div>
-  </footer>
+/* desktop nav */
+.main-nav{
+  display:flex;
+  gap:28px;
+}
 
-  <!-- scripts: config FIRST, then app -->
-  <script src="js/config.js" defer></script>
-  <script src="js/app.js" defer></script>
-</body>
-</html>
+.nav-link{
+  text-decoration:none;
+  color:#24324d;
+  font-weight:700;
+  padding:6px 0;
+  position:relative;
+}
+
+.nav-link:hover{color:var(--csc-blue);}
+.nav-link.active{color:var(--csc-blue);}
+
+.nav-link.active::after{
+  content:"";
+  position:absolute;
+  left:0; right:0;
+  bottom:-16px;
+  height:3px;
+  border-radius:99px;
+  background:var(--csc-blue);
+}
+
+/* mobile hamburger */
+.menu-toggle{
+  display:none;
+  width:46px;
+  height:46px;
+  border:none;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 20px rgba(25,39,52,.15);
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+}
+
+.menu-toggle .bar{
+  display:block;
+  width:22px;
+  height:3px;
+  background:#1b2942;
+  border-radius:999px;
+}
+
+/* ============================
+   HERO
+   ============================ */
+.hero{padding:20px 0 12px;}
+.hero-frame{
+  margin:0;
+  border-radius:20px;
+  overflow:hidden;
+  background:linear-gradient(#e9edf4,#dfe6f2);
+  box-shadow:var(--shadow);
+  position:relative;
+}
+.hero-frame img{
+  display:block;
+  width:100%;
+  height:340px;
+  object-fit:cover;
+}
+.hero-cap{
+  position:absolute;
+  left:18px;
+  bottom:18px;
+  background:rgba(12,23,40,.85);
+  color:#fff;
+  padding:9px 18px;
+  border-radius:999px;
+  font-size:.78rem;
+  letter-spacing:.01em;
+}
+
+/* fade class used by JS */
+.hero-frame img.fade{
+  opacity:0;
+  transition:opacity .3s ease;
+}
+
+/* ============================
+   INTRO BLOCK (big CSC logo)
+   ============================ */
+.intro{padding:6px 0 10px;}
+.intro-inner{
+  background:#fff;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:34px 24px 26px;
+  text-align:center;
+}
+.intro-logo-full{
+  width:min(580px, 85vw);
+  height:96px;
+  margin:0 auto 12px auto;
+  background-color:var(--csc-blue);
+  -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+          mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+}
+.intro-sub{
+  margin:0 auto;
+  max-width:780px;
+  color:var(--muted);
+}
+
+/* ============================
+   CONTENT BLOCK
+   ============================ */
+.content-block{padding:20px 0 8px;}
+.content-block h2{
+  font-size:1.4rem;
+  margin-bottom:10px;
+}
+.content-block p{
+  max-width:920px;
+  line-height:1.7;
+  margin-bottom:14px;
+}
+.primary-btn{
+  display:inline-block;
+  background:var(--csc-blue);
+  color:#fff;
+  font-weight:600;
+  padding:14px 34px;
+  border-radius:999px;
+  text-decoration:none;
+  margin-top:8px;
+  box-shadow:0 12px 24px rgba(39,84,181,.35);
+}
+
+/* ============================
+   SERVICES CARDS
+   ============================ */
+.services-home{padding:4px 0 38px;}
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  border-radius:20px;
+  box-shadow:var(--shadow);
+  padding:20px 18px 18px;
+}
+.card h3{
+  margin-top:0;
+  margin-bottom:6px;
+  color:var(--csc-blue);
+  font-size:1.02rem;
+}
+.card p{
+  margin:0;
+  color:#42516e;
+  font-size:.9rem;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+.footer{
+  padding:18px 0 26px;
+  text-align:center;
+  color:#6c7a94;
+  font-size:.8rem;
+}
+
+/* ============================
+   MOBILE
+   ============================ */
+@media (max-width:900px){
+  .nav-wrap{min-height:58px;}
+  .brand-mask{
+    width:150px;
+    height:40px;
+  }
+
+  .main-nav{
+    position:absolute;
+    top:60px;
+    right:16px;
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 20px 28px rgba(16,24,40,.16);
+    padding:12px 18px 14px;
+    display:none;
+    flex-direction:column;
+    gap:10px;
+    min-width:170px;
+  }
+  .main-nav.show{display:flex;}
+
+  .menu-toggle{display:flex;}
+
+  .hero-frame img{height:240px;}
+
+  .intro-inner{padding:26px 16px 20px;}
+  .intro-logo-full{
+    height:76px;   /* smaller on phone so it doesn’t hang off */
+  }
+
+  .cards-grid{
+    grid-template-columns:1fr;
+  }
+}
