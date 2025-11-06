@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Projects — CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CSC project portfolio across the U.S. and internationally.">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* project cards specific to this page */
+    .projects-wrap {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+    }
+    .thumb-card {
+      display: block;
+      text-decoration: none;
+      border: 2px solid transparent;
+      border-radius: 14px;
+      transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      cursor: pointer;
+      background: #fff;
+      position: relative;
+      min-height: 280px;
+      box-shadow: var(--shadow-soft);
+    }
+    .thumb-card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px 12px 0 0;
+      transition: opacity .15s ease;
+      background: #dce3ef;
+    }
+    .thumb-card h3 {
+      font-size: 1rem;
+      margin: 12px 14px 4px;
+      color: #0a2148;
+    }
+    .thumb-card p {
+      font-size: .82rem;
+      line-height: 1.28rem;
+      margin: 0 14px 14px;
+      color: #2a3240;
+    }
+    .thumb-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,.12);
+      border-color: #0a68cc;
+      background: #f9fbff;
+    }
+    .thumb-card:hover img { opacity: .9; }
+    .thumb-card::after {
+      content: "Click to open";
+      position: absolute;
+      top: 10px; right: 10px;
+      font-size: .72rem; font-weight: 600;
+      background: #0a68cc; color: #fff;
+      padding: 4px 10px; border-radius: 999px;
+      opacity: .92; pointer-events: none;
+    }
+    @media (hover:none) {
+      .thumb-card::after { content: "Tap to open"; }
+    }
+  </style>
+</head>
+<body>
+  <!-- shared top bar -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="CSC Home">
+        <span class="brand-mask" aria-hidden="true"></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link active" href="projects.html">Projects</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- hero-ish header like your other pages -->
+    <section class="intro" style="margin-top:18px;">
+      <div class="container">
+        <div class="intro-inner">
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
+          <p class="intro-sub" style="max-width:620px;">
+            Selected work delivered as Owner’s Representative, Design-Build, and construction management support
+            across the U.S. and internationally.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- projects grid -->
+    <section class="page-section">
+      <div class="container">
+        <div class="projects-wrap">
+
+          <!-- San Bernardino Wells Fargo -->
+          <a class="thumb-card" href="projects/san-bernardino-wells-fargo-development.html">
+            <img src="assets/images/projects/wells-fargo-ps-3a.png"
+                 alt="San Bernardino Wells Fargo Development"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>San Bernardino, California</h3>
+            <p>$84,000,000 office campus with dual garages, ground-up Panera, multi-tenant retail shell, $8,200,000 clean-room TI, and additional retail.</p>
+          </a>
+
+          <!-- Amarillo Food Facility -->
+          <a class="thumb-card" href="projects/amarillo-food-facility.html">
+            <img src="assets/images/projects/ama-cacique-overview-night.jpg"
+                 alt="Amarillo, Texas — Food Production Facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Amarillo, Texas</h3>
+            <p>206,000 ft² food production facility with a temperature-controlled distribution warehouse. $166,000,000 program built to FM, UL, and FDA standards.</p>
+          </a>
+
+          <!-- Harbin, China -->
+          <a class="thumb-card" href="projects/harbin-china.html">
+            <img src="assets/images/projects/mccain-harbin-factory.jpg"
+                 alt="Harbin, China — Multi-phase food processing program"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Harbin, China</h3>
+            <p>$29,000,000 multi-phase food processing expansion: plant upgrade, wastewater lagoon, new production lines, temperature-controlled facility.</p>
+          </a>
+
+          <!-- Albuquerque high-security -->
+          <a class="thumb-card" href="projects/albuquerque-high-security.html">
+            <img src="assets/images/projects/nm-2.JPG"
+                 alt="Albuquerque, New Mexico — High-security government office"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Albuquerque, New Mexico</h3>
+            <p>$34,000,000 Department of the Interior high-security government office facility.</p>
+          </a>
+
+          <!-- Smithton -->
+          <a class="thumb-card" href="projects/smithton-food-plant.html">
+            <img src="assets/images/projects/smithton-food-plant-thumb.jpg"
+                 alt="Smithton, Tasmania, Australia — Food processing plant"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Smithton, Tasmania, Australia</h3>
+            <p>$38,000,000 FM, UL, FDA-qualified food processing plant with temperature-controlled potato storage and new production lines.</p>
+          </a>
+
+          <!-- USA Test Kitchens -->
+          <a class="thumb-card" href="projects/us-test-kitchens.html">
+            <img src="assets/images/projects/us-test-kitchen-thumb.jpg"
+                 alt="USA — Test Kitchens"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>USA — Various Locations</h3>
+            <p>$32,000,000, twelve FM, UL, FDA qualified test kitchens for major QSR brands.</p>
+          </a>
+
+          <!-- Northrop/NG -->
+          <a class="thumb-card" href="projects/san-bernardino-northrop-grumman-27m.html">
+            <img src="assets/images/projects/ng-1.JPG"
+                 alt="San Bernardino, CA — High-security office"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>San Bernardino, California</h3>
+            <p>$27,000,000 high-security office for a confidential defense client.</p>
+          </a>
+
+          <!-- St Louis TK / Clean rooms -->
+          <a class="thumb-card" href="projects/st-louis-test-kitchen-clean-room.html">
+            <img src="assets/images/projects/test-kitchen-clean-room.jpg"
+                 alt="St. Louis, Missouri — Test kitchens and clean rooms"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>St. Louis, Missouri</h3>
+            <p>$8,600,000 combined program with test kitchens, clean rooms, and multi-floor office R&amp;D buildout.</p>
+          </a>
+
+          <!-- Kent clean room -->
+          <a class="thumb-card" href="projects/kent-tech-cleanroom.html">
+            <img src="assets/images/projects/kent-tech-cleanroom-thumb.jpg"
+                 alt="Kent, Washington — Tech clean room"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Kent, Washington</h3>
+            <p>$4,600,000 FM and UL approved tech clean room with custom fire protection and MEP upgrades.</p>
+          </a>
+
+          <!-- Park City mixed-use -->
+          <a class="thumb-card" href="projects/park-city-mixed-use.html">
+            <img src="assets/images/projects/park-city-lowell.jpg"
+                 alt="Park City, Utah — Mixed-use development"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Park City, Utah</h3>
+            <p>$44,000,000 mixed-use, 5-story commercial and residential with 3-story subgrade parking.</p>
+          </a>
+
+          <!-- Victorville Americold -->
+          <a class="thumb-card" href="projects/victorville-americold.html">
+            <img src="assets/images/projects/americold-2.png"
+                 alt="Americold Logistics, Victorville, California"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Victorville, California</h3>
+            <p>$23,000,000 USDA food distribution and temperature-controlled facility with large dock complex.</p>
+          </a>
+
+          <!-- Stockton -->
+          <a class="thumb-card" href="projects/stockton-distribution-64m.html">
+            <img src="assets/images/projects/stockton-distribution-64m-1.jpg"
+                 alt="Stockton, California — Distribution facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Stockton, California</h3>
+            <p>$64,000,000 USDA food distribution and 750,000 ft² temperature-controlled facility.</p>
+          </a>
+
+          <!-- Fort Worth -->
+          <a class="thumb-card" href="projects/fort-worth-distribution-28m.html">
+            <img src="assets/images/projects/distribution-thumb.jpg"
+                 alt="Fort Worth, Texas — Distribution facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Fort Worth, Texas</h3>
+            <p>$28,000,000 office and USDA food distribution facility with temperature-controlled storage.</p>
+          </a>
+
+          <!-- Atlanta -->
+          <a class="thumb-card" href="projects/atlanta-distribution-34m.html">
+            <img src="assets/images/projects/distribution-thumb.jpg"
+                 alt="Atlanta, Georgia — Distribution facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Atlanta, Georgia</h3>
+            <p>$34,000,000 office and USDA food distribution facility.</p>
+          </a>
+
+          <!-- Irapuato -->
+          <a class="thumb-card" href="projects/irapuato-distribution-32-9m.html">
+            <img src="assets/images/projects/distribution-storage-thumb.jpg"
+                 alt="Irapuato, Mexico — Distribution and storage facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Irapuato, Mexico</h3>
+            <p>$32,900,000, 274,000 ft² distribution and storage facility.</p>
+          </a>
+
+          <!-- Qingdao -->
+          <a class="thumb-card" href="projects/qingdao-research-lab.html">
+            <img src="assets/images/projects/thumb-qingdao-research-lab.jpg"
+                 alt="Qingdao, China — Food services research laboratory"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Qingdao, China</h3>
+            <p>$2,000,000 food services research laboratory built to FM/UL/FDA standards.</p>
+          </a>
+
+          <!-- Johannesburg -->
+          <a class="thumb-card" href="projects/johannesburg-food-plant.html">
+            <img src="assets/images/projects/thumb-johannesburg-processing-plant.jpg"
+                 alt="Johannesburg, South Africa — Food processing plant"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Johannesburg, South Africa</h3>
+            <p>$90,000,000 FM, UL, FDA qualified food processing plant.</p>
+          </a>
+
+          <!-- Ogden assisted -->
+          <a class="thumb-card" href="projects/ogden-assisted-living-32m.html">
+            <img src="assets/images/projects/ogden-assisted.jpg"
+                 alt="Ogden, Utah — Assisted living complex"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Ogden, Utah</h3>
+            <p>$32,000,000, 5-story medical assisted living complex — GC renovation of 1940s era hospital.</p>
+          </a>
+
+          <!-- Carberry -->
+          <a class="thumb-card" href="projects/carberry-wastewater-23m.html">
+            <img src="assets/images/projects/thumb-carberry-wastewater-plant.jpg"
+                 alt="Carberry, Manitoba — Wastewater treatment plant"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Carberry, Manitoba</h3>
+            <p>$23,000,000 wastewater treatment plant.</p>
+          </a>
+
+          <!-- Midvale self storage -->
+          <a class="thumb-card" href="projects/midvale-self-storage.html">
+            <img src="assets/images/projects/storage-thumb.jpg"
+                 alt="Midvale, Utah — Self storage facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Midvale, Utah</h3>
+            <p>$6,400,000 phased QubeSmart temperature-controlled self storage facility.</p>
+          </a>
+
+          <!-- Camarillo subdivision -->
+          <a class="thumb-card" href="projects/camarillo-subdivision-41m.html">
+            <img src="assets/images/projects/camarillo-thumb.jpg"
+                 alt="Camarillo, California — Commercial subdivision"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Camarillo, California</h3>
+            <p>$41,000,000 commercial subdivision, 14 office buildings and single-story individual office.</p>
+          </a>
+
+          <!-- Tooele subdivision -->
+          <a class="thumb-card" href="projects/tooele-subdivision.html">
+            <img src="assets/images/projects/thumb-midway-16-lot-subdivision.jpg"
+                 alt="Tooele, Utah — Subdivision"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Tooele, Utah</h3>
+            <p>$66,000,000, 220-lot civil subdivision with five community shared buildings.</p>
+          </a>
+
+          <!-- Waco -->
+          <a class="thumb-card" href="projects/waco-aluminum-can-facility.html">
+            <img src="assets/images/projects/waco-google-earth-view.png"
+                 alt="Waco, Texas — Aluminum can production facility"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Waco, Texas</h3>
+            <p>$61,000,000 aluminum can production and distribution facility.</p>
+          </a>
+
+          <!-- Park City subdivision -->
+          <a class="thumb-card" href="projects/park-city-subdivision.html">
+            <img src="assets/images/projects/thumb-midway-16-lot-subdivision.jpg"
+                 alt="Park City, Utah — Subdivision"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Park City, Utah</h3>
+            <p>$54,000,000, 80-lot design-build subdivision including civil and residential buildings.</p>
+          </a>
+
+          <!-- Midway 16-lot -->
+          <a class="thumb-card" href="projects/midway-16-lot-subdivision.html">
+            <img src="assets/images/projects/thumb-midway-16-lot-subdivision.jpg"
+                 alt="Midway, Utah — 16-lot design/build subdivision"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Midway, Utah</h3>
+            <p>$9,200,000, 16-lot design-build subdivision: civil and utilities with municipal tie-ins.</p>
+          </a>
+
+          <!-- SLC Jackson Apartments -->
+          <a class="thumb-card" href="projects/salt-lake-city-jackson-apartments.html">
+            <img src="assets/images/projects/apartment-thumb.jpg"
+                 alt="Salt Lake City, Utah — Jackson Apartments renovation"
+                 onerror="this.src='assets/images/projects/placeholder.jpg'">
+            <h3>Salt Lake City, Utah</h3>
+            <p>$34,000,000 renovation of Jackson Apartments: 70-unit residential with seismic and structural upgrades.</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
