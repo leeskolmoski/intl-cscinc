@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <title>CSC — Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="CSC provides Owner’s Representative, Construction Management, and Design-Build Oversight for industrial, food and beverage, cold storage, and commercial projects.">
+  <meta name="description" content="CSC provides Owner’s Representative, Construction Management, and Design-Build Oversight for industrial, food, beverage, cold storage, and logistics projects.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -25,7 +25,7 @@
   </header>
 
   <main>
-    <!-- HERO (static, like your screenshot) -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <figure class="hero-frame">
@@ -36,98 +36,162 @@
       </div>
     </section>
 
-    <!-- Intro block (same as home style) -->
+    <!-- Intro block -->
     <section class="intro">
       <div class="container">
         <div class="intro-inner">
           <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
           <p class="intro-sub">
-            CSC steps in as the owner’s representative to run the project. We coordinate design, manage budget
-            and schedule, and keep the work aligned with food grade, cold storage, or industrial requirements.
+            CSC steps in as the owner’s representative to run the project. We coordinate design, manage budget and schedule, and keep the work aligned with food grade, cold storage, or industrial requirements.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Services overview text -->
+    <!-- Lead text -->
     <section class="what">
       <div class="container">
         <div class="what-inner">
           <h2>Services built for complex work.</h2>
           <p>
-            Every project needs clear responsibility. CSC provides that. We front load planning, keep contractors
-            coordinated, and document the project so turnover is clean.
+            Every project needs clear responsibility. CSC provides that. We front load planning, keep contractors coordinated, and document the project so turnover is clean.
           </p>
           <p>
-            The services below are the ones we deliver most often. We can scale them up for multi-site programs
-            or keep them focused for a single facility expansion.
+            The services below are the ones we deliver most often. We can scale them up for multi-site programs or keep them focused for a single facility expansion.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- 3-up cards, same style as home, but now with inline images -->
-    <section class="cards">
-      <div class="container">
-        <div class="cards-grid">
-          <!-- Owner’s Rep -->
-          <article class="card">
+    <!-- Alternating rows -->
+    <section class="page-section">
+      <div class="container" style="display:flex; flex-direction:column; gap:22px;">
+
+        <!-- ROW 1: text | image -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div class="card" style="flex:1 1 360px;">
             <h3>Owner’s Representative</h3>
-            <p>Single point of contact for the owner. We manage design, schedule, budget, and risk and report progress in a way executives can use.</p>
+            <p>
+              Single point of contact for the owner. We manage design, schedule, budget, and risk and report progress in a way executives can use.
+            </p>
+            <ul>
+              <li>Program definition and budgeting</li>
+              <li>Design coordination and constructability review</li>
+              <li>Permitting and municipal interface</li>
+              <li>Vendor and contractor management</li>
+              <li>Change order evaluation</li>
+            </ul>
+          </div>
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/services-project-management-001.jpg"
                  alt="Hard hat, clipboard, and plans illuminated by sunlight"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
+        </div>
 
-          <!-- Construction Management -->
-          <article class="card">
-            <h3>Construction Management</h3>
-            <p>Field oversight, safety focus, submittal tracking, and coordination so work can continue without bottlenecks.</p>
+        <!-- ROW 2: image | text -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/services-construction-coordination-001.jpg"
                  alt="Team coordinating over blueprints"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
+          <div class="card" style="flex:1 1 360px;">
+            <h3>Construction Management</h3>
+            <p>
+              Field oversight, safety focus, submittal tracking, and coordination so work can continue without bottlenecks.
+            </p>
+            <ul>
+              <li>Preconstruction planning</li>
+              <li>Subcontractor coordination</li>
+              <li>Safety leadership and site monitoring</li>
+              <li>Schedule management and reporting</li>
+              <li>Cost tracking and forecasting</li>
+            </ul>
+          </div>
+        </div>
 
-          <!-- Design-Build Oversight -->
-          <article class="card">
+        <!-- ROW 3: text | image -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div class="card" style="flex:1 1 360px;">
             <h3>Design-Build Oversight</h3>
-            <p>Integrates designer and builder, keeps value engineering aligned with operations, and protects start-up dates.</p>
+            <p>
+              Integrates designer and builder, keeps value engineering aligned with operations, and protects start-up dates.
+            </p>
+            <ul>
+              <li>RFP creation and bid evaluation</li>
+              <li>Design management and VE tracking</li>
+              <li>Schedule and cost control</li>
+              <li>QA/QC, commissioning, and turnover</li>
+            </ul>
+          </div>
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/services-design-coordination-001.jpg"
                  alt="Designers collaborating over plans and samples"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
         </div>
-      </div>
-    </section>
 
-    <!-- second row of services, also with images -->
-    <section class="cards" style="padding-top:6px;">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Food and Beverage Facilities</h3>
-            <p>Support for USDA or FDA inspected spaces, cleanable construction, and process-driven layouts.</p>
+        <!-- ROW 4: image | text -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/food-processing-factory-002.jpg"
                  alt="Food processing facility interior with machinery and staff"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
+          <div class="card" style="flex:1 1 360px;">
+            <h3>Food and Beverage Facilities</h3>
+            <p>
+              Support for USDA or FDA inspected spaces, cleanable construction, and process-driven layouts.
+            </p>
+            <ul>
+              <li>Process-area compatible materials</li>
+              <li>Cleanable, washdown-friendly details</li>
+              <li>Facility upgrades without disrupting production</li>
+            </ul>
+          </div>
+        </div>
 
-          <article class="card">
+        <!-- ROW 5: text | image -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div class="card" style="flex:1 1 360px;">
             <h3>Cold Storage and Logistics</h3>
-            <p>Coordination of envelope, refrigeration, docks, and site circulation so cold chain is not disrupted.</p>
+            <p>
+              Coordination of envelope, refrigeration, docks, and site circulation so cold chain is not disrupted.
+            </p>
+            <ul>
+              <li>Dock layout and truck flow</li>
+              <li>Freezer/cooler envelope coordination</li>
+              <li>Racking and material-handling integration</li>
+            </ul>
+          </div>
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/warehouse-storage-001.jpg"
                  alt="Storage racks filled with boxes in warehouse"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
+        </div>
 
-          <article class="card">
-            <h3>Document Control</h3>
-            <p>Organized submittals, RFIs, photos, and closeout packages that help long-term maintenance.</p>
+        <!-- ROW 6: image | text -->
+        <div style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
+          <div style="flex:0 0 320px; max-width:340px;">
             <img src="assets/images/stock/services-document-control-001.jpg"
                  alt="Detailed construction document and blueprint close-up"
-                 style="width:100%; border-radius:10px; margin-top:10px;">
-          </article>
+                 style="width:100%; aspect-ratio: 16/10; object-fit:cover; border-radius:14px; box-shadow:var(--shadow);">
+          </div>
+          <div class="card" style="flex:1 1 360px;">
+            <h3>Document Control</h3>
+            <p>
+              Organized submittals, RFIs, photos, and closeout packages that help long-term maintenance.
+            </p>
+            <ul>
+              <li>Construction reporting and field photos</li>
+              <li>Owner/lender documentation packages</li>
+              <li>Closeout and turnover records</li>
+            </ul>
+          </div>
         </div>
+
       </div>
     </section>
   </main>
