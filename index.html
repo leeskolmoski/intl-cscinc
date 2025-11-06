@@ -4,182 +4,113 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSC — Construction Services Consulting</title>
-  <meta name="description" content="Construction Services Consulting provides owner representation, construction management, and design-build oversight for complex projects.">
+  <meta name="description" content="Construction Services Consulting, Inc. — Owner’s representative, construction management, food and beverage facilities, cold storage and logistics, and document control/closeout.">
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- mobile-only header and logo fixes -->
-  <style>
-    @media (max-width: 768px) {
-      .topbar {
-        height: 64px;
-        padding: 0 12px;
-      }
-
-      .nav-wrap {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      /* header logo on mobile */
-      .brand img {
-        height: 40px;
-        width: auto;
-        display: block;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 44px;
-        height: 44px;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        background: #fff;
-        border-radius: 12px;
-        font-size: 26px;
-        line-height: 1;
-        color: #1f2937;
-      }
-
-      .main-nav {
-        position: absolute;
-        top: 64px;
-        right: 16px;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
-        padding: 12px 0;
-        display: none;
-        flex-direction: column;
-        min-width: 160px;
-      }
-
-      .main-nav.show {
-        display: flex;
-      }
-
-      .main-nav .nav-link {
-        padding: 10px 18px;
-      }
-
-      /* shrink big CSC panel logo on mobile */
-      .intro-inner img.intro-logo-full {
-        max-width: 220px !important;
-        margin: 0 auto 12px;
-        display: block;
-      }
-
-      .intro-sub {
-        text-align: center;
-        font-size: 0.95rem;
-      }
-    }
-  </style>
+  <!-- preload the two logos so they show fast -->
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
-  <!-- HEADER -->
+
+  <!-- =================================
+       TOP BAR
+       ================================= -->
   <header class="topbar">
     <div class="container nav-wrap">
-      <!-- this is the one you wanted: the SHORT logo -->
-      <a class="brand" href="index.html" aria-label="CSC Home">
-        <img src="assets/images/main/logo-short.svg" alt="CSC">
+      <!-- left logo (this is the blue masked one) -->
+      <a href="index.html" class="brand" aria-label="CSC Home">
+        <span class="brand-mask"></span>
       </a>
 
-      <!-- hamburger -->
-      <button class="menu-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false">
-        ☰
-      </button>
-
-      <!-- main nav -->
-      <nav class="main-nav" aria-label="Primary">
-        <a class="nav-link active" href="index.html">Home</a>
-        <a class="nav-link" href="services.html">Services</a>
-        <a class="nav-link" href="projects.html">Projects</a>
-        <a class="nav-link" href="about.html">About</a>
-        <a class="nav-link" href="contact.html">Contact</a>
+      <!-- nav (desktop) -->
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
       </nav>
+
+      <!-- hamburger (mobile) -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
-  <!-- MAIN -->
+  <!-- =================================
+       MAIN
+       ================================= -->
   <main>
-    <!-- HERO -->
+    <!-- HERO (slideshow) -->
     <section class="hero">
       <div class="container">
         <figure class="hero-frame">
-          <img id="heroImage" src="assets/images/projects/albuquerque-high-security-hero.jpg" alt="Project photo">
-          <figcaption class="hero-cap" id="heroCaption">Albuquerque, New Mexico, USA — High-Security Office Campus</figcaption>
+          <!-- start with the Amarillo image we know exists -->
+          <img
+            id="heroImage"
+            src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
+            alt="Project photo, Amarillo, Texas, USA">
+          <figcaption class="hero-cap" id="heroCaption">
+            Amarillo, Texas, USA — Food Processing Facility
+          </figcaption>
         </figure>
       </div>
     </section>
 
-    <!-- CSC PANEL -->
+    <!-- INTRO block with the BIG logo (this was the one that was overflowing on mobile) -->
     <section class="intro">
       <div class="container">
         <div class="intro-inner">
-          <!-- big logo inside the white card -->
-          <img src="assets/images/main/logo-full.svg"
-               alt="CSC Construction Services Consulting"
-               class="intro-logo-full">
+          <!-- this div is what paints the big blue CSC logo -->
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
           <p class="intro-sub">
-            More than 100 years of combined experience from three partners. We guide projects from concept to
-            completion with precision, safety, and care.
+            More than 100 years of combined experience from three partners. We guide projects from concept to completion with precision, safety, and care.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- TEXT INTRO -->
-    <section class="what">
+    <!-- BODY TEXT -->
+    <section class="content-block">
       <div class="container">
-        <div class="what-grid">
-          <div class="what-text">
-            <h2>Complex work. Real world schedules.</h2>
-            <p>
-              CSC is a construction services group that supports owners on high value, time sensitive and technically
-              demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
-            </p>
-            <p>
-              With expertise across food processing, distribution, commercial and mixed use development, we help
-              clients navigate permitting, design, contractor management and final turnover to operations.
-            </p>
-
-            <a class="cta" href="projects.html">See Our Projects →</a>
-          </div>
-        </div>
+        <h2>Complex work. Real world schedules.</h2>
+        <p>
+          CSC is a construction services group that supports owners on high value, time sensitive and technically demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
+        </p>
+        <p>
+          With expertise across food processing, distribution, commercial and mixed use development, we help clients navigate permitting, design, contractor management and final turnover to operations.
+        </p>
+        <a class="primary-btn" href="projects.html">See Our Projects ➔</a>
       </div>
     </section>
 
-    <!-- SERVICE CARDS -->
-    <section class="cards">
+    <!-- SERVICES CARDS (6 of them) -->
+    <section class="services-home">
       <div class="container">
         <div class="cards-grid">
           <article class="card">
             <h3>Owner’s Representative</h3>
             <p>Single point of accountability protecting schedule and budget.</p>
           </article>
-
           <article class="card">
             <h3>Construction Management</h3>
             <p>Field oversight, safety culture, submittals and cost control.</p>
           </article>
-
           <article class="card">
             <h3>Design-Build Oversight</h3>
             <p>Integration from design through commissioning and turnover.</p>
           </article>
-
           <article class="card">
             <h3>Food and Beverage Facilities</h3>
             <p>Process piping, clean room, cold storage and USDA requirements.</p>
           </article>
-
           <article class="card">
             <h3>Cold Storage and Logistics</h3>
             <p>Distribution infrastructure, dock coordination and temperature-controlled operations.</p>
           </article>
-
           <article class="card">
             <h3>Document Control and Closeout</h3>
             <p>RFIs, submittals, safety reports and final as built packages.</p>
@@ -187,16 +118,21 @@
         </div>
       </div>
     </section>
+
+    <!-- we purposely REMOVED "Recent work" here -->
+
   </main>
 
-  <!-- FOOTER -->
+  <!-- =================================
+       FOOTER
+       ================================= -->
   <footer class="footer">
     <div class="container">
       © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
-  <!-- scripts -->
+  <!-- scripts: config FIRST, then app -->
   <script src="js/config.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
