@@ -22,7 +22,7 @@ window.heroSlides = [
   },
   {
     src: "assets/images/projects/nm-2.JPG",
-    caption: "Midvale, Utah, USA — Regional Office and Storage Development"
+    caption: "Midvale, Utah, USA — Regional Office"
   },
   {
     src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
