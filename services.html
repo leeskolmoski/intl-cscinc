@@ -2,22 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CSC — Services</title>
-  <meta name="description" content="Owner’s representative, construction management, and design-build oversight services for complex projects.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CSC provides Owner’s Representative, Design-Build Oversight, and Construction Management services for complex commercial, industrial, food and beverage, and infrastructure projects.">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- optional, safe to leave in even if the image is not present yet -->
-  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
-  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
-  <!-- Top Bar (same as index-csc.html) -->
+  <!-- Shared top bar (same as index) -->
   <header class="topbar">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="CSC Home">
-        <span class="brand-mask brand-short" aria-hidden="true"></span>
+        <span class="brand-mask" aria-hidden="true"></span>
       </a>
-
       <nav class="main-nav" aria-label="Primary">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link active" href="services.html">Services</a>
@@ -29,105 +25,137 @@
   </header>
 
   <main>
-    <!-- HERO for services, same style as home but focused -->
-    <section class="hero">
+    <!-- Subhero -->
+    <section class="subhero">
       <div class="container">
-        <figure class="hero-frame">
-          <!-- TEMP image from /assets/images/stock/... replace when you push assets again -->
-          <img
-            src="assets/images/stock/services-infrastructure-001.jpg"
-            alt="Construction cranes and industrial infrastructure site">
-          <figcaption class="hero-cap">Program, design, and field oversight that protects your operations.</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <!-- Intro, same style as home -->
-    <section class="intro">
-      <div class="container">
-        <div class="intro-inner">
-          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
-          <p class="intro-sub">
-            CSC steps in as the owner’s representative to run the project. We coordinate design, manage budget and
-            schedule, and keep the work aligned with food grade, cold storage, or industrial requirements.
-          </p>
+        <div class="subhero-inner" style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
+          <div style="flex:1 1 320px; min-width:280px;">
+            <p class="eyebrow">Construction Services Consulting, Inc.</p>
+            <h1>Our Services</h1>
+            <p class="lead">
+              Owner’s Representative, Design-Build Oversight, and Construction Management, set up for food and beverage, cold storage, industrial, and infrastructure work.
+            </p>
+          </div>
+          <div style="flex:0 0 280px; max-width:320px;">
+            <!-- from your stock index -->
+            <img src="assets/images/stock/services-infrastructure-001.jpg"
+                 alt="Construction cranes and industrial infrastructure site"
+                 style="width:100%; border-radius:12px;">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Main services explanation, using .what block so it matches -->
-    <section class="what">
-      <div class="container">
-        <div class="what-inner">
-          <h2>Services built for complex work.</h2>
+    <!-- Page body -->
+    <section class="page-section">
+      <div class="container" style="display:flex; flex-direction:column; gap:20px;">
+
+        <!-- Owner’s Representative -->
+        <article class="card">
+          <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start;">
+            <div style="flex:1 1 320px; min-width:260px;">
+              <h2>Owner’s Representative</h2>
+              <p>
+                CSC acts as an extension of ownership. We manage design, budget, schedule, and risk from the moment a project is defined, so the owner can stay focused on operations.
+              </p>
+              <ul>
+                <li>Program definition and budgeting</li>
+                <li>Team assembly and contracting</li>
+                <li>Design coordination and constructability</li>
+                <li>Permitting and municipal interface</li>
+                <li>Procurement and vendor management</li>
+                <li>Detailed field planning to maintain quality and flow</li>
+                <li>Change order evaluation</li>
+              </ul>
+            </div>
+            <div style="flex:0 0 280px; max-width:320px;">
+              <img src="assets/images/stock/services-project-management-001.jpg"
+                   alt="Hard hat, clipboard, and plans illuminated by sunlight"
+                   style="width:100%; border-radius:12px;">
+            </div>
+          </div>
+        </article>
+
+        <!-- Design-Build Oversight -->
+        <article class="card">
+          <h2>Design-Build Oversight</h2>
           <p>
-            Every project needs clear responsibility. CSC provides that. We front load planning, keep contractors
-            coordinated, and document the project so turnover is clean.
+            We coordinate all design and construction phases to keep speed, accuracy, quality, and accountability aligned. This is especially important when production or cold storage start-up dates cannot move.
           </p>
+          <ul>
+            <li>RFP creation and bid evaluation</li>
+            <li>Design management and value engineering</li>
+            <li>Schedule and cost control</li>
+            <li>QA/QC, commissioning, and turnover</li>
+          </ul>
+        </article>
+
+        <!-- Construction Management -->
+        <article class="card">
+          <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start;">
+            <div style="flex:1 1 320px; min-width:260px;">
+              <h2>Construction Management</h2>
+              <p>
+                CSC delivers experienced CM support for large scale, multi-discipline programs. We keep subcontractors coordinated, we keep the owner informed, and we keep the work progressing.
+              </p>
+              <ul>
+                <li>Preconstruction planning</li>
+                <li>Budget and cost forecasting</li>
+                <li>Subcontractor coordination</li>
+                <li>Safety leadership and site monitoring</li>
+                <li>Schedule management and progress reporting</li>
+              </ul>
+            </div>
+            <div style="flex:0 0 280px; max-width:320px;">
+              <img src="assets/images/stock/services-construction-coordination-001.jpg"
+                   alt="Team coordinating over blueprints"
+                   style="width:100%; border-radius:12px;">
+            </div>
+          </div>
+        </article>
+
+        <!-- Specialized Expertise -->
+        <article class="card">
+          <div style="display:flex; gap:20px; flex-wrap:wrap; align-items:flex-start;">
+            <div style="flex:1 1 320px; min-width:260px;">
+              <h2>Specialized Expertise</h2>
+              <p>
+                Much of our work is in food and beverage, cold storage, manufacturing, and sites that have to meet USDA, FDA, or SQF requirements. We help owners keep production-first priorities inside construction-first timelines.
+              </p>
+              <ul>
+                <li>Food and beverage facilities (USDA, FDA, SQF)</li>
+                <li>Cold storage and logistics</li>
+                <li>Manufacturing and clean rooms</li>
+                <li>Office and mixed-use development</li>
+                <li>Wastewater treatment and utilities</li>
+                <li>Subdivision and infrastructure</li>
+              </ul>
+            </div>
+            <div style="flex:0 0 280px; max-width:320px;">
+              <img src="assets/images/stock/food-processing-factory-002.jpg"
+                   alt="Food processing facility interior with machinery and staff"
+                   style="width:100%; border-radius:12px;">
+            </div>
+          </div>
+        </article>
+
+        <!-- Document Control -->
+        <article class="card">
+          <h2>Document Control and Site Monitoring</h2>
           <p>
-            The services below are the ones we deliver most often. We can scale them up for multi site programs or keep
-            them focused for a single facility expansion.
+            Owners and lenders want clean records. We build that into the service, not as an afterthought.
           </p>
-        </div>
-      </div>
-    </section>
+          <ul>
+            <li>Document control and construction reporting</li>
+            <li>Field photo and progress documentation</li>
+            <li>Site supervision and monitoring</li>
+            <li>Closeout packages for future maintenance</li>
+          </ul>
+          <img src="assets/images/stock/services-document-control-001.jpg"
+               alt="Detailed construction document and blueprint close-up"
+               style="width:100%; max-width:480px; border-radius:12px; margin-top:12px;">
+        </article>
 
-    <!-- Service cards, same layout as index -->
-    <section class="cards">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Owner’s Representative</h3>
-            <p>
-              Single point of contact for the owner. We manage design, schedule, budget, and risk and report progress in
-              a way executives can use.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Construction Management</h3>
-            <p>
-              Field oversight, safety focus, submittal tracking, and coordination so work can continue without
-              bottlenecks.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Design-Build Oversight</h3>
-            <p>
-              Integrates designer and builder, keeps value engineering aligned with operations, and protects
-              start-up dates.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Second row of services in same visual language -->
-    <section class="cards">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Food and Beverage Facilities</h3>
-            <p>
-              Support for USDA or FDA inspected spaces, cleanable construction, and process driven layouts.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Cold Storage and Logistics</h3>
-            <p>
-              Coordination of envelope, refrigeration, docks, and site circulation so cold chain is not disrupted.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Document Control</h3>
-            <p>
-              Organized submittals, RFIs, photos, and closeout packages that help long term maintenance.
-            </p>
-          </article>
-        </div>
       </div>
     </section>
   </main>
@@ -137,8 +165,5 @@
       © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
-
-  <!-- reuse your existing JS if needed -->
-  <script src="js/app.js" defer></script>
 </body>
 </html>
