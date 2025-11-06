@@ -1,38 +1,37 @@
-// ==========================================
-// CSC Website - Hero Slideshow Configuration
-// ==========================================
+// js/config.js
+// define the slides the homepage will use
 
-// All paths are RELATIVE (no leading slash)
 window.heroSlides = [
   {
-    src: "assets/images/projects/albuquerque-high-security-hero.jpg",
-    caption: "Albuquerque, New Mexico, USA — High-Security Office Campus"
+    src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
+    caption: "Amarillo, Texas, USA — Food Processing Facility"
   },
   {
-    src: "assets/images/projects/stockton-distribution-64m-1.jpg",
-    caption: "Stockton, California, USA — Distribution and Cold Storage Facility"
+    src: "assets/images/projects/albuquerque-high-security-hero.jpg",
+    caption: "Albuquerque, New Mexico, USA — High-Security Office"
   },
   {
     src: "assets/images/projects/ogden-assisted.jpg",
     caption: "Ogden, Utah, USA — Assisted Living and Healthcare Facility"
   },
   {
-    src: "assets/images/projects/ng-1.JPG",
-    caption: "Riverside, California, USA — Corporate Office Campus"
-  },
-  {
-    src: "assets/images/projects/nm-2.JPG",
-    caption: "Midvale, Utah, USA — Regional Office"
-  },
-  {
-    src: "assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg",
-    caption: "Amarillo, Texas, USA — Facility Construction Management Overview"
+    src: "assets/images/projects/stockton-distribution-64m-1.jpg",
+    caption: "Stockton, California, USA — Distribution & Temperature-Controlled Warehouse"
   },
   {
     src: "assets/images/projects/wells-fargo-ps-3a.png",
-    caption: "San Bernardino, California, USA — Corporate Headquarters and Retail"
+    caption: "Roseville, California, USA — Office Campus Build-Out"
+  },
+  {
+    src: "assets/images/projects/park-city-lowell.jpg",
+    caption: "Park City, Utah, USA — Mixed Use / Commercial"
+  },
+  {
+    src: "assets/images/projects/nm-2.JPG",
+    caption: "Midvale, Utah, USA — Regional Office and Storage Development"
+  },
+  {
+    src: "assets/images/projects/ama-cacique-overview-night.jpg",
+    caption: "Amarillo, Texas, USA — Food Processing Facility (night)"
   }
 ];
-
-// Each slide duration (milliseconds)
-window.heroSlideDuration = 6000;
