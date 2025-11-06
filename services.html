@@ -1,21 +1,24 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <title>Services — CSC</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <title>Services — Construction Services Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- use the same stylesheet as index -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- fixed top bar -->
+  <!-- top bar / same as home -->
   <header class="topbar">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="CSC Home">
         <span class="brand-mask"></span>
       </a>
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+
+      <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+
       <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="services.html" class="active">Services</a>
@@ -26,126 +29,124 @@
     </div>
   </header>
 
-  <main>
-    <!-- hero -->
-    <section class="hero">
-      <div class="container">
-        <figure class="hero-frame">
-          <img src="assets/images/stock/construction-cranes-hero.jpg" alt="Program, design, and field oversight that protects your operations." id="heroImage" />
-          <figcaption class="hero-cap" id="heroCaption">
-            Program, design, and field oversight that protects your operations.
-          </figcaption>
-        </figure>
+  <main class="container">
+
+    <!-- HERO stays the services/cranes image, not the home slideshow -->
+    <section class="hero" style="margin-top:18px;">
+      <figure class="hero-frame">
+        <!-- this is the image you had on the services page before -->
+        <img src="assets/images/stock/services-infrastructure-001.jpg"
+             alt="Program, design, and field oversight that protects your operations."
+             id="heroImage">
+        <figcaption class="hero-cap" id="heroCaption">
+          Program, design, and field oversight that protects your operations.
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- intro / white box with CSC logo -->
+    <section class="intro" style="padding-top:20px;">
+      <div class="intro-inner">
+        <div class="intro-logo-full"></div>
+        <p class="intro-sub">
+          CSC steps in as the owner’s representative to run the project. We coordinate design, manage budget
+          and schedule, and keep the work aligned with food grade, cold storage, or industrial requirements.
+        </p>
       </div>
     </section>
 
-    <!-- intro -->
-    <section class="intro">
-      <div class="container">
-        <div class="intro-inner">
-          <div class="intro-logo-full"></div>
-          <p class="intro-sub">
-            CSC steps in as the owner’s representative to run the project. We coordinate design, manage budget and schedule, and keep the work aligned with food grade, cold storage, or industrial requirements.
-          </p>
-        </div>
+    <!-- lead paragraph -->
+    <section class="what" style="padding-top:26px;">
+      <div class="what-inner">
+        <h2>Services built for complex work.</h2>
+        <p>
+          Every project needs clear responsibility. CSC provides that. We front load planning, keep contractors
+          coordinated, and document the project so turnover is clean.
+        </p>
+        <p>
+          The services below are the ones we deliver most often. We can scale them up for multi-site programs
+          or keep them focused for a single facility expansion.
+        </p>
       </div>
     </section>
 
-    <!-- services body -->
-    <section class="what">
-      <div class="container">
-        <div class="what-inner">
-          <!-- this is the only change: make heading blue -->
-          <h2 style="color:#2f53c7;">Services built for complex work</h2>
-          <p>
-            Every project needs clear responsibility. CSC provides that. We front load planning, keep contractors coordinated,
-            and document the project so turnover is clean.
-          </p>
-          <p>
-            The services below are the ones we deliver most often. We can scale them up for multi-site programs or keep them
-            focused for a single facility expansion.
-          </p>
-        </div>
+    <!-- service cards / blocks -->
+    <section class="cards" style="padding-top:20px; padding-bottom:40px;">
+      <div class="cards-grid">
+        <!-- 1 -->
+        <article class="card">
+          <h3>Owner’s Representative</h3>
+          <p>Single point of contact for the owner. We manage design, schedule, budget, and risk and report
+             progress in a way executives can use.</p>
+          <ul>
+            <li>Program definition and budgeting</li>
+            <li>Design coordination and constructability review</li>
+            <li>Permitting and municipal interface</li>
+            <li>Vendor and contractor management</li>
+            <li>Change order evaluation</li>
+          </ul>
+        </article>
+
+        <!-- 2 -->
+        <article class="card">
+          <h3>Construction Management</h3>
+          <p>Field oversight, safety focus, submittal tracking, and coordination so work can continue without bottlenecks.</p>
+          <ul>
+            <li>Preconstruction planning</li>
+            <li>Subcontractor coordination</li>
+            <li>Safety leadership and site monitoring</li>
+            <li>Schedule management and reporting</li>
+            <li>Cost tracking and forecasting</li>
+          </ul>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <h3>Design-Build Oversight</h3>
+          <p>Integrates designer and builder, keeps value engineering aligned with operations, and protects start-up dates.</p>
+          <ul>
+            <li>RFP creation and bid evaluation</li>
+            <li>Design management and VE tracking</li>
+            <li>Schedule and cost control</li>
+            <li>QA/QC, commissioning, and turnover</li>
+          </ul>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <h3>Food and Beverage Facilities</h3>
+          <p>Process piping, clean room, cold storage, and USDA requirements.</p>
+          <ul>
+            <li>Sanitary/hygienic design coordination</li>
+            <li>CIP/SIP systems integration</li>
+            <li>Cold storage and dock interface</li>
+          </ul>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <h3>Cold Storage and Logistics</h3>
+          <p>Distribution infrastructure, dock coordination, and temperature-controlled operations.</p>
+          <ul>
+            <li>Freezer / cooler layout and phasing</li>
+            <li>Material handling and rack coordination</li>
+            <li>Truck court, fencing, and security</li>
+          </ul>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <h3>Document Control and Closeout</h3>
+          <p>RFIs, submittals, safety reports and final as-built packages.</p>
+          <ul>
+            <li>Construction administration logs</li>
+            <li>Owner training and O&amp;M binders</li>
+            <li>Final project archiving</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <!-- service cards -->
-    <section class="cards">
-      <div class="container">
-        <div class="cards-grid">
-          <article class="card">
-            <h3>Owner’s Representative</h3>
-            <p>Single point of contact for the owner. We manage design, schedule, budget, and risk and report progress in a way executives can use.</p>
-            <ul>
-              <li>Program definition and budgeting</li>
-              <li>Design coordination and constructability review</li>
-              <li>Permitting and municipal interface</li>
-              <li>Vendor and contractor management</li>
-              <li>Change order evaluation</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Construction Management</h3>
-            <p>Field oversight, safety focus, submittal tracking, and coordination so work can continue without bottlenecks.</p>
-            <ul>
-              <li>Preconstruction planning</li>
-              <li>Subcontractor coordination</li>
-              <li>Safety leadership and site monitoring</li>
-              <li>Schedule management and reporting</li>
-              <li>Cost tracking and forecasting</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Design-Build Oversight</h3>
-            <p>Integrates designer and builder, keeps value engineering aligned with operations, and protects start-up dates.</p>
-            <ul>
-              <li>RFP creation and bid evaluation</li>
-              <li>Design management and VE tracking</li>
-              <li>Schedule and cost control</li>
-              <li>QA/QC, commissioning, and turnover</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Food and Beverage Facilities</h3>
-            <p>Process piping, clean room, cold storage and USDA requirements.</p>
-            <ul>
-              <li>Sanitary/hygienic design coordination</li>
-              <li>CIP/SIP systems interface</li>
-              <li>Environmental and USDA compliance</li>
-              <li>Process equipment integration</li>
-              <li>Sequenced construction for active operations</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Cold Storage and Logistics</h3>
-            <p>Distribution infrastructure, dock coordination and temperature-controlled operations.</p>
-            <ul>
-              <li>Site logistics and circulation</li>
-              <li>Refrigeration/insulated envelope integration</li>
-              <li>Dock equipment + MHE coordination</li>
-              <li>Fire/life safety for high-pile storage</li>
-              <li>Phased tie-ins to existing distribution</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Document Control and Closeout</h3>
-            <p>RFIs, submittals, safety reports and final as-built packages.</p>
-            <ul>
-              <li>Digital RFI and submittal tracking</li>
-              <li>Daily reporting and photo logs</li>
-              <li>Safety and inspection records</li>
-              <li>Owner training documentation</li>
-              <li>Turnover/closeout manuals</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
@@ -154,8 +155,7 @@
     </div>
   </footer>
 
-  <!-- scripts -->
-  <script src="js/config.js" defer></script>
+  <!-- same JS as home so mobile nav works -->
   <script src="js/app.js" defer></script>
 </body>
 </html>
