@@ -117,13 +117,13 @@ img{max-width:100%;display:block;}
 .nav-link.active{
   color:#2f53c7;
 }
-/* move this up so it stays inside the white bar */
+/* pulled up so it sits inside the white bar */
 .nav-link.active::after{
   content:"";
   position:absolute;
   left:0;
   right:0;
-  bottom:-16px;
+  bottom:-3px;
   height:3px;
   background:#2f53c7;
   border-radius:999px 999px 0 0;
@@ -140,6 +140,7 @@ img{max-width:100%;display:block;}
   align-items:center;
   justify-content:center;
   gap:4px;
+  flex-direction:column; /* force 3 bars to stack */
 }
 .menu-toggle .bar{
   width:18px;
@@ -148,7 +149,7 @@ img{max-width:100%;display:block;}
   border-radius:999px;
   transition:.14s ease;
 }
-/* restore the X animation */
+/* keep the X animation */
 .menu-toggle.is-open .bar:nth-child(1){
   transform:translateY(6px) rotate(45deg);
 }
@@ -177,6 +178,9 @@ img{max-width:100%;display:block;}
     min-width:145px;
   }
   .menu-toggle{display:flex;}
+  .nav-link{
+    padding:.4rem 0;
+  }
   .nav-link.active::after{display:none;}
 }
 
@@ -199,6 +203,11 @@ img{max-width:100%;display:block;}
   height:360px;
   object-fit:cover;
   display:block;
+  opacity:1;
+  transition:opacity .45s ease;
+}
+.hero-frame img.is-fading{
+  opacity:0;
 }
 .hero-cap{
   position:absolute;
