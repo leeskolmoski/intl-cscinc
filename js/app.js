@@ -1,19 +1,18 @@
-// CSC GLOBAL JS
+// CSC global JS
 document.addEventListener('DOMContentLoaded', function () {
-  // mobile menu
+  // mobile nav
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
 
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      const isOpen = nav.classList.toggle('show');
-      toggle.classList.toggle('is-open', isOpen);
-      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const open = nav.classList.toggle('show');
+      toggle.classList.toggle('is-open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
     });
 
-    // close on link click
-    nav.querySelectorAll('a').forEach(function (link) {
-      link.addEventListener('click', function () {
+    nav.querySelectorAll('a').forEach(function (lnk) {
+      lnk.addEventListener('click', function () {
         nav.classList.remove('show');
         toggle.classList.remove('is-open');
         toggle.setAttribute('aria-expanded', 'false');
@@ -21,29 +20,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // hero rotator
+  // hero slideshow (rotate no matter what)
   const heroImg = document.getElementById('heroImage');
   const heroCap = document.getElementById('heroCaption');
   const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
 
-  if (heroImg && heroCap && slides.length > 0) {
-    // make sure we start from slide 0 in config.js
-    heroImg.src = slides[0].src;
-    heroCap.textContent = slides[0].caption || "";
+  function showSlide(i) {
+    const item = slides[i];
+    heroImg.src = item.src;
+    heroImg.alt = item.caption || 'CSC project photo';
+    heroCap.textContent = item.caption || '';
+  }
 
+  if (heroImg && heroCap && slides.length > 0) {
     let idx = 0;
+    showSlide(idx);
     setInterval(function () {
       idx = (idx + 1) % slides.length;
-      const item = slides[idx];
-
-      const img = new Image();
-      img.src = item.src;
-
-      img.onload = function () {
-        heroImg.src = img.src;
-        heroImg.alt = item.caption || "CSC project photo";
-        heroCap.textContent = item.caption || "";
-      };
+      showSlide(idx);
     }, 7000);
   }
 });
