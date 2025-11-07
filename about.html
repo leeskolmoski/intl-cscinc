@@ -6,26 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Construction Services Consulting, Inc. is an owner-focused construction management and program support firm delivering food, beverage, industrial, and commercial projects across the U.S. and internationally." />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
+  <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
-  <!-- top nav (matches other pages) -->
+  <!-- shared top nav -->
   <header class="topbar">
     <div class="container nav-wrap">
       <a class="brand" href="index.html" aria-label="CSC Home">
         <span class="brand-mask" aria-hidden="true"></span>
       </a>
-      <nav class="main-nav" aria-label="Primary">
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="projects.html">Projects</a>
         <a class="nav-link active" href="about.html">About</a>
         <a class="nav-link" href="contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
-    <!-- hero-ish intro, same look as projects -->
+    <!-- hero-ish intro -->
     <section class="intro" style="margin-top:18px;">
       <div class="container">
         <div class="intro-inner">
@@ -57,7 +64,7 @@
       </div>
     </section>
 
-    <!-- how we work + image swapped -->
+    <!-- how we work -->
     <section class="page-section" style="padding-top:0;">
       <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
         <div style="flex:0 0 320px; max-width:340px;">
@@ -78,7 +85,7 @@
             <li>Closeout packages for future maintenance</li>
           </ul>
           <p>
-            The goal is simple: deliver the project in a way that lets the owner operate the facility immediately.
+            The goal is simple. Deliver the project in a way that lets the owner operate the facility immediately.
           </p>
         </article>
       </div>
@@ -93,10 +100,10 @@
             Many of the programs CSC has supported required strict safety, incident reporting, and inspection documentation. Our process centers on building that documentation as the work is being done.
           </p>
           <p>
-            For one federal/commercial campus project, Zurich and the carrier recognized the program’s risk management and documentation approach. That report is available below.
+            For one federal and commercial campus project, Zurich and the carrier recognized the program’s risk management and documentation approach. That report is available below.
           </p>
           <p>
-            <a href="assets/docs/RIR-Opus-West-Wells-Fargo.pdf" class="btn" target="_blank" rel="noopener">
+            <a href="assets/docs/RIR-Opus-West-Wells-Fargo.pdf" class="primary-btn" target="_blank" rel="noopener">
               View Safety / Risk Letter (PDF)
             </a>
           </p>
@@ -109,7 +116,7 @@
       </div>
     </section>
 
-    <!-- partnerships strip -->
+    <!-- partnerships -->
     <section class="page-section" style="padding-top:0;">
       <div class="container" style="display:flex; gap:22px; flex-wrap:wrap; align-items:stretch;">
         <div style="flex:0 0 320px; max-width:340px;">
@@ -123,7 +130,7 @@
             Much of CSC’s work comes from repeat clients, related companies, or international partners who need an experienced U.S. owner’s representative to help execute programs here.
           </p>
           <p>
-            The website refresh you are building now is to support those partnerships — to show consistent design, original content, and photo-backed projects so overseas and domestic stakeholders can verify CSC’s capabilities quickly.
+            The website refresh you are building now is to support those partnerships, to show consistent design, original content, and photo backed projects so overseas and domestic stakeholders can verify CSC’s capabilities quickly.
           </p>
         </article>
       </div>
@@ -136,5 +143,8 @@
       © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
