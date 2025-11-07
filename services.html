@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="CSC provides Owner’s Representative, Construction Management, Design-Build Oversight, food and beverage facility support, cold storage and logistics, and document control.">
   <link rel="stylesheet" href="css/styles.css">
-  <!-- preload logos just like index -->
   <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
 <body>
 
   <!-- =================================
-       TOP BAR (same as index-4.html)
+       TOP BAR
        ================================= -->
   <header class="topbar">
     <div class="container nav-wrap">
@@ -21,7 +20,7 @@
         <span class="brand-mask"></span>
       </a>
 
-      <nav class="main-nav" id="mainNav">
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a href="index.html" class="nav-link">Home</a>
         <a href="services.html" class="nav-link active">Services</a>
         <a href="projects.html" class="nav-link">Projects</a>
@@ -38,9 +37,7 @@
   </header>
 
   <main>
-    <!-- =================================
-         HERO (static, services photo)
-         ================================= -->
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <figure class="hero-frame">
@@ -54,9 +51,7 @@
       </div>
     </section>
 
-    <!-- =================================
-         INTRO / white card (services text)
-         ================================= -->
+    <!-- INTRO -->
     <section class="intro">
       <div class="container">
         <div class="intro-inner">
@@ -69,9 +64,7 @@
       </div>
     </section>
 
-    <!-- =================================
-         LEAD TEXT BOX (blue heading)
-         ================================= -->
+    <!-- LEAD TEXT BOX -->
     <section class="what">
       <div class="container">
         <div class="what-inner">
@@ -88,9 +81,7 @@
       </div>
     </section>
 
-    <!-- =================================
-         SERVICES LIST (your alternating rows)
-         ================================= -->
+    <!-- SERVICES LIST -->
     <section class="page-section">
       <div class="container" style="display:flex; flex-direction:column; gap:22px;">
 
@@ -217,7 +208,6 @@
     </div>
   </footer>
 
-  <!-- same scripts so mobile menu works; app.js is already defensive -->
   <script src="js/config.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
