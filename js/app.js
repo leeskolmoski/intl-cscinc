@@ -1,6 +1,6 @@
 // CSC GLOBAL JS
 document.addEventListener('DOMContentLoaded', function () {
-  // ----- MOBILE MENU -----
+  // mobile menu
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
 
@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
+    // close on link click
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         nav.classList.remove('show');
@@ -20,15 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // ----- HERO ROTATOR -----
-  // your config.js uses window.heroSlides
-  const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
+  // hero rotator
   const heroImg = document.getElementById('heroImage');
   const heroCap = document.getElementById('heroCaption');
+  const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
 
   if (heroImg && heroCap && slides.length > 0) {
-    let idx = 0;
+    // make sure we start from slide 0 in config.js
+    heroImg.src = slides[0].src;
+    heroCap.textContent = slides[0].caption || "";
 
+    let idx = 0;
     setInterval(function () {
       idx = (idx + 1) % slides.length;
       const item = slides[idx];
