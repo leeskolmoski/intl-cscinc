@@ -117,7 +117,7 @@ img{max-width:100%;display:block;}
 .nav-link.active{
   color:#2f53c7;
 }
-/* pulled up so it sits inside the white bar */
+/* move underline up so it sits under text */
 .nav-link.active::after{
   content:"";
   position:absolute;
@@ -140,7 +140,7 @@ img{max-width:100%;display:block;}
   align-items:center;
   justify-content:center;
   gap:4px;
-  flex-direction:column; /* force 3 bars to stack */
+  flex-direction:column; /* force vertical bars */
 }
 .menu-toggle .bar{
   width:18px;
@@ -149,7 +149,7 @@ img{max-width:100%;display:block;}
   border-radius:999px;
   transition:.14s ease;
 }
-/* keep the X animation */
+/* restore the X animation */
 .menu-toggle.is-open .bar:nth-child(1){
   transform:translateY(6px) rotate(45deg);
 }
@@ -178,9 +178,6 @@ img{max-width:100%;display:block;}
     min-width:145px;
   }
   .menu-toggle{display:flex;}
-  .nav-link{
-    padding:.4rem 0;
-  }
   .nav-link.active::after{display:none;}
 }
 
@@ -203,8 +200,7 @@ img{max-width:100%;display:block;}
   height:360px;
   object-fit:cover;
   display:block;
-  opacity:1;
-  transition:opacity .45s ease;
+  transition:opacity .35s ease;
 }
 .hero-frame img.is-fading{
   opacity:0;
