@@ -1,11 +1,9 @@
 /* ============================
    CSC global styles
    ============================ */
-/* your earlier palette */
 :root{
   --csc-blue:#2f53c7;
   --csc-blue-dark:#2746a9;
-
   --ink:#0f172a;
   --muted:#5b6b86;
   --paper:#eef3fa;
@@ -17,13 +15,12 @@
 *::before,
 *::after{box-sizing:border-box;}
 
-html,body{margin:0;padding:0}
+html,body{margin:0;padding:0;}
 
 body{
   position:relative;
   font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Inter,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
   color:var(--ink);
-  /* your soft radial + linear BG */
   background:
     radial-gradient(1200px 600px at 20% -10%, rgba(47,83,199,.06), transparent 60%),
     radial-gradient(1200px 600px at 120% 10%, rgba(47,83,199,.05), transparent 60%),
@@ -31,7 +28,7 @@ body{
   min-height:100vh;
 }
 
-/* blueprint-style GRID over everything — this is the one you liked */
+/* blueprint grid */
 body::before{
   content:"";
   position:fixed;
@@ -41,7 +38,6 @@ body::before{
   background-image:url("data:image/svg+xml;utf8,\
     <svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'>\
       <rect width='160' height='160' fill='none'/>\
-      <!-- horizontal lines -->\
       <path d='M0 20H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M0 40H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M0 60H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
@@ -49,7 +45,6 @@ body::before{
       <path d='M0 100H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M0 120H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M0 140H160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
-      <!-- vertical lines -->\
       <path d='M20 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
       <path d='M40 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.06'/>\
       <path d='M60 0V160' stroke='%233E5FD1' stroke-width='1.2' stroke-opacity='0.12'/>\
@@ -61,51 +56,15 @@ body::before{
   background-size:160px 160px;
   background-position:center;
   opacity:.75;
-  /* this mask makes the center almost transparent, darker on sides */
-  -webkit-mask-image: radial-gradient(
-      circle at 50% 40%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.00) 25%,
-      rgba(0,0,0,0.25) 65%,
-      rgba(0,0,0,1.00) 100%
-  );
-          mask-image: radial-gradient(
-      circle at 50% 40%,
-      rgba(0,0,0,0.00) 0%,
-      rgba(0,0,0,0.00) 25%,
-      rgba(0,0,0,0.25) 65%,
-      rgba(0,0,0,1.00) 100%
-  );
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,.25) 65%, rgba(0,0,0,1) 100%);
+          mask-image: radial-gradient(circle at 50% 40%, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,.25) 65%, rgba(0,0,0,1) 100%);
 }
 
-img{max-width:100%;display:block}
+img{max-width:100%;display:block;}
 
-/* layout core */
 .container{
   width:min(1120px, calc(100% - 48px));
   margin:0 auto;
-}
-
-.hero{margin-top:90px;margin-bottom:28px;}
-.hero-frame{
-  background:#fff;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-}
-.hero-frame img{
-  width:100%;
-  height:360px;
-  object-fit:cover;
-}
-.hero-cap{
-  background:rgba(0,0,0,.65);
-  color:#fff;
-  font-size:.75rem;
-  padding:6px 14px;
-  border-radius:14px;
-  display:inline-block;
-  margin:14px;
 }
 
 /* ============================
@@ -128,13 +87,12 @@ img{max-width:100%;display:block}
 .brand{
   display:flex;
   align-items:center;
-  gap:.5rem;
   text-decoration:none;
 }
 .brand-mask{
-  width:128px;
-  height:40px;
-  background:url("../assets/images/main/logo-short.svg") center/contain no-repeat;
+  background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+  width:180px;
+  height:50px;
   display:block;
 }
 .main-nav{
@@ -164,7 +122,8 @@ img{max-width:100%;display:block}
 }
 .menu-toggle{
   display:none;
-  width:48px;height:48px;
+  width:48px;
+  height:48px;
   border:none;
   border-radius:18px;
   background:radial-gradient(circle at top, #fff, #f3f4f6);
@@ -181,18 +140,12 @@ img{max-width:100%;display:block}
   transition:.14s ease;
 }
 
-/* mobile nav open state — app.js toggles .open */
-.menu-toggle.open .bar:nth-child(1){
-  transform:translateY(5px) rotate(45deg);
-}
-.menu-toggle.open .bar:nth-child(2){
-  opacity:0;
-}
-.menu-toggle.open .bar:nth-child(3){
-  transform:translateY(-5px) rotate(-45deg);
+/* open state, JS adds .show */
+.main-nav.show{
+  display:flex;
 }
 
-@media (max-width: 840px){
+@media (max-width:840px){
   .main-nav{
     position:absolute;
     top:70px;
@@ -205,13 +158,49 @@ img{max-width:100%;display:block}
     flex-direction:column;
     min-width:145px;
   }
-  .main-nav.open{display:flex;}
   .menu-toggle{display:flex;}
   .nav-link.active::after{display:none;}
 }
 
-/* intro card */
-.intro{margin-bottom:26px;}
+/* ============================
+   HERO
+   ============================ */
+.hero{
+  margin-top:90px;
+  margin-bottom:28px;
+}
+.hero-frame{
+  position:relative;
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.hero-frame img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  display:block;
+}
+.hero-cap{
+  position:absolute;
+  left:14px;
+  bottom:14px;
+  background:rgba(0,0,0,.65);
+  color:#fff;
+  font-size:.75rem;
+  padding:6px 14px;
+  border-radius:14px;
+  display:inline-block;
+  margin:0;
+}
+
+/* ============================
+   INTRO CARD
+   ============================ */
+.intro{
+  margin-bottom:26px;
+}
 .intro-inner{
   background:#fff;
   border-radius:20px;
@@ -233,26 +222,67 @@ img{max-width:100%;display:block}
   max-width:580px;
 }
 
-/* cards */
+/* ============================
+   COMMON SECTIONS
+   ============================ */
+.content-block,
+.page-section,
+.services-home,
+.what{
+  margin-bottom:26px;
+}
+
+.page-section .container,
+.content-block .container{
+  display:block;
+}
+
+/* ============================
+   CARDS
+   ============================ */
 .card{
   background:#fff;
   border-radius:18px;
   padding:20px 22px 18px;
   box-shadow:var(--shadow);
 }
+.card h2,
 .card h3{
   margin-top:0;
   color:#244a9f;
-  margin-bottom:.35rem;
 }
-.card p{color:#273445;}
-.card ul{
-  padding-left:1.25rem;
-  margin-top:.4rem;
-}
-.card ul li{margin-bottom:.35rem;}
 
-/* footer */
+/* primary button */
+.primary-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  background:#2f53c7;
+  color:#fff;
+  text-decoration:none;
+  padding:10px 18px 9px;
+  border-radius:999px;
+  font-weight:600;
+  box-shadow:0 10px 25px rgba(47,83,199,.25);
+}
+.primary-btn:hover{
+  background:#2746a9;
+}
+
+/* services cards on home */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+/* projects grid page already has its own inline styles,
+   this just keeps general look consistent */
+.projects-wrap{
+  gap:18px;
+}
+
+/* FOOTER */
 .footer{
   margin-top:48px;
   padding:28px 0 46px;
@@ -261,74 +291,13 @@ img{max-width:100%;display:block}
   font-size:.8rem;
 }
 
-/* projects cards (if page uses grid version) */
-.projects-wrap{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
-  gap:18px;
-}
-
-.thumb-card{
-  display:block;
-  text-decoration:none;
-  border:2px solid transparent;
-  border-radius:14px;
-  transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-  cursor:pointer;
-  background:#fff;
-  position:relative;
-  min-height:280px;
-  box-shadow:0 12px 28px rgba(16,24,40,.10), 0 2px 6px rgba(16,24,40,.06);
-}
-.thumb-card img{
-  width:100%;height:160px;
-  object-fit:cover;
-  border-radius:12px 12px 0 0;
-  transition:opacity .15s ease;
-  background:#dce3ef;
-}
-.thumb-card h3{
-  font-size:1rem;
-  margin:12px 14px 4px;
-  color:#0a2148;
-}
-.thumb-card p{
-  font-size:.82rem;
-  line-height:1.28rem;
-  margin:0 14px 14px;
-  color:#2a3240;
-}
-.thumb-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
-  border-color:#0a68cc;
-  background:#f9fbff;
-}
-.thumb-card:hover img{opacity:.9;}
-.thumb-card::after{
-  content:"Click to open";
-  position:absolute;
-  top:10px; right:10px;
-  font-size:.72rem; font-weight:600;
-  background:#0a68cc; color:#fff;
-  padding:4px 10px; border-radius:999px;
-  opacity:.92; pointer-events:none;
-}
-@media (hover:none){
-  .thumb-card::after{content:"Tap to open";}
-}
-
-/* home cards 3 across on desktop */
-.cards-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-}
-
+/* responsive */
 @media (max-width:960px){
   .hero-frame img{height:260px;}
   .cards-grid{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:720px){
   .cards-grid{grid-template-columns:1fr;}
+  .hero-frame img{height:220px;}
+  .intro-inner{padding:20px 16px 26px;}
 }
