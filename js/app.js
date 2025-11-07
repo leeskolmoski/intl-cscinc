@@ -1,8 +1,6 @@
-// =====================================
 // CSC GLOBAL JS
-// =====================================
 document.addEventListener('DOMContentLoaded', function () {
-  // --------- MOBILE MENU TOGGLE ----------
+  // ----- MOBILE MENU -----
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
 
@@ -13,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // close when clicking a link (mobile)
+    // close after clicking a link
     nav.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         nav.classList.remove('show');
@@ -23,22 +21,21 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // --------- OPTIONAL HERO ROTATION ----------
-  // if config.js defined window.CSC_HEROES = [{src, caption}, ...]
+  // ----- HERO ROTATOR -----
+  // your config.js defines: window.heroSlides = [...]
+  const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
   const heroImg = document.getElementById('heroImage');
   const heroCap = document.getElementById('heroCaption');
-  const heroData = (window.CSC_HEROES && Array.isArray(window.CSC_HEROES)) ? window.CSC_HEROES : [];
 
-  if (heroImg && heroCap && heroData.length > 0) {
+  if (heroImg && heroCap && slides.length > 0) {
     let idx = 0;
-    const swapHero = function () {
-      idx = (idx + 1) % heroData.length;
-      const item = heroData[idx];
+    // start with whatever is already in the HTML, then rotate
+    setInterval(function () {
+      idx = (idx + 1) % slides.length;
+      const item = slides[idx];
       heroImg.src = item.src;
-      heroImg.alt = item.caption || 'CSC project photo';
-      heroCap.textContent = item.caption || '';
-    };
-    // rotate every 7 seconds
-    setInterval(swapHero, 7000);
+      heroImg.alt = item.caption || "CSC project photo";
+      heroCap.textContent = item.caption || "";
+    }, 7000);
   }
 });
