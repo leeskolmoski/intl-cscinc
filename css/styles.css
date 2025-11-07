@@ -71,7 +71,7 @@ img {
   min-height: 34px;
 }
 
-/* back to bigger desktop logo */
+/* desktop logo back to nice size */
 .brand-mask {
   width: 170px;
   height: 32px;
@@ -80,7 +80,6 @@ img {
           mask: url("../assets/images/main/logo-short.svg") center/contain no-repeat;
 }
 
-/* desktop nav */
 .main-nav {
   display: flex;
   gap: 18px;
@@ -113,7 +112,7 @@ img {
   border-radius: 999px 999px 0 0;
 }
 
-/* mobile hamburger */
+/* mobile hamburger (vertical lines) */
 .menu-toggle {
   display: none;
   background: #fff;
@@ -126,11 +125,9 @@ img {
   justify-content: center;
   cursor: pointer;
   transition: transform 0.2s ease;
-  /* THIS makes the bars vertical */
   flex-direction: column;
   gap: 5px;
 }
-
 .menu-toggle .bar {
   width: 22px;
   height: 2.6px;
@@ -138,8 +135,6 @@ img {
   border-radius: 999px;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
-/* X animation */
 .menu-toggle.is-open .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
@@ -186,7 +181,7 @@ img {
   letter-spacing: .01em;
 }
 
-/* intro card */
+/* intro card with big CSC logo */
 .intro {
   margin-bottom: 10px;
 }
@@ -224,9 +219,9 @@ img {
   margin-bottom: 18px;
 }
 
-/* HOME TITLE SHOULD BE DARK */
+/* make the home heading blue again */
 .content-block h2 {
-  color: #0f172a !important;
+  color: var(--csc-blue);
   font-size: 1.55rem;
   margin-bottom: 8px;
 }
@@ -247,20 +242,29 @@ img {
   margin-top: 12px;
   transition: background .15s ease;
 }
-
 .primary-btn:hover {
   background: #08589f;
 }
 
+/* home services cards (the 6 boxes) */
+.services-home {
+  margin-top: 24px;
+}
+.services-home .cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 16px;
+}
+.services-home .card h3 {
+  color: var(--csc-blue);
+}
+
+/* generic card */
 .card {
   background: #fff;
   border-radius: 18px;
   padding: 18px 16px 16px;
   box-shadow: var(--shadow);
-}
-
-.page-section {
-  margin: 22px 0 24px;
 }
 
 /* footer */
@@ -282,7 +286,6 @@ img {
     display: inline-flex;
   }
 
-  /* floating mobile menu */
   .main-nav {
     position: fixed;
     top: calc(var(--header-h) + 6px);
@@ -305,13 +308,18 @@ img {
     display: none;
   }
 
-  /* FIX: big CSC logo in the white card too wide on mobile */
+  /* fix wide logo in intro on phones */
   .intro-logo-full {
     width: min(320px, 80vw);
     height: 70px;
   }
 
-  /* FIX: services rows — force text first, photo second */
+  /* services cards go single column on mobile */
+  .services-home .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* force text above photo on flex sections (services/about/contact rows) */
   .page-section .container > div[style*="display:flex"] {
     flex-direction: column !important;
   }
