@@ -1,5 +1,4 @@
 // js/app.js
-// CSC global JS
 document.addEventListener('DOMContentLoaded', function () {
   // mobile nav
   const toggle = document.getElementById('menuToggle');
@@ -26,26 +25,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const heroCap = document.getElementById('heroCaption');
   const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
 
-  function showSlide(i) {
-    const item = slides[i];
-    if (!item) return;
-
-    // light fade
-    heroImg.classList.add('is-fading');
-
-    setTimeout(function () {
-      heroImg.src = item.src;
-      heroImg.alt = item.caption || 'CSC project photo';
-      if (heroCap) {
-        heroCap.textContent = item.caption || '';
-      }
-      heroImg.classList.remove('is-fading');
-    }, 280);
-  }
-
   if (heroImg && heroCap && slides.length > 0) {
     let idx = 0;
+
+    function showSlide(i) {
+      const item = slides[i];
+      if (!item) return;
+
+      // start fade out
+      heroImg.style.opacity = '0';
+
+      // preload next image so we do not flash
+      const pre = new Image();
+      pre.src = item.src;
+      pre.onload = function () {
+        heroImg.src = item.src;
+        heroImg.alt = item.caption || 'CSC project photo';
+        heroCap.textContent = item.caption || '';
+        // fade back in
+        requestAnimationFrame(() => {
+          heroImg.style.opacity = '1';
+        });
+      };
+    }
+
+    // initialize
+    heroImg.style.opacity = '1';
     showSlide(idx);
+
     setInterval(function () {
       idx = (idx + 1) % slides.length;
       showSlide(idx);
