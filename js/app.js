@@ -1,3 +1,4 @@
+// js/app.js
 // CSC global JS
 document.addEventListener('DOMContentLoaded', function () {
   // mobile nav
@@ -20,16 +21,26 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // hero slideshow (rotate no matter what)
+  // hero slideshow
   const heroImg = document.getElementById('heroImage');
   const heroCap = document.getElementById('heroCaption');
   const slides = Array.isArray(window.heroSlides) ? window.heroSlides : [];
 
   function showSlide(i) {
     const item = slides[i];
-    heroImg.src = item.src;
-    heroImg.alt = item.caption || 'CSC project photo';
-    heroCap.textContent = item.caption || '';
+    if (!item) return;
+
+    // light fade
+    heroImg.classList.add('is-fading');
+
+    setTimeout(function () {
+      heroImg.src = item.src;
+      heroImg.alt = item.caption || 'CSC project photo';
+      if (heroCap) {
+        heroCap.textContent = item.caption || '';
+      }
+      heroImg.classList.remove('is-fading');
+    }, 280);
   }
 
   if (heroImg && heroCap && slides.length > 0) {
