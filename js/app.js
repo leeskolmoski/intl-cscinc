@@ -1,53 +1,44 @@
-// js/app.js
-// ==========================================
-// CSC Website — hero slideshow + mobile menu
-// ==========================================
-
-// current slide index
-let currentSlide = 0;
-
-// show a particular slide
-function showSlide(index){
-  const img = document.getElementById('heroImage');
-  const caption = document.getElementById('heroCaption');
-
-  if (!window.heroSlides || window.heroSlides.length === 0 || !img) return;
-
-  const slide = window.heroSlides[index];
-
-  // simple fade
-  img.classList.add('fade');
-  setTimeout(() => {
-    img.src = slide.src;
-    img.alt = slide.caption;
-    if (caption) caption.textContent = slide.caption;
-    img.classList.remove('fade');
-  }, 300);
-}
-
-function nextSlide(){
-  if (!window.heroSlides || window.heroSlides.length === 0) return;
-  currentSlide = (currentSlide + 1) % window.heroSlides.length;
-  showSlide(currentSlide);
-}
-
-// run when page is ready
-document.addEventListener('DOMContentLoaded', () => {
-  if (window.heroSlides && window.heroSlides.length > 0){
-    showSlide(currentSlide);
-    if (window.heroSlides.length > 1){
-      setInterval(nextSlide, 6000);
-    }
-  }
-
-  // mobile nav toggle
+// =====================================
+// CSC GLOBAL JS
+// =====================================
+document.addEventListener('DOMContentLoaded', function () {
+  // --------- MOBILE MENU TOGGLE ----------
   const toggle = document.getElementById('menuToggle');
   const nav = document.getElementById('mainNav');
 
-  if (toggle && nav){
-    toggle.addEventListener('click', () => {
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
       const isOpen = nav.classList.toggle('show');
+      toggle.classList.toggle('is-open', isOpen);
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
+
+    // close when clicking a link (mobile)
+    nav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        nav.classList.remove('show');
+        toggle.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  // --------- OPTIONAL HERO ROTATION ----------
+  // if config.js defined window.CSC_HEROES = [{src, caption}, ...]
+  const heroImg = document.getElementById('heroImage');
+  const heroCap = document.getElementById('heroCaption');
+  const heroData = (window.CSC_HEROES && Array.isArray(window.CSC_HEROES)) ? window.CSC_HEROES : [];
+
+  if (heroImg && heroCap && heroData.length > 0) {
+    let idx = 0;
+    const swapHero = function () {
+      idx = (idx + 1) % heroData.length;
+      const item = heroData[idx];
+      heroImg.src = item.src;
+      heroImg.alt = item.caption || 'CSC project photo';
+      heroCap.textContent = item.caption || '';
+    };
+    // rotate every 7 seconds
+    setInterval(swapHero, 7000);
   }
 });
