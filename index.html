@@ -7,7 +7,6 @@
   <meta name="description" content="Construction Services Consulting, Inc. — Owner’s representative, construction management, food and beverage facilities, cold storage and logistics, and document control/closeout.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" type="image/png" href="assets/images/main/favicon.png">
-  <!-- preload the two logos so they show fast -->
   <link rel="preload" href="assets/images/main/logo-full.svg" as="image" type="image/svg+xml">
   <link rel="preload" href="assets/images/main/logo-short.svg" as="image" type="image/svg+xml">
 </head>
@@ -19,7 +18,7 @@
   <header class="topbar">
     <div class="container nav-wrap">
       <a href="index.html" class="brand" aria-label="CSC Home">
-        <span class="brand-mask"></span>
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
       </a>
 
       <nav class="main-nav" id="mainNav" aria-label="Primary">
@@ -45,11 +44,11 @@
     <!-- HERO (slideshow) -->
     <section class="hero">
       <div class="container">
-        <figure class="hero-frame">
+        <figure class="hero-frame" aria-label="CSC project slideshow">
           <img
             id="heroImage"
             src="assets/images/projects/ama-cacique-NW-drone-concept-to-completion-4.jpg"
-            alt="Project photo, Amarillo, Texas, USA">
+            alt="CSC project — food processing facility in Amarillo, Texas, USA">
           <figcaption class="hero-cap" id="heroCaption">
             Amarillo, Texas, USA — Food Processing Facility
           </figcaption>
@@ -72,7 +71,7 @@
     <!-- BODY TEXT -->
     <section class="content-block">
       <div class="container">
-        <h2>Complex work. Real world schedules.</h2>
+        <h2 style="color:#244A9F;">Complex work. Real world schedules.</h2>
         <p>
           CSC is a construction services group that supports owners on high value, time sensitive and technically demanding projects. We provide leadership, oversight and detailed coordination from initial concept through startup.
         </p>
@@ -125,7 +124,6 @@
     </div>
   </footer>
 
-  <!-- scripts: config FIRST, then app -->
   <script src="js/config.js" defer></script>
   <script src="js/app.js" defer></script>
 </body>
