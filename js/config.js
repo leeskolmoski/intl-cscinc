@@ -23,15 +23,14 @@ window.heroSlides = [
     caption: "Roseville, California, USA — Office Campus Build-Out"
   },
   {
+    src: "assets/images/projects/ama-cacique-overview-night.jpg",
+    caption: "Amarillo, Texas, USA — Food Processing Facility"
+  },
+  {
     src: "assets/images/projects/park-city-lowell.jpg",
     caption: "Park City, Utah, USA — Mixed Use / Commercial"
   },
   {
     src: "assets/images/projects/nm-2.JPG",
     caption: "Midvale, Utah, USA — Regional Office and Storage Development"
-  },
-  {
-    src: "assets/images/projects/ama-cacique-overview-night.jpg",
-    caption: "Amarillo, Texas, USA — Food Processing Facility (night)"
-  }
 ];
