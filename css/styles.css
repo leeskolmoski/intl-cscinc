@@ -28,7 +28,7 @@ body{
   min-height:100vh;
 }
 
-/* blueprint grid */
+/* graph paper bg */
 body::before{
   content:"";
   position:fixed;
@@ -67,9 +67,7 @@ img{max-width:100%;display:block;}
   margin:0 auto;
 }
 
-/* ============================
-   HEADER / NAV
-   ============================ */
+/* header */
 .topbar{
   position:sticky;
   top:0;
@@ -139,11 +137,7 @@ img{max-width:100%;display:block;}
   border-radius:999px;
   transition:.14s ease;
 }
-
-/* open state, JS adds .show */
-.main-nav.show{
-  display:flex;
-}
+.main-nav.show{display:flex;}
 
 @media (max-width:840px){
   .main-nav{
@@ -162,9 +156,7 @@ img{max-width:100%;display:block;}
   .nav-link.active::after{display:none;}
 }
 
-/* ============================
-   HERO
-   ============================ */
+/* hero */
 .hero{
   margin-top:90px;
   margin-bottom:28px;
@@ -180,7 +172,6 @@ img{max-width:100%;display:block;}
   width:100%;
   height:360px;
   object-fit:cover;
-  display:block;
 }
 .hero-cap{
   position:absolute;
@@ -191,13 +182,10 @@ img{max-width:100%;display:block;}
   font-size:.75rem;
   padding:6px 14px;
   border-radius:14px;
-  display:inline-block;
   margin:0;
 }
 
-/* ============================
-   INTRO CARD
-   ============================ */
+/* intro card */
 .intro{
   margin-bottom:26px;
 }
@@ -222,24 +210,15 @@ img{max-width:100%;display:block;}
   max-width:580px;
 }
 
-/* ============================
-   COMMON SECTIONS
-   ============================ */
-.content-block,
+/* sections so the boxes do not touch */
 .page-section,
+.content-block,
 .services-home,
 .what{
   margin-bottom:26px;
 }
 
-.page-section .container,
-.content-block .container{
-  display:block;
-}
-
-/* ============================
-   CARDS
-   ============================ */
+/* cards */
 .card{
   background:#fff;
   border-radius:18px;
@@ -269,20 +248,14 @@ img{max-width:100%;display:block;}
   background:#2746a9;
 }
 
-/* services cards on home */
+/* home cards */
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:18px;
 }
 
-/* projects grid page already has its own inline styles,
-   this just keeps general look consistent */
-.projects-wrap{
-  gap:18px;
-}
-
-/* FOOTER */
+/* footer */
 .footer{
   margin-top:48px;
   padding:28px 0 46px;
@@ -291,7 +264,7 @@ img{max-width:100%;display:block;}
   font-size:.8rem;
 }
 
-/* responsive */
+/* responsive tweaks */
 @media (max-width:960px){
   .hero-frame img{height:260px;}
   .cards-grid{grid-template-columns:1fr 1fr;}
