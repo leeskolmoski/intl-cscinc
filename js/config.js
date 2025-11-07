@@ -33,4 +33,5 @@ window.heroSlides = [
   {
     src: "assets/images/projects/nm-2.JPG",
     caption: "Midvale, Utah, USA — Regional Office and Storage Development"
+  }
 ];
