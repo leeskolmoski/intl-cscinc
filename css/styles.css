@@ -202,12 +202,15 @@ body::before{
   box-shadow:var(--shadow);
 }
 .intro-logo-full{
+.intro-logo-full {
   width:min(580px, 85vw);
   height:96px;
   margin:0 auto 12px auto;
   background-color:var(--csc-blue);
   -webkit-mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
           mask:url("../assets/images/main/logo-full.svg") no-repeat center/contain;
+  display:block;
+  background-position:center center;
 }
 .intro-sub{
   margin:0 auto;
