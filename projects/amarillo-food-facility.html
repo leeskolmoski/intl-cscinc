@@ -22,30 +22,48 @@
     .map-skeleton small {color:#555}
     .map-btn {display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed {display:none}
-        /* hero alignment to match site */
+
+    /* hero alignment to match site */
+    .hero {margin-top:2rem;}
     .hero-inner {
       max-width: 900px;
       margin: 0 auto;
       text-align: center;
       padding: 3.5rem 1rem 2rem;
     }
-        .hero {
-      margin-top: 2rem;
+    .hero-card {
+      background:#fff;
+      border-radius:1.75rem;
+      padding:2.5rem 1.5rem 2.25rem;
+      box-shadow:0 12px 35px rgba(15,23,42,.04);
+      max-width:720px;
+      margin:0 auto;
     }
     .hero-mark {
-      display: block;
-      margin: 0 auto 1rem;
+      display:block;
+      margin:0 auto 1rem;
     }
     .hero h1 {
-      margin-bottom: .5rem;
+      margin-bottom:.5rem;
     }
     .hero .lede {
-      max-width: 620px;
-      margin: 0 auto 1.5rem;
-      color: #444;
+      max-width:620px;
+      margin:0 auto 1.5rem;
+      color:#444;
     }
-        .hero img {
-      margin-top: 1.5rem;
+    .hero img.hero-photo {
+      margin-top:1.5rem;
+      max-width:100%;
+      border-radius:12px;
+      border:1px solid #e6e6e6;
+    }
+
+    /* section title style to match site vibe */
+    .section-title {
+      font-size:1.35rem;
+      font-weight:700;
+      color:#123a7b;
+      margin-bottom:1rem;
     }
   </style>
 </head>
@@ -80,14 +98,16 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container hero-inner">
-        <!-- small logo in hero, point into /assets/images/main/ -->
-        <img class="hero-mark" src="../assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting" height="48">
-        <h1>Amarillo, Texas · Food Production Facility</h1>
-        <p class="lede">A modern 206,000 ft² food production plant paired with a temperature-controlled distribution warehouse.</p>
+        <div class="hero-card">
+          <img class="hero-mark" src="../assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting" height="48">
+          <h1>Amarillo, Texas · Food Production Facility</h1>
+          <p class="lede">A modern 206,000 ft² food production plant paired with a temperature-controlled distribution warehouse.</p>
+        </div>
+
         <img
+          class="hero-photo"
           src="../assets/images/projects/ama-cacique-overview-night.jpg"
           alt="Amarillo facility at night — Cacique sign illuminated"
-          style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
           onerror="this.src='../assets/images/projects/placeholder.jpg'">
       </div>
     </section>
@@ -95,7 +115,7 @@
     <!-- PROJECT OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2>Project Overview</h2>
+        <h2 class="section-title">Project Overview</h2>
         <p>
           CSC served as the Owner’s Representative for the delivery of a 206,000-square-foot food production facility in Amarillo, Texas, with an integrated temperature-controlled distribution warehouse.
           The $166,000,000 program was executed to FM (Factory Mutual) and UL (Underwriters Laboratories) requirements and built for FDA (Food and Drug Administration) regulated processes.
@@ -130,7 +150,7 @@
     <!-- CONCEPT TO COMPLETION -->
     <section class="section bg-alt">
       <div class="container">
-        <h2>Concept to Completion</h2>
+        <h2 class="section-title">Concept to Completion</h2>
         <div class="gallery-grid">
           <img src="../assets/images/projects/ama-cacique-NW-drone-concept-to-completion-1.jpg" alt="Concept render — aerial" onerror="this.src='../assets/images/projects/placeholder.jpg'">
           <img src="../assets/images/projects/ama-cacique-NW-drone-concept-to-completion-2.jpg" alt="Early steel and envelope — aerial" onerror="this.src='../assets/images/projects/placeholder.jpg'">
@@ -143,7 +163,7 @@
     <!-- COMPLETED SITE -->
     <section class="section">
       <div class="container">
-        <h2>Completed Site — Context Views</h2>
+        <h2 class="section-title">Completed Site — Context Views</h2>
         <div class="gallery-grid">
           <img src="../assets/images/projects/ama-cacique-S-drone-green.jpg" alt="Completed facility — south aerial" onerror="this.src='../assets/images/projects/placeholder.jpg'">
           <img src="../assets/images/projects/ama-cacique-SE-drone-green.jpg" alt="Completed facility — southeast aerial" onerror="this.src='../assets/images/projects/placeholder.jpg'">
@@ -155,7 +175,7 @@
     <!-- ONSITE WASTEWATER -->
     <section class="section bg-alt">
       <div class="container">
-        <h2>Onsite Wastewater Treatment</h2>
+        <h2 class="section-title">Onsite Wastewater Treatment</h2>
         <p>
           The project includes a dedicated wastewater treatment plant sized for process demand and future expansion.
           The system supports reliable production while managing environmental responsibilities on site.
@@ -169,7 +189,7 @@
     <!-- CONSTRUCTION -->
     <section class="section">
       <div class="container">
-        <h2>Construction</h2>
+        <h2 class="section-title">Construction</h2>
         <div class="gallery-grid">
           <img src="../assets/images/projects/ama-cacique-construction-early-snow-scenic.jpg" alt="Early construction — snow" onerror="this.src='../assets/images/projects/placeholder.jpg'">
           <img src="../assets/images/projects/ama-cacique-NE-office-construction.jpg" alt="Office and roof — early phase" onerror="this.src='../assets/images/projects/placeholder.jpg'">
@@ -189,7 +209,7 @@
     <!-- GALLERY -->
     <section class="section bg-alt">
       <div class="container">
-        <h2>Gallery</h2>
+        <h2 class="section-title">Gallery</h2>
         <div class="gallery-grid">
           <img src="../assets/images/projects/ama-cacique-overview-day.JPG" alt="Front elevation — overcast day" onerror="this.src='../assets/images/projects/placeholder.jpg'">
           <img src="../assets/images/projects/ama-cacique-overview-daylight.JPG" alt="Front elevation — bright day" onerror="this.src='../assets/images/projects/placeholder.jpg'">
@@ -204,7 +224,7 @@
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
-        <h2>Location</h2>
+        <h2 class="section-title">Location</h2>
         <p>8501 S Georgia Street, Amarillo, Texas 79118</p>
 
         <div class="map-box">
