@@ -39,11 +39,9 @@
       max-width:720px;
       margin:0 auto;
     }
-    .hero-card .hero-mark {
-      height: 72px; /* same height as cards on the other pages */
-      display:block;
+    /* make the drop-in logo from styles.css sit nicely in the card */
+    .hero-card .intro-logo-full {
       margin:0 auto 1rem;
-      /* no filter here – let the SVG stay its original blue */
     }
     .hero h1 {
       margin-bottom:.5rem;
@@ -100,7 +98,8 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-card">
-          <img class="hero-mark" src="../assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting">
+          <!-- use the same blue logo block as the other pages -->
+          <div class="intro-logo-full" role="img" aria-label="CSC Construction Services Consulting"></div>
           <h1>Amarillo, Texas · Food Production Facility</h1>
           <p class="lede">A modern 206,000 ft² food production plant paired with a temperature-controlled distribution warehouse.</p>
         </div>
@@ -269,4 +268,3 @@
   </script>
 </body>
 </html>
-
