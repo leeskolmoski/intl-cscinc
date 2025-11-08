@@ -94,11 +94,11 @@ img{max-width:100%;display:block;}
   gap:.5rem;
   text-decoration:none;
 }
-/* force header to use the full logo and tint it blue */
+/* top-left header lockup uses the short mark */
 .brand-mask{
   width:180px;
   height:50px;
-  background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+  background:url("../assets/images/main/logo-short.svg") center/contain no-repeat;
   display:block;
   filter:var(--logo-filter);
 }
