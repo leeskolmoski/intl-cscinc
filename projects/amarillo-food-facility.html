@@ -39,17 +39,14 @@
       max-width:720px;
       margin:0 auto;
     }
-    .hero-mark {
+    .hero-card .hero-mark {
+      height: 72px; /* same height as cards on the other pages */
       display:block;
       margin:0 auto 1rem;
+      /* no filter here – let the SVG stay its original blue */
     }
     .hero h1 {
       margin-bottom:.5rem;
-    }
-    /* hero logo size + official CSC blue tint */
-    .hero-card .hero-mark {
-      height: 72px; /* same as other pages */
-      filter: invert(21%) sepia(95%) saturate(2772%) hue-rotate(194deg) brightness(94%) contrast(92%);
     }
     .hero .lede {
       max-width:620px;
@@ -63,11 +60,10 @@
       border:1px solid #e6e6e6;
     }
 
-    /* section title style to match site vibe */
+    /* section title helper – let global css handle color */
     .section-title {
       font-size:1.35rem;
       font-weight:700;
-      color:#123a7b;
       margin-bottom:1rem;
     }
   </style>
@@ -104,7 +100,7 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-card">
-          <img class="hero-mark" src="../assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting" height="72">
+          <img class="hero-mark" src="../assets/images/main/logo-full.svg" alt="CSC Construction Services Consulting">
           <h1>Amarillo, Texas · Food Production Facility</h1>
           <p class="lede">A modern 206,000 ft² food production plant paired with a temperature-controlled distribution warehouse.</p>
         </div>
@@ -273,3 +269,4 @@
   </script>
 </body>
 </html>
+
