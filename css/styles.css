@@ -117,7 +117,7 @@ img{max-width:100%;display:block;}
 .nav-link.active{
   color:#2f53c7;
 }
-/* move underline up so it sits under text */
+/* moved up from -16px to stop the big gap */
 .nav-link.active::after{
   content:"";
   position:absolute;
@@ -140,7 +140,7 @@ img{max-width:100%;display:block;}
   align-items:center;
   justify-content:center;
   gap:4px;
-  flex-direction:column; /* force vertical bars */
+  flex-direction:column; /* make the 3 bars vertical */
 }
 .menu-toggle .bar{
   width:18px;
@@ -149,7 +149,7 @@ img{max-width:100%;display:block;}
   border-radius:999px;
   transition:.14s ease;
 }
-/* restore the X animation */
+/* open to X */
 .menu-toggle.is-open .bar:nth-child(1){
   transform:translateY(6px) rotate(45deg);
 }
@@ -200,7 +200,7 @@ img{max-width:100%;display:block;}
   height:360px;
   object-fit:cover;
   display:block;
-  transition:opacity .35s ease;
+  transition:opacity .45s ease;
 }
 .hero-frame img.is-fading{
   opacity:0;
@@ -305,6 +305,15 @@ img{max-width:100%;display:block;}
 @media (max-width:960px){
   .hero-frame img{height:260px;}
   .cards-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:840px){
+  /* pull hero up on phones so you don't get big grey gap */
+  .hero{
+    margin-top:18px;
+  }
+  .hero-frame img{
+    height:240px;
+  }
 }
 @media (max-width:720px){
   .cards-grid{grid-template-columns:1fr;}
