@@ -69,6 +69,56 @@
       .project-hero-card{padding:1.75rem 1.25rem;}
       .project-hero-card-logo{height:68px;}
     }
+
+    /* horizontal gallery strip */
+    .gallery-row-wrap {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.1rem 2.8rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,.03);
+      border: 1px solid rgba(11,79,160,.02);
+      overflow: hidden;
+    }
+    .gallery-row {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+    }
+    .gallery-row img {
+      height: 210px;
+      width: auto;
+      border-radius: 14px;
+      border: 1px solid #e6e6e6;
+      flex: 0 0 auto;
+      background: #f5f5f5;
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      cursor: pointer;
+      font-weight: 600;
+      color: #244a9f;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-prev { left: 0.6rem; }
+    .gallery-next { right: 0.6rem; }
+    @media (max-width: 680px) {
+      .gallery-row-wrap { padding: 1rem 1.2rem; }
+      .gallery-arrow { display: none; } /* mobile swipe */
+      .gallery-row img { height: 180px; }
+    }
   </style>
 </head>
 <body>
@@ -120,7 +170,7 @@
       <div class="container">
         <h2 class="section-title">Project Overview</h2>
         <p>
-          $34,000,000 high-security government office facility for the Department of the Interior in Albuquerque, New Mexico. CSC oversaw design, bid, and construction phases with strict security protocols, including hardened envelope, secure MEP systems, redundant power, and advanced surveillance and access control integration. :contentReference[oaicite:0]{index=0}
+          $34,000,000 high-security government office facility for the Department of the Interior in Albuquerque, New Mexico. CSC oversaw design, bid, and construction phases with strict security protocols, including hardened envelope, secure MEP systems, redundant power, and advanced surveillance and access control integration.
         </p>
 
         <div class="facts">
@@ -133,26 +183,23 @@
     </section>
 
     <!-- GALLERY -->
-   <script>
-  (function() {
-    var scroller = document.getElementById('projectGallery');
-    if (!scroller) return;
+    <section class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Gallery</h2>
 
-    var prev = document.querySelector('.gallery-prev');
-    var next = document.querySelector('.gallery-next');
+        <div class="gallery-row-wrap">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
 
-    var scrollAmount = 340; // tweak if you like
+          <div class="gallery-row" id="projectGallery">
+            <img src="../assets/images/projects/nm-1.JPG" alt="High-security office — front elevation" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img src="../assets/images/projects/nm-2.JPG" alt="High-security office — glass facade" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img src="../assets/images/projects/nm-3.JPG" alt="High-security office — parking and entry" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          </div>
 
-    if (prev) prev.addEventListener('click', function () {
-      scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-    });
-
-    if (next) next.addEventListener('click', function () {
-      scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-    });
-  })();
-</script>
-
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+    </section>
 
     <!-- LOCATION -->
     <section class="section">
@@ -189,6 +236,24 @@
   <script src="../js/config.js" defer></script>
   <script src="../js/app.js" defer></script>
   <script>
+    // gallery arrows
+    (function() {
+      var scroller = document.getElementById('projectGallery');
+      if (!scroller) return;
+
+      var prev = document.querySelector('.gallery-prev');
+      var next = document.querySelector('.gallery-next');
+      var scrollAmount = 340;
+
+      if (prev) prev.addEventListener('click', function () {
+        scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      });
+
+      if (next) next.addEventListener('click', function () {
+        scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      });
+    })();
+
     // click-to-load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
