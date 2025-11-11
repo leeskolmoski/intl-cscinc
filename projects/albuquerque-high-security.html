@@ -18,7 +18,7 @@
     .map-box {margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton {padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small {color:#555}
-    .map-btn {display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-btn {display:inline-flex;align-items:center;gap:.5rem;padding:.6rem/.9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed {display:none}
 
     .section-title {color:#16458b;font-weight:700}
@@ -94,6 +94,11 @@
       border: 1px solid #e6e6e6;
       flex: 0 0 auto;
       background: #f5f5f5;
+      cursor: pointer;
+      transition: transform .15s ease-out;
+    }
+    .gallery-row img:hover {
+      transform: translateY(-2px);
     }
     .gallery-arrow {
       position: absolute;
@@ -116,16 +121,54 @@
     .gallery-next { right: 0.6rem; }
     @media (max-width: 680px) {
       .gallery-row-wrap { padding: 1rem 1.2rem; }
-      .gallery-arrow { display: none; } /* mobile swipe */
+      .gallery-arrow { display: none; }
       .gallery-row img { height: 180px; }
+    }
+
+    /* lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 5000;
+      padding: 1.5rem;
+    }
+    .lightbox-overlay.open {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: min(1080px, 100%);
+      max-height: 90vh;
+    }
+    .lightbox-content img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(0,0,0,.6);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      line-height: 1;
     }
   </style>
 </head>
 <body>
 
-  <!-- =================================
-       TOP BAR
-       ================================= -->
   <header class="topbar">
     <div class="container nav-wrap">
       <a class="brand" href="../index.html" aria-label="CSC Home">
@@ -147,25 +190,23 @@
   </header>
 
   <main>
-    <!-- HERO -->
     <section class="hero" style="margin-top:18px;">
       <div class="project-hero-card">
         <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
         <h1>Albuquerque, New Mexico · High-Security Government Office</h1>
         <p>$34,000,000 Department of the Interior office with advanced security and controlled construction.</p>
         <p class="supporting">
-          CSC served as the Owner’s Representative, interfacing with the general contractor and federal stakeholders to manage secure design, bid, and construction delivery. CSC did not self-perform construction.
+          CSC served as the Owner’s Representative, interfacing with the general contractor and federal stakeholders to manage secure design, bid, and construction delivery. CSC did not self perform construction.
         </p>
       </div>
 
       <div class="hero-image-wrap">
         <img src="../assets/images/projects/nm-2.JPG"
-             alt="Albuquerque high-security facility — hero"
+             alt="Albuquerque high-security facility. hero image"
              onerror="this.src='../assets/images/projects/placeholder.jpg'">
       </div>
     </section>
 
-    <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Project Overview</h2>
@@ -176,13 +217,12 @@
         <div class="facts">
           <div class="fact"><strong>Budget</strong><br><span class="subtle">$34,000,000</span></div>
           <div class="fact"><strong>Program</strong><br><span class="subtle">High-security government office</span></div>
-          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design–bid–build with security protocols</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design-bid-build with security protocols</span></div>
           <div class="fact"><strong>CSC Role</strong><br><span class="subtle">Owner’s Representative, construction management support</span></div>
         </div>
       </div>
     </section>
 
-    <!-- GALLERY -->
     <section class="section bg-alt">
       <div class="container">
         <h2 class="section-title">Gallery</h2>
@@ -191,9 +231,18 @@
           <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
 
           <div class="gallery-row" id="projectGallery">
-            <img src="../assets/images/projects/nm-1.JPG" alt="High-security office — front elevation" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <img src="../assets/images/projects/nm-2.JPG" alt="High-security office — glass facade" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <img src="../assets/images/projects/nm-3.JPG" alt="High-security office — parking and entry" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/nm-1.JPG"
+                 data-full="../assets/images/projects/nm-1.JPG"
+                 alt="High-security office. front elevation"
+                 onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/nm-2.JPG"
+                 data-full="../assets/images/projects/nm-2.JPG"
+                 alt="High-security office. glass facade"
+                 onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/nm-3.JPG"
+                 data-full="../assets/images/projects/nm-3.JPG"
+                 alt="High-security office. parking and entry"
+                 onerror="this.src='../assets/images/projects/placeholder.jpg'">
           </div>
 
           <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
@@ -201,7 +250,6 @@
       </div>
     </section>
 
-    <!-- LOCATION -->
     <section class="section">
       <div class="container">
         <h2 class="section-title">Location</h2>
@@ -232,6 +280,14 @@
       © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
+
+  <!-- lightbox markup -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+      <img src="" alt="Expanded project photo" id="lightboxImg">
+    </div>
+  </div>
 
   <script src="../js/config.js" defer></script>
   <script src="../js/app.js" defer></script>
@@ -269,6 +325,42 @@
         target.style.display = 'block';
         shell.style.display = 'none';
       }, { passive: false });
+    })();
+
+    // lightbox for gallery
+    (function(){
+      var thumbs = document.querySelectorAll('.gallery-thumb');
+      var overlay = document.getElementById('lightbox');
+      var img = document.getElementById('lightboxImg');
+      var closeBtn = overlay ? overlay.querySelector('.lightbox-close') : null;
+
+      if (!thumbs.length || !overlay || !img) return;
+
+      thumbs.forEach(function(t){
+        t.addEventListener('click', function(){
+          var full = t.getAttribute('data-full') || t.src;
+          img.src = full;
+          overlay.classList.add('open');
+        });
+      });
+
+      function closeBox(){
+        overlay.classList.remove('open');
+        img.src = '';
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeBox);
+      overlay.addEventListener('click', function(e){
+        if (e.target === overlay) {
+          closeBox();
+        }
+      });
+
+      document.addEventListener('keyup', function(e){
+        if (e.key === 'Escape' && overlay.classList.contains('open')) {
+          closeBox();
+        }
+      });
     })();
   </script>
 </body>
