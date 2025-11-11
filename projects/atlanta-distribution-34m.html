@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Atlanta, Georgia · Distribution Facility — CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$34,000,000 USDA food distribution and temperature-controlled facility in Atlanta, Georgia. CSC provided closeout oversight and superintendent support.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
+  <style>
+    .gallery-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-grid img {width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
+    .facts {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact {background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle {opacity:.85}
+    .map-box {margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton {padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small {color:#555}
+    .map-btn {display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed {display:none}
+    .section-title {color:#16458b;font-weight:700}
+
+    /* hero card */
+    .project-hero-card {
+      background:#fff;
+      border-radius:24px;
+      padding:2.25rem 2.25rem 2.25rem;
+      text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.04);
+      border:1px solid rgba(11,79,160,.03);
+      max-width:960px;
+      margin:0 auto 1.75rem;
+    }
+    .project-hero-card-logo {
+      width:360px;
+      max-width:100%;
+      height:78px;
+      margin:0 auto 1rem;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .project-hero-card h1 {
+      margin:0 0 .5rem;
+      color:#244A9F;
+      font-weight:700;
+    }
+    .project-hero-card p {
+      max-width:620px;
+      margin:0 auto .6rem;
+    }
+    .project-hero-card .supporting {
+      font-size:.9rem;
+      color:#43526a;
+      max-width:720px;
+      margin:0.4rem auto 0;
+    }
+    .hero-image-wrap img {
+      width:100%;
+      max-width:960px;
+      display:block;
+      margin:0 auto;
+      border-radius:12px;
+      border:1px solid #e6e6e6;
+    }
+    @media (max-width:720px){
+      .project-hero-card{padding:1.75rem 1.25rem;}
+      .project-hero-card-logo{height:68px;}
+    }
+
+    /* top bar (to match your other project pages) */
+    .topbar {
+      background:#fff;
+      border-bottom:1px solid #e7ecf5;
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+    .nav-wrap {
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1.5rem;
+      min-height:62px;
+    }
+    .brand {
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      text-decoration:none;
+    }
+    .brand-mask {
+      width:156px;
+      height:38px;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .main-nav {
+      display:flex;
+      gap:1rem;
+    }
+    .nav-link {
+      text-decoration:none;
+      color:#19345e;
+      font-weight:500;
+    }
+    .nav-link.active {
+      color:#244a9f;
+    }
+    .menu-toggle {display:none;}
+    @media (max-width:720px){
+      .main-nav{display:none;}
+      .menu-toggle{display:inline-flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+      .menu-toggle .bar{width:22px;height:2px;background:#244a9f;}
+    }
+
+    /* horizontal gallery strip */
+    .gallery-row-wrap {
+      position: relative;
+      background: #fff;
+      border-radius: 16px;
+      padding: 1.1rem 2.8rem;
+      box-shadow: 0 16px 40px rgba(0,0,0,.03);
+      border: 1px solid rgba(11,79,160,.02);
+      overflow: hidden;
+    }
+    .gallery-row {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: thin;
+    }
+    .gallery-row img {
+      height: 210px;
+      width: auto;
+      border-radius: 14px;
+      border: 1px solid #e6e6e6;
+      flex: 0 0 auto;
+      background: #f5f5f5;
+      cursor: pointer;
+      transition: transform .15s ease-out;
+    }
+    .gallery-row img:hover {
+      transform: translateY(-2px);
+    }
+    .gallery-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 999px;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+      cursor: pointer;
+      font-weight: 600;
+      color: #244a9f;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .gallery-prev { left: 0.6rem; }
+    .gallery-next { right: 0.6rem; }
+    @media (max-width: 680px) {
+      .gallery-row-wrap { padding: 1rem 1.2rem; }
+      .gallery-arrow { display: none; }
+      .gallery-row img { height: 180px; }
+    }
+
+    /* lightbox */
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 5000;
+      padding: 1.5rem;
+    }
+    .lightbox-overlay.open {
+      display: flex;
+    }
+    .lightbox-content {
+      position: relative;
+      max-width: min(1080px, 100%);
+      max-height: 90vh;
+    }
+    .lightbox-content img {
+      width: 100%;
+      max-height: 90vh;
+      object-fit: contain;
+      border-radius: 14px;
+      background: #fff;
+    }
+    .lightbox-close {
+      position: absolute;
+      top: .5rem;
+      right: .5rem;
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(0,0,0,.6);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .lightbox-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(36,74,159,.75);
+      color: #fff;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lightbox-prev { left: .4rem; }
+    .lightbox-next { right: .4rem; }
+    .lightbox-arrow.is-disabled {
+      background: rgba(0,0,0,.2);
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+        <h1>Atlanta, Georgia · Distribution Facility</h1>
+        <p>$34,000,000 office and USDA food distribution facility with temperature-controlled storage.</p>
+        <p class="supporting">
+          CSC provided project closeout oversight and supported the onsite superintendent to finalize turnover and USDA-aligned deliverables.
+        </p>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img src="../assets/images/projects/atl-distribution-hero.jpg"
+             alt="Atlanta, Georgia distribution facility — exterior"
+             onerror="this.src='../assets/images/projects/placeholder.jpg'">
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+          $34,000,000 USDA (United States Department of Agriculture) food distribution and temperature-controlled facility in the Atlanta, Georgia market.
+          CSC was engaged to oversee closeout activities, coordinate with the owner and GC, and ensure documentation, punch list, and QA/QC items were resolved to USDA expectations.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Budget</strong><br><span class="subtle">$34,000,000</span></div>
+          <div class="fact"><strong>Program</strong><br><span class="subtle">USDA food distribution with temperature-controlled storage</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Closeout oversight, superintendent support</span></div>
+          <div class="fact"><strong>CSC Role</strong><br><span class="subtle">Owner’s Representative support through closeout</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCEPT / SITE GALLERY -->
+    <section class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Facility Views</h2>
+        <div class="gallery-row-wrap">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
+          <div class="gallery-row" data-gallery="facility">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-front.jpg" data-full="../assets/images/projects/atl-distribution-front.jpg" alt="Front elevation, Atlanta distribution facility" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-loading.jpg" data-full="../assets/images/projects/atl-distribution-loading.jpg" alt="Loading docks and truck court" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-office.jpg" data-full="../assets/images/projects/atl-distribution-office.jpg" alt="Office and support areas" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEMPERATURE-CONTROLLED / INTERIOR -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Temperature-Controlled Distribution</h2>
+        <p>
+          The facility includes conditioned storage zones, dock equipment, and circulation designed for USDA food handling. CSC supported punch list closeout for mechanical, envelope, and finishes.
+        </p>
+        <div class="gallery-row-wrap">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
+          <div class="gallery-row" data-gallery="interior">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-cooler.jpg" data-full="../assets/images/projects/atl-distribution-cooler.jpg" alt="Cooler / freezer space" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-dock.jpg" data-full="../assets/images/projects/atl-distribution-dock.jpg" alt="Dock area and seals" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-warehouse.jpg" data-full="../assets/images/projects/atl-distribution-warehouse.jpg" alt="High-bay warehouse area" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- QA/QC / CLOSEOUT -->
+    <section class="section bg-alt">
+      <div class="container">
+        <h2 class="section-title">Closeout, QA/QC, Turnover</h2>
+        <p>
+          CSC’s team assisted the owner and GC in resolving punch items, validating system performance, and completing turnover packages appropriate for USDA-reviewed facilities.
+        </p>
+        <div class="gallery-row-wrap">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
+          <div class="gallery-row" data-gallery="closeout">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-punchlist.jpg" data-full="../assets/images/projects/atl-distribution-punchlist.jpg" alt="Punch list walk areas" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-mech.jpg" data-full="../assets/images/projects/atl-distribution-mech.jpg" alt="Mechanical and dock systems" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/atl-distribution-admin.jpg" data-full="../assets/images/projects/atl-distribution-admin.jpg" alt="Administrative / office interior" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Location</h2>
+        <p>Atlanta, Georgia (USDA distribution facility)</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map loads only after click to minimize third-party requests.</small>
+            <a class="map-btn" href="https://www.google.com/maps/place/Atlanta,+GA/" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+        </div>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- lightbox markup -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous image">‹</button>
+      <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next image">›</button>
+      <img src="" alt="Expanded project photo" id="lightboxImg">
+    </div>
+  </div>
+
+  <script src="../js/config.js" defer></script>
+  <script src="../js/app.js" defer></script>
+  <script>
+    // make each horizontal gallery scrollable with arrows
+    (function(){
+      var wraps = document.querySelectorAll('.gallery-row-wrap');
+      wraps.forEach(function(wrap){
+        var scroller = wrap.querySelector('.gallery-row');
+        var prev = wrap.querySelector('.gallery-prev');
+        var next = wrap.querySelector('.gallery-next');
+        if (!scroller) return;
+        var scrollAmount = 340;
+        if (prev) prev.addEventListener('click', function () {
+          scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+        if (next) next.addEventListener('click', function () {
+          scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      });
+    })();
+
+    // click-to-load map
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('Atlanta, Georgia');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+
+    // lightbox for all galleries
+    (function(){
+      var thumbs = document.querySelectorAll('.gallery-thumb');
+      var overlay = document.getElementById('lightbox');
+      var img = document.getElementById('lightboxImg');
+      var closeBtn = overlay ? overlay.querySelector('.lightbox-close') : null;
+      var prevBtn = overlay ? overlay.querySelector('.lightbox-prev') : null;
+      var nextBtn = overlay ? overlay.querySelector('.lightbox-next') : null;
+
+      if (!thumbs.length || !overlay || !img) return;
+
+      var currentIndex = 0;
+      var thumbArray = Array.prototype.slice.call(thumbs);
+
+      function openAt(index) {
+        var t = thumbArray[index];
+        if (!t) return;
+        var full = t.getAttribute('data-full') || t.src;
+        img.src = full;
+        overlay.classList.add('open');
+        currentIndex = index;
+        updateArrows();
+      }
+
+      function updateArrows() {
+        if (!prevBtn || !nextBtn) return;
+        if (currentIndex === 0) {
+          prevBtn.classList.add('is-disabled');
+        } else {
+          prevBtn.classList.remove('is-disabled');
+        }
+        if (currentIndex === thumbArray.length - 1) {
+          nextBtn.classList.add('is-disabled');
+        } else {
+          nextBtn.classList.remove('is-disabled');
+        }
+      }
+
+      thumbArray.forEach(function(t, idx){
+        t.addEventListener('click', function(){
+          openAt(idx);
+        });
+      });
+
+      function closeBox(){
+        overlay.classList.remove('open');
+        img.src = '';
+      }
+
+      if (closeBtn) closeBtn.addEventListener('click', closeBox);
+      overlay.addEventListener('click', function(e){
+        if (e.target === overlay) {
+          closeBox();
+        }
+      });
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function(){
+          if (currentIndex > 0) {
+            openAt(currentIndex - 1);
+          }
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function(){
+          if (currentIndex < thumbArray.length - 1) {
+            openAt(currentIndex + 1);
+          }
+        });
+      }
+
+      document.addEventListener('keyup', function(e){
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') {
+          closeBox();
+        }
+        if (e.key === 'ArrowLeft' && currentIndex > 0) {
+          openAt(currentIndex - 1);
+        }
+        if (e.key === 'ArrowRight' && currentIndex < thumbArray.length - 1) {
+          openAt(currentIndex + 1);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
