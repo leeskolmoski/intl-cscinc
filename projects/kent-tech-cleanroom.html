@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Kent, Washington · Tech Clean Room — CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$4,600,000 FM and UL approved technology clean room with custom FP/MEP systems and infrastructure upgrades. CSC provided design leadership, budgeting, scheduling, and safety development.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
+  <style>
+    .section-title{color:#16458b;font-weight:700}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+    .project-hero-card{
+      background:#fff;border-radius:24px;padding:2.25rem;text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);
+      max-width:960px;margin:0 auto 1.75rem;
+    }
+    .project-hero-card-logo{
+      width:360px;max-width:100%;height:78px;margin:0 auto 1rem;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700;}
+    .project-hero-card p{max-width:650px;margin:0 auto .6rem;}
+    .project-hero-card .supporting{font-size:.9rem;color:#43526a;max-width:720px;margin:0.4rem auto 0;}
+    @media (max-width:720px){
+      .project-hero-card{padding:1.75rem 1.25rem;}
+      .project-hero-card-logo{height:68px;}
+    }
+    .topbar{background:#fff;border-bottom:1px solid #e7ecf5;position:sticky;top:0;z-index:40;}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:62px;}
+    .brand{display:inline-flex;align-items:center;text-decoration:none;}
+    .brand-mask{width:156px;height:38px;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter);}
+    .main-nav{display:flex;gap:1rem;}
+    .nav-link{text-decoration:none;color:#19345e;font-weight:500;}
+    .nav-link.active{color:#244a9f;}
+    .menu-toggle{display:none;}
+    @media(max-width:720px){
+      .main-nav{display:none;}
+      .menu-toggle{display:inline-flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+      .menu-toggle .bar{width:22px;height:2px;background:#244a9f;}
+    }
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+        <h1>Kent, Washington · Tech Clean Room</h1>
+        <p>$4,600,000 Factory Mutual (FM) and Underwriters Laboratories (UL) approved technology clean room.</p>
+        <p class="supporting">
+          CSC managed design and delivery for a tenant improvement including custom fire protection, mechanical, and electrical systems with infrastructure upgrades and phased construction.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+          CSC directed the design and execution of a technology clean room at <strong>6320 S 190th Street</strong> in Kent, Washington.
+          The scope included FM and UL–approved custom fire protection, mechanical, and electrical systems, integrated into existing MEP infrastructure.
+          The project required continuous operations during construction, with coordinated permitting, phased inspections, and QA/QC oversight through turnover.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$4,600,000 tenant improvement</span></div>
+          <div class="fact"><strong>Facility</strong><br><span class="subtle">Technology clean room, FP/MEP systems</span></div>
+          <div class="fact"><strong>Compliance</strong><br><span class="subtle">FM and UL approvals</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Owner’s Rep, phased schedule, QA/QC</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Location</h2>
+        <p>6320 S 190th Street, Kent, Washington 98032</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map loads only after click to minimize third party requests.</small>
+            <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+              <a class="map-btn" href="https://www.google.com/maps/place/6320+S+190th+St,+Kent,+WA+98032" target="_blank" rel="noopener">Open Street View</a>
+              <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+            </div>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+        </div>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // current year
+    document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("#y").forEach(e=>e.textContent=new Date().getFullYear())});
+    // map loader
+    (function(){
+      const embedBtn=document.getElementById('embedMap');
+      const shell=document.getElementById('mapShell');
+      const target=document.getElementById('mapEmbed');
+      if(!embedBtn||!shell||!target)return;
+      embedBtn.addEventListener('click',function(e){
+        e.preventDefault();
+        const addr=encodeURIComponent('6320 S 190th St, Kent, WA 98032');
+        const src='https://www.google.com/maps?q='+addr+'&output=embed';
+        target.innerHTML='<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display='block';shell.style.display='none';
+      },{passive:false});
+    })();
+  </script>
+</body>
+</html>
