@@ -12,6 +12,7 @@
     .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
+
     .project-hero-card{
       background:#fff;border-radius:24px;padding:2.25rem;text-align:center;
       box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);
@@ -49,7 +50,7 @@
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb;}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;}
     .map-skeleton small{color:#555;}
-    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none;}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none;cursor:pointer;}
     .map-embed{display:none;}
   </style>
 </head>
@@ -133,26 +134,32 @@
   </footer>
 
   <script>
-    document.getElementById('y')?.textContent = new Date().getFullYear();
-    (function(){
-      const embedBtn = document.getElementById('embedMap');
-      const shell = document.getElementById('mapShell');
-      const target = document.getElementById('mapEmbed');
-      if (!embedBtn || !shell || !target) return;
-      embedBtn.addEventListener('click', function(e){
-        e.preventDefault();
+    // Year stamp if you have a span#y somewhere in the global layout
+    var yEl = document.getElementById('y');
+    if (yEl) {
+      yEl.textContent = new Date().getFullYear();
+    }
 
-        // Final working embed map URL
-        const embedSrc =
-          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.766146241986!2d-111.910251!3d40.6184738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752890140ee94c7%3A0xec33c3597f9db702!2s621%20W%209th%20Ave%2C%20Midvale%2C%20UT%2084047!5e0!3m2!1sen!2sus!4v1731450400000!5m2!1sen!2sus";
+    (function () {
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.onclick = function (e) {
+        if (e && e.preventDefault) e.preventDefault();
+
+        var embedSrc = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.766146241986!2d-111.910251!3d40.6184738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8752890140ee94c7%3A0xec33c3597f9db702!2s621%20W%209th%20Ave%2C%20Midvale%2C%20UT%2084047!5e0!3m2!1sen!2sus!4v1731450400000!5m2!1sen!2sus";
 
         target.innerHTML =
-          '<iframe title="Map" src="'+embedSrc+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+          '<iframe title="Map" src="' + embedSrc + '" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
 
         target.style.display = 'block';
+        target.setAttribute('aria-hidden', 'false');
         shell.style.display = 'none';
-      }, { passive: false });
+      };
     })();
   </script>
 </body>
 </html>
+
