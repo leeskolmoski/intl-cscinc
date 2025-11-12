@@ -4,92 +4,84 @@
   <meta charset="utf-8">
   <title>Waco, Texas · Aluminum Can Production Facility — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$61,000,000 aluminum can production and distribution facility in Waco, Texas. Concrete tilt-up construction. CSC provided Design/Build management, day-to-day construction oversight, scheduling, safety, bidding/buyout, and city coordination.">
-
-  <!-- NEW repo paths -->
-  <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
+  <meta name="description" content="$61,000,000 aluminum can production and distribution facility in Waco, Texas. Concrete tilt-up construction. CSC provided Design/Build management, day to day construction oversight, scheduling, safety, bidding and buyout, and city coordination.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Waco, Texas · Aluminum Can Production Facility — CSC">
   <meta property="og:description" content="Concrete tilt-up aluminum can production plant and distribution center. $61,000,000. Design/Build management by CSC.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="../assets/images/projects/waco-google-earth-view.png">
+  <meta property="og:image" content="/assets/images/projects/waco-google-earth-view.png">
   <meta property="og:image:alt" content="Aerial view of the completed aluminum can production facility in Waco, Texas">
 
   <style>
-    .section-title{color:#16458b;font-weight:700}
+    /* Peekaboo sliding gallery */
+    .peek-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .peek-card{position:relative;border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
+    .peek-card img{display:block;width:100%;height:auto}
+    .peek-cap{
+      position:absolute;left:0;right:0;bottom:0;
+      background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.25), rgba(0,0,0,0));
+      color:#fff;padding:.75rem .9rem;font-size:.95rem;line-height:1.25rem;
+      transform:translateY(65%);transition:transform .28s ease-in-out;
+    }
+    .peek-card:focus-within .peek-cap,
+    .peek-card:hover .peek-cap{transform:translateY(0)}
+    .peek-cap span{display:block;opacity:.95}
+    .peek-cap .alt{font-size:.85rem;opacity:.85}
+
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
     .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed{display:none}
-    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
-    .subtle{opacity:.85}
     .img-note{font-size:.9rem;color:#555;margin-top:.5rem}
-    .gallery{margin:2rem 0}
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-    .gallery figure{margin:0;background:#fff;border:1px solid #eee;border-radius:12px;overflow:hidden}
-    .gallery img{width:100%;height:auto;display:block}
-    .gallery figcaption{font-size:.9rem;color:#444;padding:.6rem .8rem}
-
-    /* project hero card (matches new pages) */
-    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.25rem}
-    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
-    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
-    .project-hero-card p{max-width:650px;margin:0 auto .6rem}
-    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
-    @media (max-width:720px){.project-hero-card{padding:1.75rem 1.25rem}.project-hero-card-logo{height:68px}}
   </style>
 </head>
 <body>
-
-  <!-- NEW top bar -->
-  <header class="topbar">
-    <div class="container nav-wrap">
-      <a class="brand" href="../index.html" aria-label="CSC Home">
-        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
-      </a>
-      <nav class="main-nav" id="mainNav" aria-label="Primary">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="../services.html">Services</a>
-        <a class="nav-link active" href="../projects.html">Projects</a>
-        <a class="nav-link" href="../about.html">About</a>
-        <a class="nav-link" href="../contact.html">Contact</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/images/main/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
       </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero" style="margin-top:18px;">
-      <div class="project-hero-card">
-        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+    <section class="hero">
+      <div class="container hero-inner">
+        <img class="hero-mark" src="/assets/images/main/logo-short.svg" alt="" height="48">
         <h1>Waco, Texas · Aluminum Can Production Facility</h1>
-        <p>$61,000,000 Design/Build aluminum can production and distribution facility.</p>
-      </div>
-      <div class="hero-image-wrap">
+        <p class="lede">$61,000,000 Design/Build aluminum can production and distribution facility.</p>
+
+        <!-- Hero image (Google Earth view) -->
         <img
-          src="../assets/images/projects/waco-google-earth-view.png"
+          src="/assets/images/projects/waco-google-earth-view.png"
           alt="Google Earth overview of the aluminum can production facility in Waco, Texas"
+          style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
           loading="eager"
-          onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          onerror="this.src='/assets/images/projects/placeholder.jpg'">
+        <div class="img-note">Image: Google Earth view of the finished facility.</div>
       </div>
-      <div class="container"><div class="img-note">Image: Google Earth view of the finished facility.</div></div>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Project Overview</h2>
+        <h2>Project Overview</h2>
         <p>
           Design/Build program for a new aluminum can production plant with integrated distribution. CSC managed the design
           and engineering, day to day construction activities, scheduling, safety planning and procedures, and the bidding
-          and buyout of the project. The building structure used <strong>concrete tilt-up panels</strong> with long-span steel bar joists and deck,
+          and buyout of the project. The building structure used <strong>concrete tilt up panels</strong> with long span steel bar joists and deck,
           supported by deep foundations to accommodate heavy process loads and wide clear spans. Throughout delivery, CSC
           coordinated with the Waco City building and zoning departments, organizing inspections and quality control to
           ensure a compliant, on schedule turnover.
@@ -104,100 +96,77 @@
 
         <h3>Construction Highlights</h3>
         <ul>
-          <li>Concrete tilt-up wall panels formed and cast on site, then lifted into place with crawler cranes.</li>
+          <li>Concrete tilt up wall panels formed and cast on site, then lifted into place with crawler cranes.</li>
           <li>Large bay spacing with steel bar joists for unobstructed process floor layouts.</li>
           <li>Organized site logistics for panel casting beds, steel staging, and laydown to maintain schedule.</li>
         </ul>
       </div>
     </section>
 
-    <!-- GALLERY -->
-    <section class="section gallery" aria-label="Project photo gallery">
+    <!-- PHOTOS: Peekaboo sliding gallery -->
+    <section class="section" aria-label="Project photo gallery">
       <div class="container">
-        <h2 class="section-title">Photos</h2>
-        <div class="gallery-grid">
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-10-site-overview-final.jpg"
-                 alt="Wide aerial overview of the Waco aluminum can facility jobsite and building footprint"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Sitewide overview during steel erection and panel casting.</figcaption>
+        <h2>Photos</h2>
+        <div class="peek-grid">
+          <!-- 1 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-00-overview-sitewide.jpg" alt="Sitewide overview during steel erection and panel casting." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Sitewide overview during steel erection and panel casting.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-01-site-prep.jpg"
-                 alt="Aerial view of site preparation and early utilities at the Waco facility"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Site prep, utilities, and foundations underway.</figcaption>
+          <!-- 2 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-01-site-prep.jpg" alt="Site prep, utilities, and foundations underway." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Site prep, utilities, and foundations underway.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-02-structural-steel-setup.jpg"
-                 alt="Structural steel frame grids with bar joists set across large bays"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Structural steel grids with long span joists.</figcaption>
+          <!-- 3 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-02-structural-steel-setup.jpg" alt="Structural steel grids with long span joists." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Structural steel grids with long span joists.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-03-material-staging.jpg"
-                 alt="Organized laydown yard with steel members, joists, and trusses staged by type"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Organized steel staging for efficient picks.</figcaption>
+          <!-- 4 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-03-material-staging.jpg" alt="Organized steel staging for efficient picks." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Organized steel staging for efficient picks.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-04-foundation-grid.jpg"
-                 alt="Overhead shot of foundation grid, trenches, and slab sections"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Foundations and slab sections in a clean grid.</figcaption>
+          <!-- 5 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-04-foundation-grid.jpg" alt="Tilt up panel beds and slab activity." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Tilt up panel beds and slab activity.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-05-steel-erection.jpg"
-                 alt="Aerial of active steel erection with lifts and crews across the slab"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Active steel erection across the slab.</figcaption>
+          <!-- 6 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-05-steel-erection.jpg" alt="Active steel erection across the slab." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Active steel erection across the slab.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-06-frame-assembly.jpg"
-                 alt="High angle of frame assembly with roof deck areas in progress"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Frame assembly with roof deck placement.</figcaption>
+          <!-- 7 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-06-frame-assembly.jpg" alt="Frame assembly with roof deck placement." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Frame assembly with roof deck placement.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-07-progress-west-view.jpg"
-                 alt="Progress view looking west across the main structure and laydown areas"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Progress view across the main structure.</figcaption>
+          <!-- 8 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-07-progress-west-view.jpg" alt="Progress view across the main structure." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Progress view across the main structure.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-08-progress-east-view.jpg"
-                 alt="Progress view looking east showing slab pours and steel bays"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Progress view showing slab pours and bays.</figcaption>
+          <!-- 9 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-08-progress-east-view.jpg" alt="Progress view showing slab pours and bays." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Progress view showing slab pours and bays.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-aerial-09-tilt-panel-lift.jpg"
-                 alt="Overhead view of tilt-up panel beds and slab with crews and lifts"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Tilt-up panel beds and slab activity.</figcaption>
+          <!-- 10 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-aerial-09-tilt-panel-lift.jpg" alt="Tilt panel lift with crawler crane." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Tilt panel lift with crawler crane.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-material-staging-aerial.jpg"
-                 alt="Aerial closeup of material organization, wrapped bundles and pipe stacks"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Material organization for schedule control.</figcaption>
+          <!-- 11 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-material-staging-aerial.jpg" alt="Material organization for schedule control." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Material organization for schedule control.</span></figcaption>
           </figure>
-
-          <figure>
-            <img src="../assets/images/projects/waco/waco-construction-tiltup-foundation-scale.jpg"
-                 alt="Interior casting beds for concrete tilt-up panels, showing scale next to workers"
-                 loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption>Tilt-up casting beds, scale shown by crew.</figcaption>
+          <!-- 12 -->
+          <figure class="peek-card">
+            <img src="../assets/images/projects/waco-construction-tiltup-foundation-scale.jpg" alt="Tilt up casting beds, scale shown by crew." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <figcaption class="peek-cap"><span>Tilt up casting beds, scale shown by crew.</span></figcaption>
           </figure>
         </div>
       </div>
@@ -206,7 +175,7 @@
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Location</h2>
+        <h2>Location</h2>
         <p>1901 Wycon Drive, Waco, Texas 76712</p>
 
         <div class="map-box">
@@ -217,41 +186,39 @@
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
+  <footer class="site-footer">
     <div class="container">
-      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Structured data (paths updated) -->
+  <!-- Schema -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"ConstructionProject",
     "name":"Waco, Texas · Aluminum Can Production Facility",
-    "description":"Concrete tilt-up aluminum can production plant with integrated distribution. Design/Build management by CSC.",
+    "description":"Concrete tilt up aluminum can production plant with integrated distribution. Design/Build management by CSC.",
     "location":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"1901 Wycon Drive","addressLocality":"Waco","addressRegion":"TX","postalCode":"76712","addressCountry":"US"}},
     "contractor":{"@type":"Organization","name":"Construction Services Consulting, Inc."},
     "cost":"61000000",
     "image":[
-      "../assets/images/projects/waco/waco-construction-aerial-10-site-overview-final.jpg",
-      "../assets/images/projects/waco/waco-construction-tiltup-foundation-scale.jpg",
-      "../assets/images/projects/waco/waco-construction-aerial-03-material-staging.jpg"
+      "/assets/images/projects/waco-construction-aerial-10-site-overview-final.jpg",
+      "/assets/images/projects/waco-construction-tiltup-foundation-scale.jpg",
+      "/assets/images/projects/waco-construction-aerial-03-material-staging.jpg"
     ]
   }
   </script>
 
-  <!-- site scripts -->
-  <script src="../js/config.js" defer></script>
-  <script src="../js/app.js" defer></script>
-
   <script>
-    // click-to-load map
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Click to load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
