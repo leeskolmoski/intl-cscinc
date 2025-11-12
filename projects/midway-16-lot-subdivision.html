@@ -46,6 +46,13 @@
       .menu-toggle{display:inline-flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
       .menu-toggle .bar{width:22px;height:2px;background:#244a9f;}
     }
+
+    /* card grid spacing fix */
+    .card-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -97,7 +104,7 @@
           <div class="fact"><strong>Location</strong><br><span class="subtle">Midway, Utah</span></div>
         </div>
 
-        <div class="card-grid" style="margin-top:1rem">
+        <div class="card-grid">
           <article class="card">
             <h3>Scope</h3>
             <ul class="checklist">
