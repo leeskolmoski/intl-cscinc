@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Salt Lake City, Utah · Jackson Apartments | CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$34,000,000 renovation of the 70-unit Jackson Apartments, including seismic and structural upgrades. General Contractor for modernization while preserving historic character.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
+  <style>
+    .section-title{color:#16458b;font-weight:700}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+
+    /* hero */
+    .project-hero-card{
+      background:#fff;border-radius:24px;padding:2.25rem;text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);
+      max-width:960px;margin:0 auto 1.75rem;
+    }
+    .project-hero-card-logo{
+      width:360px;max-width:100%;height:78px;margin:0 auto 1rem;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700;}
+    .project-hero-card p{max-width:700px;margin:0 auto .6rem;}
+    .project-hero-card .supporting{font-size:.9rem;color:#43526a;max-width:720px;margin:.4rem auto 0;}
+    @media(max-width:720px){
+      .project-hero-card{padding:1.75rem 1.25rem;}
+      .project-hero-card-logo{height:68px;}
+    }
+
+    /* nav */
+    .topbar{background:#fff;border-bottom:1px solid #e7ecf5;position:sticky;top:0;z-index:40;}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;min-height:62px;}
+    .brand{display:inline-flex;align-items:center;text-decoration:none;}
+    .brand-mask{width:156px;height:38px;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter);}
+    .main-nav{display:flex;gap:1rem;}
+    .nav-link{text-decoration:none;color:#19345e;font-weight:500;}
+    .nav-link.active{color:#244a9f;}
+    .menu-toggle{display:none;}
+    @media(max-width:720px){
+      .main-nav{display:none;}
+      .menu-toggle{display:inline-flex;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;}
+      .menu-toggle .bar{width:22px;height:2px;background:#244a9f;}
+    }
+
+    /* map */
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb;}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;}
+    .map-skeleton small{color:#555;}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none;}
+    .map-embed{display:none;}
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting logo"></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+        <h1>Salt Lake City, Utah · Jackson Apartments</h1>
+        <p>$34,000,000 renovation of a 70-unit residential complex, including seismic and structural modernization.</p>
+        <p class="supporting">
+          CSC served as General Contractor for the historic Jackson Apartments, built in 1920. The program joined two buildings into one cohesive 70-unit residential structure through seismic retrofitting, modernization, and historic preservation.
+        </p>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+          The Jackson Apartments renovation delivered modern living standards while retaining the architectural identity of a century-old structure.
+          CSC managed extensive seismic strengthening, structural tie-ins, and modernization of building systems across both towers. All work was performed under active occupancy constraints and historic review oversight.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$34,000,000</span></div>
+          <div class="fact"><strong>Units</strong><br><span class="subtle">70 apartments (2 connected buildings)</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">General Contractor</span></div>
+          <div class="fact"><strong>Status</strong><br><span class="subtle">Completed</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Location</h2>
+        <p>Jackson Apartments<br>274 West 200 South, Salt Lake City, Utah 84101</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Street View opens in a new tab. Map loads only after click.</small>
+
+            <a class="map-btn"
+               href="https://www.google.com/maps/place/274+W+200+S,+Salt+Lake+City,+UT+84101/@40.7649638,-111.8995566,3a,60y,28.85h,101.08t/data=!3m7!1e1!3m5!1sV3KPF0nRBQtti6_CSOzWbQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-11.076486244618891%26panoid%3DV3KPF0nRBQtti6_CSOzWbQ%26yaw%3D28.848738911758737!7i16384!8i8192!4m6!3m5!1s0x8752f503faed5431:0x1d06e6bef68149c!8m2!3d40.7653949!4d-111.8992443!16s%2Fg%2F11xgk6ryx1?entry=ttu"
+               target="_blank" rel="noopener">Open Street View</a>
+
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+        </div>
+
+        <p style="margin-top:1.25rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('#y').forEach(e=>e.textContent=new Date().getFullYear());
+    (function(){
+      const embedBtn=document.getElementById('embedMap');
+      const shell=document.getElementById('mapShell');
+      const target=document.getElementById('mapEmbed');
+      if(!embedBtn||!shell||!target)return;
+      embedBtn.addEventListener('click',function(e){
+        e.preventDefault();
+        const addr=encodeURIComponent('274 West 200 South, Salt Lake City, UT 84101');
+        const src='https://www.google.com/maps?q='+addr+'&output=embed';
+        target.innerHTML='<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display='block';
+        shell.style.display='none';
+      },{passive:false});
+    })();
+  </script>
+</body>
+</html>
