@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Park City, Utah · Subdivision — CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$54,000,000, 80-lot design/build subdivision in Park City, Utah. Civil infrastructure and residential buildings.">
+  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Park City, Utah · Subdivision — CSC">
+  <meta property="og:description" content="80-lot design/build subdivision in Park City, Utah. Civil works and residential buildings.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/assets/images/projects/placeholder.jpg">
+  <meta property="og:image:alt" content="Concept view for a residential subdivision in Park City, Utah">
+
+  <style>
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/"><img src="/assets/images/main/logo-full.svg" alt="CSC logo" height="36"></a>
+      <nav class="site-nav">
+        <a href="/services.html">Services</a>
+        <a href="/about.html">About</a>
+        <a href="/projects/" aria-current="page">Projects</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <img class="hero-mark" src="/assets/images/main/logo-short.svg" alt="" height="48">
+        <h1>Park City, Utah · Subdivision</h1>
+        <p class="lede">$54,000,000, 80-lot design/build subdivision including civil infrastructure and residential buildings.</p>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2>Project Overview</h2>
+        <p>
+          Turnkey residential subdivision program that included planning, entitlement support, and delivery of civil works with coordinated vertical pads. The scope covered grading, roads, utilities, drainage, sidewalks, and trails, with procurement and quality oversight through completion.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Program Value</strong><br><span class="subtle">$54,000,000</span></div>
+          <div class="fact"><strong>Lots</strong><br><span class="subtle">80 units</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design/Build oversight, Owner’s Representative</span></div>
+          <div class="fact"><strong>City Coordination</strong><br><span class="subtle">Permitting, inspections, utilities</span></div>
+        </div>
+
+        <div class="card-grid" style="margin-top:1.25rem">
+          <article class="card">
+            <h3>Scope</h3>
+            <ul class="checklist">
+              <li>Subdivision layout and entitlement support</li>
+              <li>Civil infrastructure: roads, utilities, grading, drainage</li>
+              <li>Residential building pads and siteworks</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Role</h3>
+            <ul class="checklist">
+              <li>Design-Build oversight and Owner’s Representative</li>
+              <li>Municipal coordination and permitting</li>
+              <li>Contractor procurement and quality control</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Program</h3>
+            <ul class="checklist">
+              <li>Approx. $54,000,000 total program value</li>
+              <li>80 units (about 2,400 to 3,000&nbsp;ft&sup2;)</li>
+              <li>Turnkey delivery: grading, utilities, curb, gutter, sidewalks, trails</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION (optional generic if you want to add address later) -->
+    <section class="section">
+      <div class="container">
+        <h2>Location</h2>
+        <p>Park City, Utah</p>
+
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
+            <small>Map loads only after click to minimize third-party requests.</small>
+            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+          </div>
+          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+        </div>
+
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ConstructionProject",
+    "name":"Park City, Utah · Subdivision",
+    "description":"80-lot design/build subdivision. Civil infrastructure and residential pads.",
+    "location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Park City","addressRegion":"UT","addressCountry":"US"}},
+    "contractor":{"@type":"Organization","name":"Construction Services Consulting, Inc."},
+    "cost":"54000000"
+  }
+  </script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Click-to-load map (generic Park City center, update to a specific address when ready)
+    (function(){
+      var embedBtn = document.getElementById('embedMap');
+      var shell = document.getElementById('mapShell');
+      var target = document.getElementById('mapEmbed');
+      if (!embedBtn || !shell || !target) return;
+
+      embedBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        var addr = encodeURIComponent('Park City, Utah');
+        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.style.display = 'block';
+        shell.style.display = 'none';
+      }, { passive: false });
+    })();
+  </script>
+</body>
+</html>
