@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Johannesburg, South Africa · Food Processing Plant | CSC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="$90,000,000 FM, UL, and FDA qualified food processing plant in Johannesburg, South Africa. Owner’s Representative and design-build leadership. Limited public information available.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
+  <style>
+    .section-title { color:#16458b; font-weight:700 }
+    .facts { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:1rem }
+    .fact { background:#fff; border:1px solid #eee; border-radius:12px; padding:1rem }
+    .subtle { opacity:.85 }
+    .note { font-size:.9rem; color:#555; opacity:.9; margin-top:.75rem }
+
+    /* hero card */
+    .project-hero-card {
+      background:#fff; border-radius:24px; padding:2.25rem; text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.04); border:1px solid rgba(11,79,160,.03);
+      max-width:960px; margin:0 auto 1.75rem;
+    }
+    .project-hero-card-logo {
+      width:360px; max-width:100%; height:78px; margin:0 auto 1rem;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .project-hero-card h1 { margin:0 0 .5rem; color:#244A9F; font-weight:700 }
+    .project-hero-card p { max-width:650px; margin:0 auto .6rem }
+    .project-hero-card .supporting { font-size:.9rem; color:#43526a; max-width:720px; margin:.4rem auto 0 }
+    @media (max-width:720px){
+      .project-hero-card { padding:1.75rem 1.25rem }
+      .project-hero-card-logo { height:68px }
+    }
+
+    /* top bar, to match v2 */
+    .topbar { background:#fff; border-bottom:1px solid #e7ecf5; position:sticky; top:0; z-index:40 }
+    .nav-wrap { display:flex; align-items:center; justify-content:space-between; gap:1.5rem; min-height:62px }
+    .brand { display:inline-flex; align-items:center; text-decoration:none }
+    .brand-mask { width:156px; height:38px; background:url("../assets/images/main/logo-full.svg") center/contain no-repeat; filter:var(--logo-filter) }
+    .main-nav { display:flex; gap:1rem }
+    .nav-link { text-decoration:none; color:#19345e; font-weight:500 }
+    .nav-link.active { color:#244a9f }
+    .menu-toggle { display:none }
+    @media (max-width:720px){
+      .main-nav { display:none }
+      .menu-toggle { display:inline-flex; flex-direction:column; gap:4px; background:none; border:none; cursor:pointer }
+      .menu-toggle .bar { width:22px; height:2px; background:#244a9f }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+        <h1>Johannesburg, South Africa · Food Processing Plant</h1>
+        <p>$90,000,000 FM, UL, and FDA qualified facility for large scale food processing.</p>
+        <p class="supporting">
+          CSC served as the Owner’s Representative with design build leadership, coordinating contractors and international vendors, and managing commissioning, QA/QC, and turnover.
+        </p>
+        <p class="note">Very limited public information. Page provided for program completeness.</p>
+      </div>
+    </section>
+
+    <!-- OVERVIEW -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+          The program delivered a comprehensive processing facility with temperature controlled operations and compliance to FM, UL, and FDA standards.
+          CSC led contracting strategy, vendor coordination, approvals, and full project controls for schedule, quality, safety, and cost through turnover.
+        </p>
+
+        <div class="facts">
+          <div class="fact"><strong>Value</strong><br><span class="subtle">$90,000,000</span></div>
+          <div class="fact"><strong>Type</strong><br><span class="subtle">Food processing plant</span></div>
+          <div class="fact"><strong>Compliance</strong><br><span class="subtle">FM · UL · FDA qualified</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Owner’s Representative, design build leadership</span></div>
+        </div>
+
+        <p style="margin-top:1.25rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // year stamps if you ever use #y nodes on this page
+    document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("#y").forEach(e=>e.textContent=new Date().getFullYear())});
+  </script>
+</body>
+</html>
