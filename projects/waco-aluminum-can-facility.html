@@ -4,87 +4,93 @@
   <meta charset="utf-8">
   <title>Waco, Texas · Aluminum Can Production Facility — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$61,000,000 aluminum can production and distribution facility in Waco, Texas. Concrete tilt-up construction. CSC provided Design/Build management, day to day construction oversight, scheduling, safety, bidding and buyout, and city coordination.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Waco, Texas · Aluminum Can Production Facility — CSC">
-  <meta property="og:description" content="Concrete tilt-up aluminum can production plant and distribution center. $61,000,000. Design/Build management by CSC.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/images/projects/waco-google-earth-view.png">
-  <meta property="og:image:alt" content="Aerial view of the completed aluminum can production facility in Waco, Texas">
-
+  <meta name="description" content="$61,000,000 aluminum can production and distribution facility in Waco, Texas. Concrete tilt-up construction. CSC provided Design/Build management, day-to-day construction oversight, scheduling, safety, bidding/buyout, and city coordination.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
   <style>
-    /* Peekaboo sliding gallery */
-    .peek-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-    .peek-card{position:relative;border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
-    .peek-card img{display:block;width:100%;height:auto}
-    .peek-cap{
-      position:absolute;left:0;right:0;bottom:0;
-      background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.25), rgba(0,0,0,0));
-      color:#fff;padding:.75rem .9rem;font-size:.95rem;line-height:1.25rem;
-      transform:translateY(65%);transition:transform .28s ease-in-out;
-    }
-    .peek-card:focus-within .peek-cap,
-    .peek-card:hover .peek-cap{transform:translateY(0)}
-    .peek-cap span{display:block;opacity:.95}
-    .peek-cap .alt{font-size:.85rem;opacity:.85}
+    .facts {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact {background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle {opacity:.85}
+    .map-box {margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton {padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small {color:#555}
+    .map-btn {display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed {display:none}
+    .section-title {color:#16458b;font-weight:700}
 
-    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
-    .subtle{opacity:.85}
+    /* hero card */
+    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
+    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
+    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a}
 
-    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
-    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
-    .map-skeleton small{color:#555}
-    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
-    .map-embed{display:none}
-    .img-note{font-size:.9rem;color:#555;margin-top:.5rem}
+    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
+
+    /* horizontal gallery strip + lightbox (matches Amarillo) */
+    .gallery-row-wrap{position:relative;background:#fff;border-radius:16px;padding:1.1rem 2.8rem;box-shadow:0 16px 40px rgba(0,0,0,.03);border:1px solid rgba(11,79,160,.02);overflow:hidden}
+    .gallery-row{display:flex;gap:1rem;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:thin}
+    .gallery-thumb{height:210px;width:auto;border-radius:14px;border:1px solid #e6e6e6;flex:0 0 auto;background:#f5f5f5;cursor:pointer;transition:transform .15s ease-out}
+    .gallery-thumb:hover{transform:translateY(-2px)}
+    .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border:none;border-radius:999px;background:#fff;box-shadow:0 10px 25px rgba(0,0,0,.08);cursor:pointer;font-weight:600;color:#244a9f;display:inline-flex;align-items:center;justify-content:center}
+    .gallery-prev{left:.6rem}.gallery-next{right:.6rem}
+    @media (max-width:680px){.gallery-row-wrap{padding:1rem 1.2rem}.gallery-arrow{display:none}.gallery-thumb{height:180px}}
+
+    .lightbox-overlay{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:5000;padding:1.5rem}
+    .lightbox-overlay.open{display:flex}
+    .lightbox-content{position:relative;max-width:min(1080px,100%);max-height:90vh}
+    .lightbox-content img{width:100%;max-height:90vh;object-fit:contain;border-radius:14px;background:#fff}
+    .lightbox-close{position:absolute;top:.5rem;right:.5rem;width:32px;height:32px;border:none;border-radius:999px;background:rgba(0,0,0,.6);color:#fff;font-size:1.1rem;cursor:pointer;line-height:1}
+    .lightbox-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border:none;border-radius:999px;background:rgba(36,74,159,.75);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
+    .lightbox-prev{left:.4rem}.lightbox-next{right:.4rem}
+    .lightbox-arrow.is-disabled{background:rgba(0,0,0,.2);cursor:not-allowed;pointer-events:none}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/"><img src="/assets/images/main/logo-full.svg" alt="CSC logo" height="36"></a>
-      <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/" aria-current="page">Projects</a>
-        <a href="/contact.html">Contact</a>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/images/main/logo-short.svg" alt="" height="48">
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
         <h1>Waco, Texas · Aluminum Can Production Facility</h1>
-        <p class="lede">$61,000,000 Design/Build aluminum can production and distribution facility.</p>
-
-        <!-- Hero image (Google Earth view) -->
-        <img
-          src="/assets/images/projects/waco-google-earth-view.png"
-          alt="Google Earth overview of the aluminum can production facility in Waco, Texas"
-          style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6"
-          loading="eager"
-          onerror="this.src='/assets/images/projects/placeholder.jpg'">
-        <div class="img-note">Image: Google Earth view of the finished facility.</div>
+        <p>$61,000,000 Design/Build aluminum can production and distribution facility.</p>
       </div>
+
+      <!-- Google Earth hero (works, do not change) -->
+      <div class="hero-image-wrap">
+        <img src="../assets/images/projects/waco-google-earth-view.png"
+             alt="Google Earth overview of the aluminum can production facility in Waco, Texas"
+             loading="eager"
+             onerror="this.src='../assets/images/projects/placeholder.jpg'">
+      </div>
+      <p class="container" style="max-width:960px;margin:.5rem auto 0;color:#555;font-size:.9rem">Image: Google Earth view of the finished facility.</p>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2>Project Overview</h2>
+        <h2 class="section-title">Project Overview</h2>
         <p>
-          Design/Build program for a new aluminum can production plant with integrated distribution. CSC managed the design
-          and engineering, day to day construction activities, scheduling, safety planning and procedures, and the bidding
-          and buyout of the project. The building structure used <strong>concrete tilt up panels</strong> with long span steel bar joists and deck,
-          supported by deep foundations to accommodate heavy process loads and wide clear spans. Throughout delivery, CSC
-          coordinated with the Waco City building and zoning departments, organizing inspections and quality control to
-          ensure a compliant, on schedule turnover.
+          Design/Build program for a new aluminum can production plant with integrated distribution. CSC managed the design and engineering, day-to-day construction activities, scheduling, safety planning and procedures, and the bidding and buyout of the project. The building structure used <strong>concrete tilt-up panels</strong> with long-span steel bar joists and deck, supported by deep foundations to accommodate heavy process loads and wide clear spans. Throughout delivery, CSC coordinated with the Waco City building and zoning departments, organizing inspections and quality control to ensure a compliant, on-schedule turnover.
         </p>
 
         <div class="facts">
@@ -94,80 +100,36 @@
           <div class="fact"><strong>City Coordination</strong><br><span class="subtle">Inspections and QA/QC with Waco</span></div>
         </div>
 
-        <h3>Construction Highlights</h3>
+        <h3 style="margin-top:1.25rem">Construction Highlights</h3>
         <ul>
-          <li>Concrete tilt up wall panels formed and cast on site, then lifted into place with crawler cranes.</li>
+          <li>Concrete tilt-up wall panels formed and cast on site, then lifted into place with crawler cranes.</li>
           <li>Large bay spacing with steel bar joists for unobstructed process floor layouts.</li>
           <li>Organized site logistics for panel casting beds, steel staging, and laydown to maintain schedule.</li>
         </ul>
       </div>
     </section>
 
-    <!-- PHOTOS: Peekaboo sliding gallery -->
-    <section class="section" aria-label="Project photo gallery">
+    <!-- PHOTOS (horizontal peekaboo with lightbox) -->
+    <section class="section">
       <div class="container">
-        <h2>Photos</h2>
-        <div class="peek-grid">
-          <!-- 1 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-00-overview-sitewide.jpg" alt="Sitewide overview during steel erection and panel casting." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Sitewide overview during steel erection and panel casting.</span></figcaption>
-          </figure>
-          <!-- 2 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-01-site-prep.jpg" alt="Site prep, utilities, and foundations underway." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Site prep, utilities, and foundations underway.</span></figcaption>
-          </figure>
-          <!-- 3 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-02-structural-steel-setup.jpg" alt="Structural steel grids with long span joists." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Structural steel grids with long span joists.</span></figcaption>
-          </figure>
-          <!-- 4 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-03-material-staging.jpg" alt="Organized steel staging for efficient picks." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Organized steel staging for efficient picks.</span></figcaption>
-          </figure>
-          <!-- 5 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-04-foundation-grid.jpg" alt="Tilt up panel beds and slab activity." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Tilt up panel beds and slab activity.</span></figcaption>
-          </figure>
-          <!-- 6 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-05-steel-erection.jpg" alt="Active steel erection across the slab." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Active steel erection across the slab.</span></figcaption>
-          </figure>
-          <!-- 7 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-06-frame-assembly.jpg" alt="Frame assembly with roof deck placement." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Frame assembly with roof deck placement.</span></figcaption>
-          </figure>
-          <!-- 8 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-07-progress-west-view.jpg" alt="Progress view across the main structure." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Progress view across the main structure.</span></figcaption>
-          </figure>
-          <!-- 9 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-08-progress-east-view.jpg" alt="Progress view showing slab pours and bays." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Progress view showing slab pours and bays.</span></figcaption>
-          </figure>
-          <!-- 10 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-aerial-09-tilt-panel-lift.jpg" alt="Tilt panel lift with crawler crane." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Tilt panel lift with crawler crane.</span></figcaption>
-          </figure>
-          <!-- 11 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-material-staging-aerial.jpg" alt="Material organization for schedule control." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Material organization for schedule control.</span></figcaption>
-          </figure>
-          <!-- 12 -->
-          <figure class="peek-card">
-            <img src="../assets/images/projects/waco-construction-tiltup-foundation-scale.jpg" alt="Tilt up casting beds, scale shown by crew." loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Tilt up casting beds, scale shown by crew.</span></figcaption>
-          </figure>
+        <h2 class="section-title">Photos</h2>
+        <div class="gallery-row-wrap">
+          <button class="gallery-arrow gallery-prev" type="button" aria-label="Scroll gallery left">←</button>
+          <div class="gallery-row" data-gallery="waco">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-00-overview-sitewide.jpg" data-full="../assets/images/projects/waco-construction-aerial-00-overview-sitewide.jpg" alt="Sitewide overview during steel erection and panel casting." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-01-site-prep.jpg" data-full="../assets/images/projects/waco-construction-aerial-01-site-prep.jpg" alt="Site prep, utilities, and foundations underway." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-02-structural-steel-setup.jpg" data-full="../assets/images/projects/waco-construction-aerial-02-structural-steel-setup.jpg" alt="Structural steel grids with long span joists." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-03-material-staging.jpg" data-full="../assets/images/projects/waco-construction-aerial-03-material-staging.jpg" alt="Organized steel staging for efficient picks." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-04-foundation-grid.jpg" data-full="../assets/images/projects/waco-construction-aerial-04-foundation-grid.jpg" alt="Tilt-up panel beds and slab activity." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-05-steel-erection.jpg" data-full="../assets/images/projects/waco-construction-aerial-05-steel-erection.jpg" alt="Active steel erection across the slab." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-06-frame-assembly.jpg" data-full="../assets/images/projects/waco-construction-aerial-06-frame-assembly.jpg" alt="Frame assembly with roof deck placement." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-07-progress-west-view.jpg" data-full="../assets/images/projects/waco-construction-aerial-07-progress-west-view.jpg" alt="Progress view across the main structure." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-08-progress-east-view.jpg" data-full="../assets/images/projects/waco-construction-aerial-08-progress-east-view.jpg" alt="Progress view showing slab pours and bays." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-aerial-09-tilt-panel-lift.jpg" data-full="../assets/images/projects/waco-construction-aerial-09-tilt-panel-lift.jpg" alt="Tilt-panel lift with crawler crane." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-material-staging-aerial.jpg" data-full="../assets/images/projects/waco-construction-material-staging-aerial.jpg" alt="Material organization for schedule control." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+            <img class="gallery-thumb" src="../assets/images/projects/waco-construction-tiltup-foundation-scale.jpg" data-full="../assets/images/projects/waco-construction-tiltup-foundation-scale.jpg" alt="Tilt-up casting beds, scale shown by crew." onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          </div>
+          <button class="gallery-arrow gallery-next" type="button" aria-label="Scroll gallery right">→</button>
         </div>
       </div>
     </section>
@@ -175,64 +137,108 @@
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
-        <h2>Location</h2>
+        <h2 class="section-title">Location</h2>
         <p>1901 Wycon Drive, Waco, Texas 76712</p>
 
         <div class="map-box">
           <div class="map-skeleton" id="mapShell">
-            <small>Map embed loads only after you click. No Street View for this site.</small>
+            <small>Map loads only after click to minimize third-party requests. No Street View for this site.</small>
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      © 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
-  <!-- Schema -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ConstructionProject",
-    "name":"Waco, Texas · Aluminum Can Production Facility",
-    "description":"Concrete tilt up aluminum can production plant with integrated distribution. Design/Build management by CSC.",
-    "location":{"@type":"Place","address":{"@type":"PostalAddress","streetAddress":"1901 Wycon Drive","addressLocality":"Waco","addressRegion":"TX","postalCode":"76712","addressCountry":"US"}},
-    "contractor":{"@type":"Organization","name":"Construction Services Consulting, Inc."},
-    "cost":"61000000",
-    "image":[
-      "/assets/images/projects/waco-construction-aerial-10-site-overview-final.jpg",
-      "/assets/images/projects/waco-construction-tiltup-foundation-scale.jpg",
-      "/assets/images/projects/waco-construction-aerial-03-material-staging.jpg"
-    ]
-  }
-  </script>
+  <!-- lightbox -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+      <button class="lightbox-close" type="button" aria-label="Close image">&times;</button>
+      <button class="lightbox-arrow lightbox-prev" type="button" aria-label="Previous image">‹</button>
+      <button class="lightbox-arrow lightbox-next" type="button" aria-label="Next image">›</button>
+      <img src="" alt="Expanded project photo" id="lightboxImg">
+    </div>
+  </div>
 
+  <script src="../js/config.js" defer></script>
+  <script src="../js/app.js" defer></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click to load map
+    // gallery arrows
+    (function(){
+      var wraps = document.querySelectorAll('.gallery-row-wrap');
+      wraps.forEach(function(wrap){
+        var scroller = wrap.querySelector('.gallery-row');
+        var prev = wrap.querySelector('.gallery-prev');
+        var next = wrap.querySelector('.gallery-next');
+        if (!scroller) return;
+        var scrollAmount = 340;
+        if (prev) prev.addEventListener('click', function(){ scroller.scrollBy({left:-scrollAmount,behavior:'smooth'}); });
+        if (next) next.addEventListener('click', function(){ scroller.scrollBy({left: scrollAmount,behavior:'smooth'}); });
+      });
+    })();
+
+    // click-to-load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
       if (!embedBtn || !shell || !target) return;
-
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        var addr = encodeURIComponent('1901 Wycon Drive, Waco, Texas 76712');
+        var addr = '1901+Wycon+Drive,+Waco,+Texas+76712';
         var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
         target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
       }, { passive: false });
+    })();
+
+    // lightbox
+    (function(){
+      var thumbs = document.querySelectorAll('.gallery-thumb');
+      var overlay = document.getElementById('lightbox');
+      var img = document.getElementById('lightboxImg');
+      var closeBtn = overlay ? overlay.querySelector('.lightbox-close') : null;
+      var prevBtn = overlay ? overlay.querySelector('.lightbox-prev') : null;
+      var nextBtn = overlay ? overlay.querySelector('.lightbox-next') : null;
+      if (!thumbs.length || !overlay || !img) return;
+
+      var currentIndex = 0;
+      var list = Array.prototype.slice.call(thumbs);
+
+      function openAt(i){
+        var t = list[i]; if (!t) return;
+        img.src = t.getAttribute('data-full') || t.src;
+        overlay.classList.add('open'); currentIndex = i; update();
+      }
+      function update(){
+        if (!prevBtn || !nextBtn) return;
+        prevBtn.classList.toggle('is-disabled', currentIndex === 0);
+        nextBtn.classList.toggle('is-disabled', currentIndex === list.length - 1);
+      }
+      list.forEach(function(t,i){ t.addEventListener('click', function(){ openAt(i); }); });
+      function close(){ overlay.classList.remove('open'); img.src=''; }
+      if (closeBtn) closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', function(e){ if (e.target === overlay) close(); });
+      if (prevBtn) prevBtn.addEventListener('click', function(){ if (currentIndex>0) openAt(currentIndex-1); });
+      if (nextBtn) nextBtn.addEventListener('click', function(){ if (currentIndex<list.length-1) openAt(currentIndex+1); });
+      document.addEventListener('keyup', function(e){
+        if (!overlay.classList.contains('open')) return;
+        if (e.key==='Escape') close();
+        if (e.key==='ArrowLeft' && currentIndex>0) openAt(currentIndex-1);
+        if (e.key==='ArrowRight' && currentIndex<list.length-1) openAt(currentIndex+1);
+      });
     })();
   </script>
 </body>
