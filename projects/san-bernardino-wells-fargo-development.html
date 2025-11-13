@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean-room tenant improvement, and miscellaneous retail.">
   <link rel="stylesheet" href="../css/styles.css">
+
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
     .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
@@ -22,7 +23,7 @@
 </head>
 <body>
 
-  <!-- Top bar (new site format) -->
+  <!-- Top bar (new site) -->
   <header class="topbar">
     <div class="container nav-wrap">
       <a class="brand" href="../index.html" aria-label="CSC Home">
@@ -49,7 +50,7 @@
         <h1>San Bernardino, California · Wells Fargo Development</h1>
         <p class="lede">
           Multi-scope program: high-security office support, dual parking structures, ground-up Panera Bread,
-          multi-tenant retail shell, clean-room tenant improvement, and additional retail.
+          multi-tenant retail shell, clean-room tenant improvement, and additional retail units.
         </p>
         <img src="../assets/images/projects/wells-fargo-ps-3a.png"
              alt="Wells Fargo San Bernardino — main building"
@@ -127,11 +128,13 @@
           <img
             src="../assets/images/projects/wells-fargo-ps-1-new.jpg"
             alt="Wells Fargo San Bernardino parking structure, view 1"
-            loading="lazy">
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/leeskolmoski/csc-site/main/assets/img/projects/wells-fargo-ps-1-new.jpg';">
           <img
             src="../assets/images/projects/wells-fargo-ps-2-new.jpg"
             alt="Wells Fargo San Bernardino parking structure, view 2"
-            loading="lazy">
+            loading="lazy"
+            onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/leeskolmoski/csc-site/main/assets/img/projects/wells-fargo-ps-2-new.jpg';">
         </div>
       </div>
     </section>
@@ -158,15 +161,14 @@
 
   <footer class="footer">
     <div class="container">
-      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+      © 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
   <script src="../js/config.js" defer></script>
   <script src="../js/app.js" defer></script>
   <script>
-    // year stamp for legacy footer if needed elsewhere
-    (function(){var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();})();
+    document.getElementById('y').textContent = new Date().getFullYear();
 
     // Click-to-load embed (no API key, no cost)
     const USE_STREET_VIEW_EMBED = false;
@@ -181,7 +183,7 @@
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        var src;
+        let src;
         if (USE_STREET_VIEW_EMBED && SV_LAT && SV_LNG) {
           src = 'https://www.google.com/maps?layer=c&cbll=' + SV_LAT + ',' + SV_LNG + '&output=embed';
         } else {
