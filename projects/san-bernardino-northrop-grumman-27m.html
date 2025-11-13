@@ -5,7 +5,7 @@
   <title>San Bernardino, California · High-Security Office — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$27,000,000 high-security office facility in San Bernardino, California for a confidential defense client.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <link rel="stylesheet" href="/css/styles.css?v=24">
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
     .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
@@ -14,7 +14,7 @@
     .map-skeleton small{color:#555}
     .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed{display:none}
-    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;margin-top:1.25rem}
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
   </style>
@@ -33,13 +33,14 @@
   </header>
 
   <main>
-    <!-- HERO (image removed) -->
+    <!-- HERO (no main photo, just text) -->
     <section class="hero">
       <div class="container hero-inner">
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>San Bernardino, California · High-Security Office</h1>
-        <p class="lede">$27,000,000 — Confidential defense client (Northrop Grumman).</p>
-        <!-- IMAGE REMOVED -->
+        <p class="lede">
+          $27,000,000 high-security office facility for a confidential defense client (Northrop Grumman).
+        </p>
       </div>
     </section>
 
@@ -48,18 +49,25 @@
       <div class="container">
         <h2>Project Overview</h2>
         <p>
-          This program delivered a high-security office facility with strict information-control protocols. 
-          CSC provided Owner’s Representative and construction management services, secure trade coordination, 
-          phased occupancy turnovers, and full QA/QC integration.
+          This program delivered a high-security office facility with strict information-control protocols.
+          CSC provided Owner’s Representative and construction management services, secure trade coordination,
+          phased occupancy turnovers, and full Quality Assurance / Quality Control (QA/QC) integration.
         </p>
 
         <div class="facts">
-          <div class="fact"><strong>Program Value</strong><br><span class="subtle">$27,000,000 confidential defense office facility.</span></div>
-          <div class="fact"><strong>Client</strong><br><span class="subtle">Confidential defense client (Northrop Grumman).</span></div>
-          <div class="fact"><strong>Specialized Delivery</strong><br>
+          <div class="fact">
+            <strong>Program Value</strong><br>
+            <span class="subtle">$27,000,000 confidential defense office facility.</span>
+          </div>
+          <div class="fact">
+            <strong>Client</strong><br>
+            <span class="subtle">Confidential defense client (Northrop Grumman).</span>
+          </div>
+          <div class="fact">
+            <strong>Specialized Delivery</strong><br>
             <span class="subtle">
               High-security access control.<br>
-              Secure coordination / compliance screening.<br>
+              Secure coordination and compliance screening.<br>
               Phased occupancy turnovers.<br>
               Integrated QA/QC oversight.
             </span>
@@ -68,13 +76,19 @@
       </div>
     </section>
 
-    <!-- GALLERY -->
+    <!-- GALLERY (just the two photos) -->
     <section class="section bg-alt">
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img src="/assets/images/projects/ng-1.JPG" alt="San Bernardino facility — view 1" loading="lazy">
-          <img src="/assets/images/projects/ng-2.JPG" alt="San Bernardino facility — view 2" loading="lazy">
+          <img src="/assets/images/projects/ng-1.JPG"
+               alt="High-security office facility — San Bernardino, early site context"
+               loading="lazy"
+               onerror="this.src='/assets/images/projects/placeholder.jpg'">
+          <img src="/assets/images/projects/ng-2.JPG"
+               alt="High-security office facility — San Bernardino, parking and entry elevation"
+               loading="lazy"
+               onerror="this.src='/assets/images/projects/placeholder.jpg'">
         </div>
       </div>
     </section>
@@ -107,20 +121,21 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
+    // Click-to-load Google Map (no Street View)
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
-      if(!embedBtn || !shell || !target) return;
+      if (!embedBtn || !shell || !target) return;
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
         var addr = encodeURIComponent('862 E Hospitality Lane, San Bernardino, CA 92408');
         var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
-        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy"></iframe>';
+        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
-      });
+      }, { passive: false });
     })();
   </script>
 </body>
