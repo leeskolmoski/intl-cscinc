@@ -6,37 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean-room tenant improvement, and miscellaneous retail.">
   <link rel="stylesheet" href="../css/styles.css">
-  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
   <style>
-    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
-    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
-    .subtle{opacity:.85}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
     .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed{display:none}
-
-    /* hero card */
-    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
-    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
-    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
-    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a}
-    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
-
-    /* peekaboo cards */
-    .peek-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-    .peek-card{position:relative;border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
-    .peek-card img{display:block;width:100%;height:auto}
-    .peek-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.25),rgba(0,0,0,0));color:#fff;padding:.75rem .9rem;font-size:.95rem;line-height:1.25rem;transform:translateY(65%);transition:transform .28s ease-in-out}
-    .peek-card:hover .peek-cap,.peek-card:focus-within .peek-cap{transform:translateY(0)}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
+    .band{background:#f7f7fb;padding:2rem 0;margin-top:1rem;border-top:1px solid #eee;border-bottom:1px solid #eee}
   </style>
 </head>
 <body>
-  <!-- TOP BAR (new site) -->
+
+  <!-- Top bar (new site format) -->
   <header class="topbar">
     <div class="container nav-wrap">
-      <a class="brand" href="../index.html" aria-label="CSC Home"><span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span></a>
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
       <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a class="nav-link" href="../index.html">Home</a>
         <a class="nav-link" href="../services.html">Services</a>
@@ -53,27 +44,72 @@
   <main>
     <!-- HERO -->
     <section class="hero" style="margin-top:18px;">
-      <div class="project-hero-card">
-        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
+      <div class="container hero-inner">
+        <img class="hero-mark" src="../assets/images/main/logo-short.svg" alt="" height="48">
         <h1>San Bernardino, California · Wells Fargo Development</h1>
-        <p>Multi-scope program: high-security office support, dual parking structures, ground-up Panera Bread, multi-tenant retail shell, clean-room tenant improvement, and additional retail.</p>
-      </div>
-
-      <div class="hero-image-wrap">
+        <p class="lede">
+          Multi-scope program: high-security office support, dual parking structures, ground-up Panera Bread,
+          multi-tenant retail shell, clean-room tenant improvement, and additional retail.
+        </p>
         <img src="../assets/images/projects/wells-fargo-ps-3a.png"
              alt="Wells Fargo San Bernardino — main building"
-             onerror="this.src='../assets/images/projects/placeholder.jpg'">
+             style="margin-top:1.5rem;max-width:100%;border-radius:12px;border:1px solid #e6e6e6">
       </div>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Project Overview</h2>
+        <h2>Project Overview</h2>
         <p>
-          CSC served as Owner’s Representative and design-build oversight for a coordinated program around Wells Fargo’s San Bernardino campus. Work included a high-security office program, two cast-in-place parking structures, a ground-up Panera Bread, a multi-tenant retail shell, an $8,200,000 clean-room tenant improvement within the campus, and additional retail. Responsibilities covered municipal permitting and inspections, contractor and vendor coordination (including security and building systems), phased turnovers, and schedule, quality, safety, and cost control.
+          CSC served as Owner’s Representative and design-build oversight for a coordinated program around Wells Fargo’s
+          San Bernardino campus. Work included a high-security office program, two cast-in-place parking structures,
+          a ground-up Panera Bread, a multi-tenant retail shell for future build-outs, an $8,200,000 clean-room tenant
+          improvement within the campus, and additional retail. Responsibilities covered municipal permitting and
+          inspections, contractor and vendor coordination (including security and building systems), phased turnovers,
+          and schedule, quality, safety, and cost control.
         </p>
 
+        <div class="card-grid" style="margin-top:1rem">
+          <article class="card">
+            <h3>Program Value &amp; Scale</h3>
+            <ul class="checklist">
+              <li><strong>Wells Fargo office:</strong> approx. <strong>$84,000,000</strong>, ~<strong>320,000&nbsp;ft&sup2;</strong> (5-story).</li>
+              <li><strong>Clean room (TI):</strong> approx. <strong>$8,200,000</strong>.</li>
+              <li><strong>Parking structures:</strong> multi-level, serving the campus (value included within campus program).</li>
+              <li><strong>Retail:</strong> Panera Bread (ground-up) and multi-tenant shell.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Key Deliverables</h3>
+            <ul class="checklist">
+              <li>High-security office campus support</li>
+              <li>Two multi-level parking structures</li>
+              <li>Panera Bread: ground-up development</li>
+              <li>Retail center shell for future tenant improvements</li>
+              <li>Clean-room tenant improvement within Wells Fargo campus</li>
+              <li>Additional retail including Wingstop, Subway, and others</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Execution</h3>
+            <ul class="checklist">
+              <li>Owner’s Representative and design-build oversight</li>
+              <li>Permitting, inspection, and phased turnovers</li>
+              <li>Security and systems integration management</li>
+              <li>Schedule, quality, safety, and cost control</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AT-A-GLANCE -->
+    <section class="band">
+      <div class="container">
+        <h2 style="margin-top:0">At-a-Glance</h2>
         <div class="facts">
           <div class="fact"><strong>Office</strong><br><span class="subtle">~320,000&nbsp;ft&sup2;, ~$84,000,000 program value.</span></div>
           <div class="fact"><strong>Parking</strong><br><span class="subtle">Two multi-level garages serving the campus.</span></div>
@@ -83,19 +119,19 @@
       </div>
     </section>
 
-    <!-- PHOTOS (peekaboo) -->
-    <section class="section bg-alt" aria-label="Parking Structures Photos">
+    <!-- GALLERY -->
+    <section class="section bg-alt">
       <div class="container">
-        <h2 class="section-title">Parking Structures</h2>
-        <div class="peek-grid">
-          <figure class="peek-card">
-            <img src="../assets/images/projects/wells-fargo-ps-1-new.jpg" alt="Parking structure, view 1" loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Multi-level garage serving the main campus.</span></figcaption>
-          </figure>
-          <figure class="peek-card">
-            <img src="../assets/images/projects/wells-fargo-ps-2-new.jpg" alt="Parking structure, view 2" loading="lazy" onerror="this.src='../assets/images/projects/placeholder.jpg'">
-            <figcaption class="peek-cap"><span>Cast-in-place structure with integrated circulation.</span></figcaption>
-          </figure>
+        <h2>Parking Structures (photos available)</h2>
+        <div class="gallery-grid">
+          <img
+            src="../assets/images/projects/wells-fargo-ps-1-new.jpg"
+            alt="Wells Fargo San Bernardino parking structure, view 1"
+            loading="lazy">
+          <img
+            src="../assets/images/projects/wells-fargo-ps-2-new.jpg"
+            alt="Wells Fargo San Bernardino parking structure, view 2"
+            loading="lazy">
         </div>
       </div>
     </section>
@@ -103,7 +139,7 @@
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Location</h2>
+        <h2>Location</h2>
         <p>10033 East Brier Dr, San Bernardino, CA 92408</p>
 
         <div class="map-box">
@@ -121,24 +157,37 @@
   </main>
 
   <footer class="footer">
-    <div class="container">© 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</div>
+    <div class="container">
+      © 2009–2025 Construction Services Consulting, Inc. All rights reserved.
+    </div>
   </footer>
 
   <script src="../js/config.js" defer></script>
   <script src="../js/app.js" defer></script>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    // year stamp for legacy footer if needed elsewhere
+    (function(){var y=document.getElementById('y'); if(y) y.textContent=new Date().getFullYear();})();
 
-    // click-to-load map embed
+    // Click-to-load embed (no API key, no cost)
+    const USE_STREET_VIEW_EMBED = false;
+    const SV_LAT = 0;
+    const SV_LNG = 0;
+
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
       if (!embedBtn || !shell || !target) return;
+
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
-        var addr = '10033+East+Brier+Dr,+San+Bernardino,+CA+92408';
-        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
+        var src;
+        if (USE_STREET_VIEW_EMBED && SV_LAT && SV_LNG) {
+          src = 'https://www.google.com/maps?layer=c&cbll=' + SV_LAT + ',' + SV_LNG + '&output=embed';
+        } else {
+          var addr = '10033+East+Brier+Dr,+San+Bernardino,+CA+92408';
+          src = 'https://www.google.com/maps?&q=' + addr + '&output=embed';
+        }
         target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
