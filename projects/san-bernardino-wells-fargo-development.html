@@ -4,56 +4,39 @@
   <meta charset="utf-8">
   <title>San Bernardino, California · Wells Fargo Development — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean-room TI, and miscellaneous retail.">
+  <meta name="description" content="Wells Fargo Development in San Bernardino, California: high-security office support, dual parking structures, ground-up Panera Bread, retail shell, clean-room tenant improvement, and miscellaneous retail.">
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="San Bernardino, California · Wells Fargo Development — CSC">
-  <meta property="og:description" content="Multi-scope program: office support, dual parking structures, Panera Bread, retail shell, clean-room TI.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="../assets/images/projects/wells-fargo-ps-1-new.jpg">
-  <meta property="og:image:alt" content="Wells Fargo San Bernardino parking structure">
-
   <style>
     .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
-    .section-title{color:#16458b;font-weight:700}
-
-    /* hero card */
-    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
-    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
-    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
-    .project-hero-card p{max-width:740px;margin:0 auto .6rem;color:#43526a}
-    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
-    @media (max-width:720px){.project-hero-card{padding:1.75rem 1.25rem}.project-hero-card-logo{height:68px}}
-
-    /* peekaboo grid */
-    .peek-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
-    .peek-card{position:relative;border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
-    .peek-card img{display:block;width:100%;height:auto}
-    .peek-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,.25), rgba(0,0,0,0));color:#fff;padding:.75rem .9rem;font-size:.95rem;line-height:1.25rem;transform:translateY(65%);transition:transform .28s ease-in-out}
-    .peek-card:hover .peek-cap,.peek-card:focus-within .peek-cap{transform:translateY(0)}
-    .peek-cap span{display:block;opacity:.95}
-    .peek-cap .alt{font-size:.85rem;opacity:.85}
-
-    /* map */
     .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
     .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
     .map-skeleton small{color:#555}
     .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed{display:none}
+
+    /* hero card */
+    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
+    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
+    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a}
+    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
+
+    /* peekaboo cards */
+    .peek-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .peek-card{position:relative;border:1px solid #eee;border-radius:12px;overflow:hidden;background:#fff}
+    .peek-card img{display:block;width:100%;height:auto}
+    .peek-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,rgba(0,0,0,.72),rgba(0,0,0,.25),rgba(0,0,0,0));color:#fff;padding:.75rem .9rem;font-size:.95rem;line-height:1.25rem;transform:translateY(65%);transition:transform .28s ease-in-out}
+    .peek-card:hover .peek-cap,.peek-card:focus-within .peek-cap{transform:translateY(0)}
   </style>
 </head>
 <body>
-
-  <!-- TOP BAR -->
+  <!-- TOP BAR (new site) -->
   <header class="topbar">
     <div class="container nav-wrap">
-      <a class="brand" href="../index.html" aria-label="CSC Home">
-        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
-      </a>
+      <a class="brand" href="../index.html" aria-label="CSC Home"><span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span></a>
       <nav class="main-nav" id="mainNav" aria-label="Primary">
         <a class="nav-link" href="../index.html">Home</a>
         <a class="nav-link" href="../services.html">Services</a>
@@ -73,16 +56,12 @@
       <div class="project-hero-card">
         <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
         <h1>San Bernardino, California · Wells Fargo Development</h1>
-        <p>
-          Multi-scope program supporting Wells Fargo’s San Bernardino campus: high-security office support, two parking structures,
-          ground-up Panera Bread, multi-tenant retail shell, an $8,200,000 clean-room tenant improvement, and additional retail.
-        </p>
+        <p>Multi-scope program: high-security office support, dual parking structures, ground-up Panera Bread, multi-tenant retail shell, clean-room tenant improvement, and additional retail.</p>
       </div>
 
       <div class="hero-image-wrap">
-        <img src="../assets/images/projects/wells-fargo-ps-1-new.jpg"
-             alt="Wells Fargo San Bernardino campus, parking structure"
-             loading="eager"
+        <img src="../assets/images/projects/wells-fargo-ps-3a.png"
+             alt="Wells Fargo San Bernardino — main building"
              onerror="this.src='../assets/images/projects/placeholder.jpg'">
       </div>
     </section>
@@ -92,45 +71,19 @@
       <div class="container">
         <h2 class="section-title">Project Overview</h2>
         <p>
-          CSC acted as Owner’s Representative with design-build oversight for a coordinated program around Wells Fargo’s San Bernardino campus.
-          Responsibilities included municipal permitting and inspections, contractor and vendor coordination (including security and building systems),
-          phased turnovers, and schedule, quality, safety, and cost control across office, parking, retail, and clean-room scopes.
+          CSC served as Owner’s Representative and design-build oversight for a coordinated program around Wells Fargo’s San Bernardino campus. Work included a high-security office program, two cast-in-place parking structures, a ground-up Panera Bread, a multi-tenant retail shell, an $8,200,000 clean-room tenant improvement within the campus, and additional retail. Responsibilities covered municipal permitting and inspections, contractor and vendor coordination (including security and building systems), phased turnovers, and schedule, quality, safety, and cost control.
         </p>
 
         <div class="facts">
-          <div class="fact"><strong>Office</strong><br><span class="subtle">~320,000&nbsp;ft&sup2; (5-story), about $84,000,000.</span></div>
+          <div class="fact"><strong>Office</strong><br><span class="subtle">~320,000&nbsp;ft&sup2;, ~$84,000,000 program value.</span></div>
           <div class="fact"><strong>Parking</strong><br><span class="subtle">Two multi-level garages serving the campus.</span></div>
-          <div class="fact"><strong>Retail</strong><br><span class="subtle">Panera Bread (ground-up) and multi-tenant shell.</span></div>
-          <div class="fact"><strong>Specialized</strong><br><span class="subtle">$8,200,000 clean-room tenant improvement.</span></div>
-        </div>
-
-        <div class="card-grid" style="margin-top:1.25rem">
-          <article class="card">
-            <h3>Key Deliverables</h3>
-            <ul class="checklist">
-              <li>High-security office campus support</li>
-              <li>Two multi-level parking structures</li>
-              <li>Panera Bread: ground-up development</li>
-              <li>Retail center shell for future tenant improvements</li>
-              <li>Clean-room TI within the Wells Fargo campus</li>
-              <li>Additional retail units</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <h3>Execution</h3>
-            <ul class="checklist">
-              <li>Owner’s Representative and design-build oversight</li>
-              <li>Permitting, inspection, and phased turnovers</li>
-              <li>Security and systems integration management</li>
-              <li>Schedule, quality, safety, and cost control</li>
-            </ul>
-          </article>
+          <div class="fact"><strong>Retail</strong><br><span class="subtle">Panera Bread ground-up + multi-tenant shell.</span></div>
+          <div class="fact"><strong>Specialized</strong><br><span class="subtle">$8,200,000 clean-room TI.</span></div>
         </div>
       </div>
     </section>
 
-    <!-- PHOTOS: Peekaboo -->
+    <!-- PHOTOS (peekaboo) -->
     <section class="section bg-alt" aria-label="Parking Structures Photos">
       <div class="container">
         <h2 class="section-title">Parking Structures</h2>
@@ -168,9 +121,7 @@
   </main>
 
   <footer class="footer">
-    <div class="container">
-      © 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.
-    </div>
+    <div class="container">© 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</div>
   </footer>
 
   <script src="../js/config.js" defer></script>
@@ -178,13 +129,12 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map (no API key)
+    // click-to-load map embed
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
       if (!embedBtn || !shell || !target) return;
-
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
         var addr = '10033+East+Brier+Dr,+San+Bernardino,+CA+92408';
