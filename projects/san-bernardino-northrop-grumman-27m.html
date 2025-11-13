@@ -5,7 +5,8 @@
   <title>San Bernardino, California · High-Security Office — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$27,000,000 high-security office facility in San Bernardino, California for a confidential defense client.">
-  <link rel="stylesheet" href="/css/styles.css?v=24">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
     .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
@@ -22,21 +23,22 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <a class="logo" href="/"><img src="/assets/img/logo-full.svg" alt="CSC logo" height="36"></a>
+      <a class="logo" href="../index.html">
+        <img src="../assets/images/main/logo-full.svg" alt="CSC logo" height="36">
+      </a>
       <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/" aria-current="page">Projects</a>
-        <a href="/contact.html">Contact</a>
+        <a href="../services.html">Services</a>
+        <a href="../about.html">About</a>
+        <a href="../projects.html" aria-current="page">Projects</a>
+        <a href="../contact.html">Contact</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- HERO (no main photo, just text) -->
+    <!-- HERO (text only, no main photo) -->
     <section class="hero">
       <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>San Bernardino, California · High-Security Office</h1>
         <p class="lede">
           $27,000,000 high-security office facility for a confidential defense client (Northrop Grumman).
@@ -76,19 +78,19 @@
       </div>
     </section>
 
-    <!-- GALLERY (just the two photos) -->
+    <!-- GALLERY -->
     <section class="section bg-alt">
       <div class="container">
         <h2>Gallery</h2>
         <div class="gallery-grid">
-          <img src="/assets/images/projects/ng-1.JPG"
-               alt="High-security office facility — San Bernardino, early site context"
+          <img src="../assets/images/projects/ng-1.JPG"
+               alt="High-security office facility, early site context"
                loading="lazy"
-               onerror="this.src='/assets/images/projects/placeholder.jpg'">
-          <img src="/assets/images/projects/ng-2.JPG"
-               alt="High-security office facility — San Bernardino, parking and entry elevation"
+               onerror="this.src='../assets/images/projects/placeholder.jpg'">
+          <img src="../assets/images/projects/ng-2.JPG"
+               alt="High-security office facility, parking and entry elevation"
                loading="lazy"
-               onerror="this.src='/assets/images/projects/placeholder.jpg'">
+               onerror="this.src='../assets/images/projects/placeholder.jpg'">
         </div>
       </div>
     </section>
@@ -107,7 +109,7 @@
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
       </div>
     </section>
   </main>
@@ -132,7 +134,9 @@
         e.preventDefault();
         var addr = encodeURIComponent('862 E Hospitality Lane, San Bernardino, CA 92408');
         var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
-        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+        target.innerHTML =
+          '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" ' +
+          'loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
         target.style.display = 'block';
         shell.style.display = 'none';
       }, { passive: false });
