@@ -10,29 +10,49 @@
 
   <!-- Open Graph -->
   <meta property="og:title" content="Park City, Utah · Subdivision — CSC">
-  <meta property="og:description" content="80-lot design and build subdivision in Park City, Utah. Civil works and residential buildings.">
+  <meta property="og:description" content="80-lot design and build subdivision. Civil works and residential buildings.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="../assets/images/projects/placeholder.jpg">
-  <meta property="og:image:alt" content="Concept view for a residential subdivision in Park City, Utah">
+  <meta property="og:image" content="../assets/images/main/logo-full.svg">
+  <meta property="og:image:alt" content="CSC logo">
 
   <style>
     .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
     .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
     .subtle{opacity:.85}
-    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
-    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
-    .map-skeleton small{color:#555}
-    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
-    .map-embed{display:none}
     .section-title{color:#16458b;font-weight:700}
 
-    /* hero card, matches Amarillo */
-    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
-    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
-    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
-    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a}
-    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
-    @media (max-width:720px){.project-hero-card{padding:1.75rem 1.25rem}.project-hero-card-logo{height:68px}}
+    /* hero card */
+    .project-hero-card{
+      background:#fff;border-radius:24px;padding:2.25rem;text-align:center;
+      box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);
+      max-width:960px;margin:0 auto 1.75rem;
+    }
+    .project-hero-card-logo{
+      width:360px;max-width:100%;height:78px;margin:0 auto 1rem;
+      background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;
+      filter:var(--logo-filter);
+    }
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700;}
+    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a;}
+    @media (max-width:720px){
+      .project-hero-card{padding:1.75rem 1.25rem;}
+      .project-hero-card-logo{height:68px;}
+    }
+
+    /* card grid spacing */
+    .card-grid{
+      display:grid;
+      gap:1rem;
+      margin-top:1.25rem;
+    }
+
+    /* simple CTA card */
+    .cta-card{
+      background:#fff;border:1px solid #eee;border-radius:14px;
+      padding:1rem 1.25rem;display:flex;align-items:center;
+      justify-content:space-between;gap:1rem;
+    }
+    .cta-card .btn{white-space:nowrap;}
   </style>
 </head>
 <body>
@@ -64,13 +84,6 @@
         <h1>Park City, Utah · Subdivision</h1>
         <p>$54,000,000 program. 80-lot design and build subdivision including civil infrastructure and residential buildings.</p>
       </div>
-
-      <!-- optional hero image, using placeholder for now -->
-      <div class="hero-image-wrap">
-        <img src="../assets/images/projects/placeholder.jpg"
-             alt="Concept view for a residential subdivision in Park City, Utah"
-             onerror="this.src='../assets/images/projects/placeholder.jpg'">
-      </div>
     </section>
 
     <!-- OVERVIEW -->
@@ -85,10 +98,10 @@
           <div class="fact"><strong>Program Value</strong><br><span class="subtle">$54,000,000</span></div>
           <div class="fact"><strong>Lots</strong><br><span class="subtle">80 units</span></div>
           <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design and Build oversight, Owner’s Representative</span></div>
-          <div class="fact"><strong>City Coordination</strong><br><span class="subtle">Permitting, inspections, utilities</span></div>
+          <div class="fact"><strong>Coordination</strong><br><span class="subtle">Permitting, inspections, utilities</span></div>
         </div>
 
-        <div class="card-grid" style="margin-top:1.25rem">
+        <div class="card-grid">
           <article class="card">
             <h3>Scope</h3>
             <ul class="checklist">
@@ -116,24 +129,17 @@
             </ul>
           </article>
         </div>
-      </div>
-    </section>
 
-    <!-- LOCATION -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">Location</h2>
-        <p>Park City, Utah</p>
-
-        <div class="map-box">
-          <div class="map-skeleton" id="mapShell">
-            <small>Map loads only after click to minimize third-party requests.</small>
-            <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
+        <!-- Optional CTA -->
+        <div class="cta-card" style="margin-top:1.25rem">
+          <div>
+            <strong>More detail on request.</strong><br>
+            <span class="subtle">Permit packages, phasing plans, and utility coordination summaries available to qualified parties.</span>
           </div>
-          <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
+          <a class="btn" href="../contact.html">Contact CSC</a>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
+        <p style="margin-top:1.25rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
       </div>
     </section>
   </main>
@@ -144,7 +150,7 @@
     </div>
   </footer>
 
-  <!-- structured data -->
+  <!-- Structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -161,22 +167,6 @@
   <script src="../js/app.js" defer></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // click to load map
-    (function(){
-      var embedBtn = document.getElementById('embedMap');
-      var shell = document.getElementById('mapShell');
-      var target = document.getElementById('mapEmbed');
-      if (!embedBtn || !shell || !target) return;
-      embedBtn.addEventListener('click', function(e){
-        e.preventDefault();
-        var addr = encodeURIComponent('Park City, Utah');
-        var src = 'https://www.google.com/maps?q=' + addr + '&output=embed';
-        target.innerHTML = '<iframe title="Map" src="'+src+'" width="100%" height="360" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
-        target.style.display = 'block';
-        shell.style.display = 'none';
-      }, { passive: false });
-    })();
   </script>
 </body>
 </html>
