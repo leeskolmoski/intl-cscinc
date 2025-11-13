@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <title>Park City, Utah · Subdivision — CSC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="$54,000,000, 80-lot design/build subdivision in Park City, Utah. Civil infrastructure and residential buildings.">
-  <link rel="stylesheet" href="/assets/css/styles.css?v=24">
+  <meta name="description" content="$54,000,000 program. 80-lot design and build subdivision in Park City, Utah. Civil infrastructure and residential buildings.">
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="icon" type="image/png" href="../assets/images/main/favicon.png">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Park City, Utah · Subdivision — CSC">
-  <meta property="og:description" content="80-lot design/build subdivision in Park City, Utah. Civil works and residential buildings.">
+  <meta property="og:description" content="80-lot design and build subdivision in Park City, Utah. Civil works and residential buildings.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="/assets/images/projects/placeholder.jpg">
+  <meta property="og:image" content="../assets/images/projects/placeholder.jpg">
   <meta property="og:image:alt" content="Concept view for a residential subdivision in Park City, Utah">
 
   <style>
@@ -23,35 +24,59 @@
     .map-skeleton small{color:#555}
     .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
     .map-embed{display:none}
+    .section-title{color:#16458b;font-weight:700}
+
+    /* hero card, matches Amarillo */
+    .project-hero-card{background:#fff;border-radius:24px;padding:2.25rem;text-align:center;box-shadow:0 16px 40px rgba(0,0,0,.04);border:1px solid rgba(11,79,160,.03);max-width:960px;margin:0 auto 1.75rem}
+    .project-hero-card-logo{width:360px;max-width:100%;height:78px;margin:0 auto 1rem;background:url("../assets/images/main/logo-full.svg") center/contain no-repeat;filter:var(--logo-filter)}
+    .project-hero-card h1{margin:0 0 .5rem;color:#244A9F;font-weight:700}
+    .project-hero-card p{max-width:720px;margin:0 auto .6rem;color:#43526a}
+    .hero-image-wrap img{width:100%;max-width:960px;display:block;margin:0 auto;border-radius:12px;border:1px solid #e6e6e6}
+    @media (max-width:720px){.project-hero-card{padding:1.75rem 1.25rem}.project-hero-card-logo{height:68px}}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="logo" href="/"><img src="/assets/images/main/logo-full.svg" alt="CSC logo" height="36"></a>
-      <nav class="site-nav">
-        <a href="/services.html">Services</a>
-        <a href="/about.html">About</a>
-        <a href="/projects/" aria-current="page">Projects</a>
-        <a href="/contact.html">Contact</a>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html" aria-label="CSC Home">
+        <span class="brand-mask" role="img" aria-label="Construction Services Consulting (CSC) logo"></span>
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Primary">
+        <a class="nav-link" href="../index.html">Home</a>
+        <a class="nav-link" href="../services.html">Services</a>
+        <a class="nav-link active" href="../projects.html">Projects</a>
+        <a class="nav-link" href="../about.html">About</a>
+        <a class="nav-link" href="../contact.html">Contact</a>
       </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-inner">
-        <img class="hero-mark" src="/assets/images/main/logo-short.svg" alt="" height="48">
+    <section class="hero" style="margin-top:18px;">
+      <div class="project-hero-card">
+        <div class="project-hero-card-logo" aria-label="CSC Construction Services Consulting"></div>
         <h1>Park City, Utah · Subdivision</h1>
-        <p class="lede">$54,000,000, 80-lot design/build subdivision including civil infrastructure and residential buildings.</p>
+        <p>$54,000,000 program. 80-lot design and build subdivision including civil infrastructure and residential buildings.</p>
+      </div>
+
+      <!-- optional hero image, using placeholder for now -->
+      <div class="hero-image-wrap">
+        <img src="../assets/images/projects/placeholder.jpg"
+             alt="Concept view for a residential subdivision in Park City, Utah"
+             onerror="this.src='../assets/images/projects/placeholder.jpg'">
       </div>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-        <h2>Project Overview</h2>
+        <h2 class="section-title">Project Overview</h2>
         <p>
           Turnkey residential subdivision program that included planning, entitlement support, and delivery of civil works with coordinated vertical pads. The scope covered grading, roads, utilities, drainage, sidewalks, and trails, with procurement and quality oversight through completion.
         </p>
@@ -59,7 +84,7 @@
         <div class="facts">
           <div class="fact"><strong>Program Value</strong><br><span class="subtle">$54,000,000</span></div>
           <div class="fact"><strong>Lots</strong><br><span class="subtle">80 units</span></div>
-          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design/Build oversight, Owner’s Representative</span></div>
+          <div class="fact"><strong>Delivery</strong><br><span class="subtle">Design and Build oversight, Owner’s Representative</span></div>
           <div class="fact"><strong>City Coordination</strong><br><span class="subtle">Permitting, inspections, utilities</span></div>
         </div>
 
@@ -76,7 +101,7 @@
           <article class="card">
             <h3>Role</h3>
             <ul class="checklist">
-              <li>Design-Build oversight and Owner’s Representative</li>
+              <li>Design and Build oversight, Owner’s Representative</li>
               <li>Municipal coordination and permitting</li>
               <li>Contractor procurement and quality control</li>
             </ul>
@@ -86,7 +111,7 @@
             <h3>Program</h3>
             <ul class="checklist">
               <li>Approx. $54,000,000 total program value</li>
-              <li>80 units (about 2,400 to 3,000&nbsp;ft&sup2;)</li>
+              <li>80 units, about 2,400 to 3,000&nbsp;ft&sup2;</li>
               <li>Turnkey delivery: grading, utilities, curb, gutter, sidewalks, trails</li>
             </ul>
           </article>
@@ -97,7 +122,7 @@
     <!-- LOCATION -->
     <section class="section">
       <div class="container">
-        <h2>Location</h2>
+        <h2 class="section-title">Location</h2>
         <p>Park City, Utah</p>
 
         <div class="map-box">
@@ -108,40 +133,41 @@
           <div class="map-embed" id="mapEmbed" aria-hidden="true"></div>
         </div>
 
-        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
+        <p style="margin-top:1rem;"><a class="btn btn-secondary" href="../projects.html">← Back to Projects</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="container">
-      <p>&copy; 2009-<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.</p>
+      © 2009–<span id="y"></span> Construction Services Consulting, Inc. All rights reserved.
     </div>
   </footer>
 
-  <!-- Structured data -->
+  <!-- structured data -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"ConstructionProject",
     "name":"Park City, Utah · Subdivision",
-    "description":"80-lot design/build subdivision. Civil infrastructure and residential pads.",
+    "description":"80-lot design and build subdivision. Civil infrastructure and residential pads.",
     "location":{"@type":"Place","address":{"@type":"PostalAddress","addressLocality":"Park City","addressRegion":"UT","addressCountry":"US"}},
     "contractor":{"@type":"Organization","name":"Construction Services Consulting, Inc."},
     "cost":"54000000"
   }
   </script>
 
+  <script src="../js/config.js" defer></script>
+  <script src="../js/app.js" defer></script>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Click-to-load map (generic Park City center for now)
+    // click to load map
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
       if (!embedBtn || !shell || !target) return;
-
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
         var addr = encodeURIComponent('Park City, Utah');
