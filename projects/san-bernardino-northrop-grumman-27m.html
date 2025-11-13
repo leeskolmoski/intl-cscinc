@@ -6,68 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="$27,000,000 high-security office facility in San Bernardino, California for a confidential defense client.">
   <link rel="stylesheet" href="/assets/css/styles.css?v=24">
-
   <style>
-    .facts {
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-      gap:1rem;
-      margin-top:1rem;
-    }
-    .fact {
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:12px;
-      padding:1rem;
-    }
-    .subtle { opacity:.85 }
-
-    /* gallery slider */
-    .gallery-wrap {
-      border:1px solid #e6e6e6;
-      border-radius:12px;
-      background:#fff;
-      padding:1rem;
-      margin-top:1.5rem;
-      position:relative;
-      overflow:hidden;
-    }
-    .gallery-row {
-      display:flex;
-      gap:1rem;
-      overflow-x:auto;
-      scroll-snap-type:x mandatory;
-      padding-bottom:.5rem;
-    }
-    .gallery-row img {
-      width:260px;
-      height:auto;
-      border-radius:12px;
-      border:1px solid #e6e6e6;
-      flex:0 0 auto;
-      scroll-snap-align:start;
-    }
-    .gallery-prev, .gallery-next {
-      position:absolute;
-      top:50%;
-      transform:translateY(-50%);
-      background:#fff;
-      border:1px solid #ddd;
-      width:32px;
-      height:32px;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      font-weight:bold;
-      user-select:none;
-    }
-    .gallery-prev { left:.5rem }
-    .gallery-next { right:.5rem }
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+    .gallery-grid img{width:100%;height:auto;border-radius:12px;border:1px solid #e6e6e6}
+    .map-box{margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb}
+    .map-skeleton{padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between}
+    .map-skeleton small{color:#555}
+    .map-btn{display:inline-flex;align-items:center;gap:.5rem;padding:.6rem .9rem;border:1px solid #e0e0e0;border-radius:9999px;background:#fff;font-weight:600;text-decoration:none}
+    .map-embed{display:none}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .fact{background:#fff;border:1px solid #eee;border-radius:12px;padding:1rem}
+    .subtle{opacity:.85}
   </style>
 </head>
-
 <body>
   <header class="site-header">
     <div class="container">
@@ -82,25 +33,24 @@
   </header>
 
   <main>
-
-    <!-- HERO (title only) -->
+    <!-- HERO (image removed) -->
     <section class="hero">
       <div class="container hero-inner">
         <img class="hero-mark" src="/assets/img/logo-short.svg" alt="" height="48">
         <h1>San Bernardino, California · High-Security Office</h1>
-        <p class="lede">$27,000,000 high-security office facility for a confidential defense client (Northrop Grumman).</p>
+        <p class="lede">$27,000,000 — Confidential defense client (Northrop Grumman).</p>
+        <!-- IMAGE REMOVED -->
       </div>
     </section>
 
     <!-- OVERVIEW -->
     <section class="section">
       <div class="container">
-
         <h2>Project Overview</h2>
         <p>
-          This program delivered a high-security office facility with strict information-control protocols. CSC provided Owner’s
-          Representative and construction management services, secure trade coordination, phased occupancy turnovers, and full
-          QA/QC integration.
+          This program delivered a high-security office facility with strict information-control protocols. 
+          CSC provided Owner’s Representative and construction management services, secure trade coordination, 
+          phased occupancy turnovers, and full QA/QC integration.
         </p>
 
         <div class="facts">
@@ -115,7 +65,6 @@
             </span>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -123,24 +72,10 @@
     <section class="section bg-alt">
       <div class="container">
         <h2>Gallery</h2>
-
-        <div class="gallery-wrap">
-          <div class="gallery-prev">←</div>
-          <div class="gallery-next">→</div>
-
-          <div class="gallery-row" data-gallery="ng">
-            <img src="/assets/images/projects/ng-1.JPG"
-                 alt="San Bernardino high-security office — view 1"
-                 loading="lazy"
-                 onerror="this.src='/assets/images/projects/placeholder.jpg'">
-
-            <img src="/assets/images/projects/ng-2.JPG"
-                 alt="San Bernardino high-security office — view 2"
-                 loading="lazy"
-                 onerror="this.src='/assets/images/projects/placeholder.jpg'">
-          </div>
+        <div class="gallery-grid">
+          <img src="/assets/images/projects/ng-1.JPG" alt="San Bernardino facility — view 1" loading="lazy">
+          <img src="/assets/images/projects/ng-2.JPG" alt="San Bernardino facility — view 2" loading="lazy">
         </div>
-
       </div>
     </section>
 
@@ -150,8 +85,8 @@
         <h2>Location</h2>
         <p>862 E Hospitality Lane, San Bernardino, CA 92408</p>
 
-        <div class="map-box" style="margin-top:1rem;border:1px solid #e6e6e6;border-radius:12px;overflow:hidden;background:#f7f7fb;">
-          <div class="map-skeleton" id="mapShell" style="padding:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:space-between;">
+        <div class="map-box">
+          <div class="map-skeleton" id="mapShell">
             <small>Map loads only after click.</small>
             <a class="map-btn" id="embedMap" href="#" role="button">Show embedded map</a>
           </div>
@@ -161,7 +96,6 @@
         <p style="margin-top:1rem;"><a class="btn btn-secondary" href="/projects/">← Back to Projects</a></p>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
@@ -173,19 +107,11 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // gallery slider
-    document.querySelectorAll('.gallery-wrap').forEach(wrap => {
-      const row = wrap.querySelector('.gallery-row');
-      wrap.querySelector('.gallery-prev').onclick = () => row.scrollBy({ left: -300, behavior: 'smooth' });
-      wrap.querySelector('.gallery-next').onclick = () => row.scrollBy({ left: 300, behavior: 'smooth' });
-    });
-
-    // map click-to-load
     (function(){
       var embedBtn = document.getElementById('embedMap');
       var shell = document.getElementById('mapShell');
       var target = document.getElementById('mapEmbed');
-      if (!embedBtn || !shell || !target) return;
+      if(!embedBtn || !shell || !target) return;
 
       embedBtn.addEventListener('click', function(e){
         e.preventDefault();
@@ -197,6 +123,5 @@
       });
     })();
   </script>
-
 </body>
 </html>
